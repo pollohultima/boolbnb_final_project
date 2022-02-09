@@ -49924,9 +49924,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/auth.scss":
+/***/ "./resources/sass/host.scss":
 /*!**********************************!*\
-  !*** ./resources/sass/auth.scss ***!
+  !*** ./resources/sass/host.scss ***!
   \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -49937,14 +49937,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 0:
 /*!****************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/auth.scss ***!
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/host.scss ***!
   \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\auth.scss */"./resources/sass/auth.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })
