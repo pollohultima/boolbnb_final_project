@@ -9,7 +9,12 @@ class Apartment extends Model
 {
     protected $fillable = ['title', 'slug', 'rooms', 'bathrooms', 'beds', 'squared_meters', 'address', 'longitude', 'latitiude', 'image', 'is_visible', 'floor', 'price', 'description'];
 
-    public function service()
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
+    }
+
+    public function sponsors()
     {
         return $this->belongsToMany(Service::class);
     }

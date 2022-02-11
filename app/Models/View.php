@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class View extends Model
 {
     //
-        public function apartment()
+    public function apartments()
     {
         return $this->belongsTo(Apartment::class);
     }
