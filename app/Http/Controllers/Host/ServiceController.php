@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Host;
 
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ServiceController extends Controller
 {
@@ -14,7 +16,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view('admin.services.index', compact('services'));
     }
 
     /**
@@ -22,9 +25,8 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
     }
 
     /**
@@ -35,7 +37,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate_date = $request->validate([
+            'name' => 'required|unique:services'
+        ]);
+        $validate_date['slug'] = Str::slug($request->name);
+
+        Service::create($validate_date);
+
+        return redirect()->back()->with('message', 'Service created');
     }
 
     /**
@@ -44,7 +53,7 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Service $service)
     {
         //
     }
@@ -55,7 +64,7 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
         //
     }
@@ -67,7 +76,7 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -78,8 +87,9 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->back()->with('message', 'Service deleted');
     }
 }
