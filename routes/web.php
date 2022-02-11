@@ -29,6 +29,6 @@ Route::middleware('auth')->prefix('host')->namespace('Host')->name('host.')->gro
     Route::resource('apartments', ApartmentController::class);
     Route::resource('messages', MessageController::class);
     Route::resource('services', ServiceController::class);
-    Route::resource('sponsors', SponsorController::class);
-    Route::resource('views', ViewController::class);
+    Route::resource('sponsors', SponsorController::class)->only(['index']);
+    Route::resource('views', ViewController::class)->only('index');
 });
