@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Apartment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'username', 'lastname', 'date_of_birth', 'address'
     ];
 
     /**
@@ -38,7 +39,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function apartments()
+    public function apartments(): HasMany
     {
         return $this->hasMany(Apartment::class);
     }
