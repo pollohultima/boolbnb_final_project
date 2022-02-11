@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Host;
 
 use App\Http\Controllers\Controller;
+use App\Models\Apartment;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ApartmentController extends Controller
 {
@@ -14,7 +18,9 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //
+        $apartments = Auth::user()->apartments()->orderByDesc('id')->paginate(6);
+
+        return view('host.apartments.index', compact('apartments'));
     }
 
     /**
@@ -24,7 +30,9 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::all();
+
+        return view('host.apartments.create', compact('services'));
     }
 
     /**
@@ -35,7 +43,42 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->has('services')) {
+            $request->validate([
+                'services' => ['nullable', 'exists:services,id']
+            ]);
+        }
+
+        $validate_data = $request->validate([
+            'title' => ['required', 'unique:apartments', 'max:200'],
+            'rooms' => ['required'],
+            'bathrooms' => ['required'],
+            'beds' => ['required'],
+            'squared_meters' => ['required'],
+            'address' => ['required'],
+            'longitude' => ['required'],
+            'latitude' => ['required'],
+            'image' => ['required'],
+            'is_visible' => ['required'],
+            'floor' => ['nullable'],
+            'price' => ['nullable'],
+            'description' => ['nullable'],
+        ]);
+
+        $validate_data['slug'] = Str::slug($validate_data['title']);
+
+        $validate_data['user_id'] = Auth::id();
+
+        $apartment = Apartment::crate($validate_data);
+
+        if ($request->has('services')) {
+            $request->validate([
+                'services' => ['nullable', 'exists:services,id']
+            ]);
+            $apartment->services()->attach($request->apartments);
+        }
+
+        return redirect()->route('host.apartments.index');
     }
 
     /**
@@ -44,9 +87,9 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
-        //
+        return view('host.apartment.show', compact('apartment'));
     }
 
     /**
@@ -55,9 +98,15 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        //
+        $services = Service::all();
+
+        if (Auth::id() === $apartment->user_id) {
+            return view('host.apartments.edit', compact('apartments', 'services'));
+        } else {
+            abort(403);
+        }
     }
 
     /**
@@ -67,9 +116,39 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        if (Auth::id() === $apartment->user_id) {
+
+            $validate_data = $request->validate([
+                'title' => ['required', 'unique:apartments', 'max:200'],
+                'rooms' => ['required'],
+                'bathrooms' => ['required'],
+                'beds' => ['required'],
+                'squared_meters' => ['required'],
+                'address' => ['required'],
+                'longitude' => ['required'],
+                'latitude' => ['required'],
+                'image' => ['required'],
+                'is_visible' => ['required'],
+                'floor' => ['nullable'],
+                'price' => ['nullable'],
+                'description' => ['nullable'],
+            ]);
+
+            if ($request->has('services')) {
+                $request->validate([
+                    'services' => ['nullable', 'exists:services,id']
+                ]);
+                $apartment->services()->sync($request->apartments);
+            }
+
+            $apartment->update($validate_data);
+
+            return redirect()->route('host.apartments.index');
+        } else {
+            abort(403);
+        }
     }
 
     /**
@@ -78,8 +157,13 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        if (Auth::id() === $apartment->user_id) {
+            $apartment->delete();
+            return redirect()->route('host.apartments.index');
+        } else {
+            abort(403);
+        }
     }
 }

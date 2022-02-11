@@ -20,3 +20,15 @@ Auth::routes();
 
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
+/* Routes for Host */
+Route::middleware('auth')->prefix('host')->namespace('Host')->name('host.')->group(function () {
+
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('apartments', ApartmentController::class);
+    Route::resource('messages', MessageController::class);
+    Route::resource('services', ServiceController::class);
+    Route::resource('sponsors', SponsorController::class);
+    Route::resource('views', ViewController::class);
+});
