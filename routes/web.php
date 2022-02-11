@@ -16,7 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('/', 'HomeController@index')->name('home');
+
+
 Auth::routes();
 
+/* host-routes */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::namespace('Host')->prefix('host')->name('host.')->middleware('auth')->group(function () {
+
+    Route::resource('messages', MessageController::class);
+
+
+});
+
+
+
+

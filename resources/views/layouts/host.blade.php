@@ -120,7 +120,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('host.messages.index')}}">
                             <h4 class="text-primary">
                                 <i class="fas fa-tags    "></i>
                                 Messages

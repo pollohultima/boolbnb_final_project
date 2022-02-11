@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Host;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Message;
 
 class MessageController extends Controller
 {
@@ -15,6 +16,9 @@ class MessageController extends Controller
     public function index()
     {
         //
+        ddd($messages = Message::all());
+        $messages = Message::all();
+        return view('host.messages.index', compact('messages'));
     }
 
     /**
