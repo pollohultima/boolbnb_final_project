@@ -1950,7 +1950,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      sponsored_apartments_list: null
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("../api/apartments").then(function (r) {
+      _this.sponsored_apartments_list = r.data;
+    });
+  }
+});
 
 /***/ }),
 
@@ -37595,16 +37632,60 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h1", { staticClass: "text-center py-5" }, [
+      _vm._v("Sponsored Apartments"),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "sponsored_apartments_container container" }, [
+      _c(
+        "div",
+        { staticClass: "row justify-content-center" },
+        _vm._l(_vm.sponsored_apartments_list, function (sponsored_apartment) {
+          return _c(
+            "div",
+            {
+              key: sponsored_apartment.slug,
+              staticClass: "sponsored_apartment_card",
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "card", staticStyle: { width: "18rem" } },
+                [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: { src: sponsored_apartment.image, alt: "..." },
+                    }),
+                    _vm._v(" "),
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v(_vm._s(sponsored_apartment.title)),
+                    ]),
+                    _vm._v(" "),
+                    _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
+                      _vm._v("Sponsored"),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(sponsored_apartment.title) +
+                          "\n            "
+                      ),
+                    ]),
+                  ]),
+                ]
+              ),
+            ]
+          )
+        }),
+        0
+      ),
+    ]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("HOME PAGE")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
