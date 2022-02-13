@@ -11,8 +11,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                     <li>
+                        <router-link to="/" class="mx-3">Home</router-link>
+                    </li>
                     <li>
-                        <a class="mx-3" href="#">Ricerca Appartamenti</a>  <!-- rotta pagina ricerca avanzata -->
+                        <router-link to="/apartments" class="mx-3">Ricerca Appartamenti</router-link>
                     </li>
                 </ul>
 
