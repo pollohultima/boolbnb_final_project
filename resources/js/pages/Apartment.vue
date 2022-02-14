@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center py-5">Sponsored Apartments</h1>
+    <h1 class="text-center py-5">Apartments List</h1>
   </div>
 </template>
 
