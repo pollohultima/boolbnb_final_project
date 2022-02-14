@@ -37608,7 +37608,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Apartment page")])])
+    return _c("div", [
+      _c("h1", { staticClass: "text-center py-5" }, [
+        _vm._v("Sponsored Apartments"),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
