@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Host;
 use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Service;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -121,7 +122,7 @@ class ApartmentController extends Controller
         if (Auth::id() === $apartment->user_id) {
 
             $validate_data = $request->validate([
-                'title' => ['required', 'unique:apartments', 'max:200'],
+                'title' => ['required', Rule::unique('apartments')->ignore($apartment->id), 'max:200'],
                 'rooms' => ['required'],
                 'bathrooms' => ['required'],
                 'beds' => ['required'],
