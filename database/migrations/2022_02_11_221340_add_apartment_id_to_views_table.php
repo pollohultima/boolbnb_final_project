@@ -15,7 +15,7 @@ class AddApartmentIdToViewsTable extends Migration
     {
         Schema::table('views', function (Blueprint $table) {
             $table->unsignedBigInteger('apartment_id')->nullable()->after('id');
-            $table->foreign('apartment_id')->references('id')->on('apartments');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('set null');
         });
     }
 
@@ -27,7 +27,7 @@ class AddApartmentIdToViewsTable extends Migration
     public function down()
     {
         Schema::table('views', function (Blueprint $table) {
-            $table->dropForeign('view_apartment_id_foreign');
+            $table->dropForeign(['apartment_id']);
             $table->dropColumn('apartment_id');
         });
     }

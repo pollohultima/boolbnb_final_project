@@ -27,7 +27,7 @@ class AddApartmentIdToMessagesTable extends Migration
     public function down()
     {
         Schema::table('messages', function (Blueprint $table) {
-            $table->dropForeign('message_apartment_id_foreign');
+            $table->dropForeign(['apartment_id']);
             $table->dropColumn('apartment_id');
         });
     }
