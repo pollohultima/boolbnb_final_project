@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
@@ -63,12 +62,25 @@ class ApartmentController extends Controller
             'address' => ['required'],
             'longitude' => ['required'],
             'latitude' => ['required'],
-            'image' => ['required'],
+            'image' => ['required', 'image', 'max:500'],
             'is_visible' => ['required'],
             'floor' => ['nullable'],
             'price' => ['nullable'],
             'description' => ['nullable'],
         ]);
+
+
+
+
+        if ($request->file('image')) {
+
+            $image_path = Storage::put('apartment_image', $request->file('image'));
+
+
+            $validate_data['image'] = $image_path;
+        }
+
+
         $validate_data['slug'] = Str::slug($validate_data['title']);
         $validate_data = Arr::add($validate_data, 'user_id', "$user");
         $apartment = Apartment::create($validate_data);
@@ -108,7 +120,7 @@ class ApartmentController extends Controller
         $services = Service::all();
 
         if (Auth::id() === $apartment->user_id) {
-            return view('host.apartments.edit', compact('apartments', 'services'));
+            return view('host.apartments.edit', compact('apartment', 'services'));
         } else {
             abort(403);
         }
@@ -134,12 +146,21 @@ class ApartmentController extends Controller
                 'address' => ['required'],
                 'longitude' => ['required'],
                 'latitude' => ['required'],
-                'image' => ['required'],
+                'image' => ['required', 'image', 'max:500'],
                 'is_visible' => ['required'],
                 'floor' => ['nullable'],
                 'price' => ['nullable'],
                 'description' => ['nullable'],
             ]);
+
+            if ($request->file('image')) {
+
+                Storage::delete($apartment->image);
+
+                $image_path = $request->file('image')->store('apartment_image');
+
+                $validated['image'] = $image_path;
+            }
 
             if ($request->has('services')) {
                 $request->validate([
