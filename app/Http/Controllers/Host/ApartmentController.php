@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 
+
+
 class ApartmentController extends Controller
 {
     /**
@@ -70,7 +72,7 @@ class ApartmentController extends Controller
         $validate_data['slug'] = Str::slug($validate_data['title']);
         $validate_data = Arr::add($validate_data, 'user_id', "$user");
         $apartment = Apartment::create($validate_data);
-        ddd($apartment);
+
 
         /*   $apartment->user_id = Auth::id(); */
 
