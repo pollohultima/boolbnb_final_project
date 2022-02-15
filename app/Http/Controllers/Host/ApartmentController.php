@@ -106,7 +106,8 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('host.apartment.show', compact('apartment'));
+
+        return view('host.apartments.show', compact('apartment'));
     }
 
     /**
@@ -135,6 +136,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+
         if (Auth::id() === $apartment->user_id) {
 
             $validate_data = $request->validate([
@@ -184,7 +186,9 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Apartment $apartment)
+
     {
+
         if (Auth::id() === $apartment->user_id) {
             $apartment->delete();
             return redirect()->route('host.apartments.index');

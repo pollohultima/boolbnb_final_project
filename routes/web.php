@@ -26,7 +26,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::middleware('auth')->prefix('host')->namespace('Host')->name('host.')->group(function () {
 
     Route::get('/', 'HomeController@index')->name('home');
-    Route::resource('apartments', ApartmentController::class);
+    Route::resource('apartments', ApartmentController::class)->parameter('apartments', 'apartment:slug');
     Route::resource('messages', MessageController::class);
     Route::resource('services', ServiceController::class);
     Route::resource('sponsors', SponsorController::class);

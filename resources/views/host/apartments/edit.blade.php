@@ -3,7 +3,7 @@
 @section('content')
     <h1>Update an apartment</h1>
 
-    <form action="{{ route('host.apartments.update') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('host.apartments.update',$apartment->slug) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -118,10 +118,9 @@
             <label for="services" class="form-label">Servizi</label>
             <select multiple class="form-select" name="services[]" id="services">
                 <option disabled>Seleziona uno o più servizi</option>
-
                 @foreach ($services as $service)
-                    <option value="{{ $service->id }}"
-                        {{ $apartment->services->contains($service->id) ? 'selected' : '' }}>{{ $service->name }}
+                    <option {{ $apartment->services->contains($service->id) ? 'selected' : '' }} value="{{ $service->id }}"
+                        >{{ $service->name }}
                     </option>
                 @endforeach
 

@@ -52,23 +52,24 @@
                 </div>
 
                 <div class="col-md-2">
-                    <a href="{{ route('host.apartments.show', $apartment->id) }}"><i
+                    <a href="{{ route('host.apartments.show', $apartment->slug) }}"><i
                             class="fas fa-eye fa-lg fa-fw "></i></a>
-                    <a href="{{ route('host.apartments.edit', $apartment->id) }}"> <i
+                    <a href="{{ route('host.apartments.edit', $apartment->slug) }}"> <i
                             class="fas fa-pencil-alt fa-lg fa-fw"></i></a>
 
                     <!-- Button trigger modal -->
-                    <a data-bs-toggle="modal" data-bs-target="#delete{{ $apartment->id }}">
+                    
+                    <a data-bs-toggle="modal" data-bs-target="#delete{{ $apartment->slug}}">
                         <i class="fas fa-trash fa-lg fa-fw text-danger"></i>
                     </a>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="delete{{ $apartment->id }}" tabindex="-1" role="dialog"
-                        aria-labelledby="modal-{{ $apartment->id }}" aria-hidden="true">
+                    <div class="modal fade" id="delete{{ $apartment->slug }}" tabindex="-1" role="dialog"
+                        aria-labelledby="modal-{{ $apartment->slug }}" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Delete apartment {{ $apartment->title }}</h5>
+                                    <h5 class="modal-title">Delete apartment {{ $apartment->slug }}</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -77,7 +78,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <form action="{{ route('host.apartments.destroy', $apartment->id) }}" method="post">
+                                    <form action="{{ route('host.apartments.destroy', $apartment->slug) }}" method="post">
                                         @csrf
                                         @method('DELETE')
 
