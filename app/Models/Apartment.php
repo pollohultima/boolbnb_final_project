@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Apartment extends Model
 {
-    protected $fillable = ['title', 'slug', 'rooms', 'bathrooms', 'beds', 'squared_meters', 'address', 'longitude', 'latitiude', 'image', 'is_visible', 'floor', 'price', 'description'];
+    protected $fillable = ['title', 'slug', 'rooms', 'bathrooms', 'beds', 'squared_meters', 'address', 'longitude', 'latitude', 'image', 'is_visible', 'floor', 'price', 'description'];
 
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function service()
+    public function services()
     {
         return $this->belongsToMany(Service::class);
     }

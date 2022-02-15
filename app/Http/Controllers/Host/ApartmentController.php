@@ -68,9 +68,12 @@ class ApartmentController extends Controller
 
         $validate_data['slug'] = Str::slug($validate_data['title']);
 
-        $validate_data['user_id'] = Auth::id();
+        /* $validate_data['user_id'] = Auth::id(); */
 
-        $apartment = Apartment::crate($validate_data);
+
+        $apartment = Apartment::create($validate_data)->with('user_id', Auth::id());
+
+        /*   $apartment->user_id = Auth::id(); */
 
         if ($request->has('services')) {
             $request->validate([
