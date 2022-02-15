@@ -4,7 +4,7 @@
     <div class="sponsored_apartments_container container">
       <div class="row justify-content-center">
         <div
-          class="sponsored_apartment_card"
+          class="col-3 sponsored_apartment_card"
           v-for="sponsored_apartment in sponsored_apartments_list"
           :key="sponsored_apartment.slug"
         >

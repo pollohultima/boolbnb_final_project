@@ -3,18 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Apartment extends Model
 {
-    protected $fillable = ['title', 'slug', 'rooms', 'bathrooms', 'beds', 'squared_meters', 'address', 'longitude', 'latitiude', 'image', 'is_visible', 'floor', 'price', 'description'];
+    protected $fillable = ['user_id', 'service_id', 'title', 'slug', 'rooms', 'bathrooms', 'beds', 'squared_meters', 'address', 'longitude', 'latitude', 'image', 'is_visible', 'floor', 'price', 'description'];
 
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    public function service()
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(Models\User::class);
+    }
+
+    public function services()
     {
         return $this->belongsToMany(Service::class);
     }

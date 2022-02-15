@@ -41498,7 +41498,7 @@ var render = function () {
             "div",
             {
               key: sponsored_apartment.slug,
-              staticClass: "sponsored_apartment_card",
+              staticClass: "col-3 sponsored_apartment_card",
             },
             [
               _c(
