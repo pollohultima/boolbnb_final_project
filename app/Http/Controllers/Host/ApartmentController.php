@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 class ApartmentController extends Controller
 {
@@ -44,6 +45,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $user = Auth::id();
         if ($request->has('services')) {
             $request->validate([
                 'services' => ['nullable', 'exists:services,id']
@@ -65,13 +67,10 @@ class ApartmentController extends Controller
             'price' => ['nullable'],
             'description' => ['nullable'],
         ]);
-
         $validate_data['slug'] = Str::slug($validate_data['title']);
-
-        /* $validate_data['user_id'] = Auth::id(); */
-
-
-        $apartment = Apartment::create($validate_data)->with('user_id', Auth::id());
+        $validate_data = Arr::add($validate_data, 'user_id', "$user");
+        $apartment = Apartment::create($validate_data);
+        ddd($apartment);
 
         /*   $apartment->user_id = Auth::id(); */
 
