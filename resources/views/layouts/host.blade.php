@@ -52,7 +52,7 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -83,41 +83,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ route('host.apartments.index') }}">
                             <h4 class="text-primary">
-                                <i class="fas fa-shopping-cart"></i>
-                                Products
+                                <i class="fas fa-home"></i>
+                                Apartments
                             </h4>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <h4 class="text-primary">
-                                <i class="fas fa-thumbtack"></i>
-                                Posts
-                            </h4>
-
-                        </a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <h4 class="text-primary">
-                                <i class="fas fa-bookmark    "></i>
-                                Categories
-                            </h4>
-
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <h4 class="text-primary">
-                                <i class="fas fa-tags    "></i>
-                                Tags
-                            </h4>
-
-                        </a>
-                    </li>
-
 
                     <li class="nav-item">
                         <a class="nav-link" href="">
