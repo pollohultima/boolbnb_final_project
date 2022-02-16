@@ -55,22 +55,6 @@
                 placeholder="Type your address" aria-describedby="helpId" value="{{ $apartment->address }}">
         </div>
 
-
-        <div class="mb-3">
-            <label for="longitude" class="form-label">Longitude</label>
-            <input type="text" name="longitude" id="longitude"
-                class="form-control  @error('longitude') is_invalid @enderror" placeholder="Type your longitude"
-                aria-describedby="helpId" value="{{ $apartment->longitude }}">
-        </div>
-
-
-        <div class="mb-3">
-            <label for="latitude" class="form-label">Latitude</label>
-            <input type="text" name="latitude" id="latitude" class="form-control  @error('latitude') is_invalid @enderror"
-                placeholder="Type your latitude" aria-describedby="helpId" value="{{ $apartment->latitude }}">
-        </div>
-
-
         <div class="mb-3">
 
             <div class="row">
@@ -79,7 +63,7 @@
                 </div>
                 <div class="col"> <label for="image" class="form-label">Cambia immagine</label>
                     <input type="file" name="image" id="cover" class="form-control  @error('image') is_invalid @enderror"
-                        placeholder="image" aria-describedby="helpId">
+                        placeholder="{{ asset('storage/' . $apartment->image) }}" aria-describedby="helpId" >
                 </div>
 
             </div>
@@ -110,7 +94,7 @@
             <label for="is_visible" class="form-label">E' visibile?</label>
             <select multiple class="form-select" name="is_visible" id="is_visible">
                 <option disabled>Is visible </option>
-                <option value="1">si</option>
+                <option {{ $apartment->is_visible = 1 ? 'selected' : '' }} value="1">si</option>
             </select>
         </div>
 

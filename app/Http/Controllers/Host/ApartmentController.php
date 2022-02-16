@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
 
 class ApartmentController extends Controller
 {
@@ -46,6 +47,13 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $address_input = urlencode($request->all()['address']);
+        $get_coordinate = Http::withOptions([
+            'verify' => false,
+        ])
+            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
+        $get_lat_long = $get_coordinate->json()['results'][0]['position'];
+
         $user = Auth::id();
         if ($request->has('services')) {
             $request->validate([
@@ -60,8 +68,6 @@ class ApartmentController extends Controller
             'beds' => ['required'],
             'squared_meters' => ['required'],
             'address' => ['required'],
-            'longitude' => ['required'],
-            'latitude' => ['required'],
             'image' => ['required', 'image', 'max:500'],
             'is_visible' => ['required'],
             'floor' => ['nullable'],
@@ -83,6 +89,8 @@ class ApartmentController extends Controller
 
         $validate_data['slug'] = Str::slug($validate_data['title']);
         $validate_data = Arr::add($validate_data, 'user_id', "$user");
+        $validate_data['latitude'] = $get_lat_long['lat'];
+        $validate_data['longitude'] = $get_lat_long['lon'];
         $apartment = Apartment::create($validate_data);
 
 
@@ -92,7 +100,7 @@ class ApartmentController extends Controller
             $request->validate([
                 'services' => ['nullable', 'exists:services,id']
             ]);
-            $apartment->services()->attach($request->apartments);
+            $apartment->services()->attach($request->services);
         }
 
         return redirect()->route('host.apartments.index');
@@ -137,6 +145,13 @@ class ApartmentController extends Controller
     public function update(Request $request, Apartment $apartment)
     {
 
+        $address_input = urlencode($request->all()['address']);
+        $get_coordinate = Http::withOptions([
+            'verify' => false,
+        ])
+            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
+        $get_lat_long = $get_coordinate->json()['results'][0]['position'];
+
         if (Auth::id() === $apartment->user_id) {
 
             $validate_data = $request->validate([
@@ -146,9 +161,7 @@ class ApartmentController extends Controller
                 'beds' => ['required'],
                 'squared_meters' => ['required'],
                 'address' => ['required'],
-                'longitude' => ['required'],
-                'latitude' => ['required'],
-                'image' => ['required', 'image', 'max:500'],
+                'image' => ['nullable', 'image', 'max:500'],
                 'is_visible' => ['required'],
                 'floor' => ['nullable'],
                 'price' => ['nullable'],
@@ -170,6 +183,9 @@ class ApartmentController extends Controller
                 ]);
                 $apartment->services()->sync($request->apartments);
             }
+
+            $validate_data['latitude'] = $get_lat_long['lat'];
+            $validate_data['longitude'] = $get_lat_long['lon'];
 
             $apartment->update($validate_data);
 

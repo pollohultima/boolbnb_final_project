@@ -54,22 +54,6 @@
                 placeholder="Type your address" aria-describedby="helpId" value="{{ old('address') }}">
         </div>
 
-
-        <div class="mb-3">
-            <label for="longitude" class="form-label">longitude</label>
-            <input type="text" name="longitude" id="longitude"
-                class="form-control  @error('longitude') is_invalid @enderror" placeholder="Type your longitude"
-                aria-describedby="helpId" value="{{ old('longitude') }}">
-        </div>
-
-
-        <div class="mb-3">
-            <label for="latitude" class="form-label">latitude</label>
-            <input type="text" name="latitude" id="latitude" class="form-control  @error('latitude') is_invalid @enderror"
-                placeholder="Type your latitude" aria-describedby="helpId" value="{{ old('latitude') }}">
-        </div>
-
-
         <div class="mb-3">
             <label for="image" class="form-label">Image URL</label>
             <input type="file" accept="images/*" name="image" id="image"
