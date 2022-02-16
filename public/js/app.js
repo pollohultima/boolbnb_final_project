@@ -5192,6 +5192,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41515,11 +41563,11 @@ var render = function () {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("h1", { staticClass: "text-center py-5" }, [
-      _vm._v("Sponsored Apartments"),
-    ]),
-    _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
+      _c("h1", { staticClass: "py-5 page_title" }, [
+        _vm._v("Sponsored Apartments"),
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row justify-content-center g-5" },
@@ -41540,21 +41588,51 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "card_info" }, [
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v(_vm._s(sponsored_apartment.title)),
-                    ]),
+                  _c("div", { staticClass: "card_bottom" }, [
+                    _vm._m(1, true),
                     _vm._v(" "),
-                    _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-                      _vm._v("Sponsored"),
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(sponsored_apartment.title) +
-                          "\n              "
-                      ),
+                    _c("div", { staticClass: "card_info" }, [
+                      _c("h5", { staticClass: " card_title" }, [
+                        _vm._v(_vm._s(sponsored_apartment.title)),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "info_type_wrapper" }, [
+                        _c("i", { staticClass: "fa-solid fa-location-dot" }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card_text" }, [
+                          _vm._v(
+                            "\n\n                         " +
+                              _vm._s(sponsored_apartment.address) +
+                              "\n                      "
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "info_type_wrapper" }, [
+                        _c("p", { staticClass: "card_text" }, [
+                          _vm._v(
+                            "\n                         \n\n                         " +
+                              _vm._s(sponsored_apartment.squared_meters) +
+                              "\n                      "
+                          ),
+                        ]),
+                        _vm._v(
+                          "\n                      \n\n                      m"
+                        ),
+                        _c("sup", [_vm._v("2")]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "info_type_wrapper" }, [
+                        _c("p", { staticClass: "card_text" }, [
+                          _vm._v(
+                            "\n                        \n\n                         " +
+                              _vm._s(sponsored_apartment.price) +
+                              "\n                      "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "fa-solid fa-dollar-sign" }),
+                      ]),
                     ]),
                   ]),
                 ]),
@@ -41580,16 +41658,28 @@ var staticRenderFns = [
           _vm._v(" Nessun problema!"),
         ]),
         _vm._v(" "),
-        _c("a", { staticClass: "btn_visit", attrs: { href: "#" } }, [
-          _c("span", { staticClass: "gradient" }, [
-            _vm._v(
-              "\n                parti adesso \n                \n               \n                "
-            ),
-          ]),
-          _vm._v(" "),
-          _c("i", { staticClass: "fa-solid fa-rocket" }),
-        ]),
+        _c(
+          "a",
+          {
+            staticClass: "btn_visit d-flex align-items-center",
+            attrs: { href: "#" },
+          },
+          [
+            _c("span", { staticClass: "gradient" }, [
+              _vm._v("\n                parti adesso     \n                 "),
+              _c("i", { staticClass: "fa-solid fa-rocket" }),
+            ]),
+          ]
+        ),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sponsored" }, [
+      _c("i", { staticClass: "fa-solid fa-crown" }),
     ])
   },
 ]

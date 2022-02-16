@@ -6,22 +6,24 @@
      <div class="heroSec">
         <div class="hero">
               <h2 class="welcome_title">Non sai dove andare? <br> Nessun problema!</h2>
-              <a href="#" class="btn_visit">
+              <a href="#" class="btn_visit d-flex align-items-center">
                   <span class="gradient">
-                  parti adesso 
-                  
-                 
+                  parti adesso     
+                   <i class="fa-solid fa-rocket"></i>             
                   </span>
+
                   
-                 <i class="fa-solid fa-rocket"></i>
+                
               </a>
+               
         </div>
 
      </div>
 
 
-    <h1 class="text-center py-5">Sponsored Apartments</h1>
+    
     <div class="sponsored_apartments_container container">
+      <h1 class="py-5 page_title">Sponsored Apartments</h1>
       <div class="row justify-content-center g-5">
         <div
           class="col-4 sponsored_apartment_card"
@@ -39,12 +41,58 @@
               </div>
               
 
-              <div class="card_info">
-                <h5 class="card-title">{{ sponsored_apartment.title }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Sponsored</h6>
-                <p class="card-text">
-                  {{ sponsored_apartment.title }}
-                </p>
+              <div class="card_bottom">
+
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Sponsored</h6> -->
+                <div class="sponsored">
+                 
+                
+                  <i class="fa-solid fa-crown"></i>
+                </div>
+
+                <div class="card_info">
+                   <h5 class=" card_title">{{ sponsored_apartment.title }}</h5>
+
+                
+
+                    <div class="info_type_wrapper">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p class="card_text">
+
+                           {{ sponsored_apartment.address }}
+                        </p>
+                    </div>
+
+                  
+
+                    <div class="info_type_wrapper">
+                      
+                        <p class="card_text">
+                           
+
+                           {{ sponsored_apartment.squared_meters }}
+                        </p>
+                        
+
+                        m<sup>2</sup>
+
+                    </div>
+
+                    <div class="info_type_wrapper">
+                        <p class="card_text">
+                          
+
+                           {{ sponsored_apartment.price }}
+                        </p>
+                         <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+
+                   
+                    
+                </div>
+
+
+               
 
               </div>
 

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap'); */
 * {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Poppins", sans-serif;
 }
 
 /*!
@@ -11337,8 +11337,23 @@ textarea.form-control-lg {
   -webkit-text-fill-color: transparent;
 }
 
+.fa-rocket {
+  vertical-align: middle;
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
+}
+
 /* SPONSORED APARTMENTS */
+.page_title {
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  text-align: left;
+}
+
 /* card */
+.sponsored_apartment_card {
+  padding-top: 3rem;
+}
 .sponsored_apartment_card .card {
   border: none;
   border-radius: 20px;
@@ -11371,10 +11386,43 @@ textarea.form-control-lg {
   mix-blend-mode: multiply;
   border-radius: 5px;
 }
-.sponsored_apartment_card .card_info {
+.sponsored_apartment_card .card_bottom {
   padding: 1rem;
   padding-top: 1rem;
   height: 50%;
+  position: relative;
+  background-color: #ff385c;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: white;
+}
+.sponsored_apartment_card .card_info .card_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.sponsored_apartment_card .card_info .info_type_wrapper {
+  display: flex;
+  align-items: center;
+}
+.sponsored_apartment_card .card_info .info_type_wrapper .card_text {
+  font-size: 0.8rem;
+  margin: 0;
+}
+.sponsored_apartment_card .sponsored {
+  color: white;
+  height: 50px;
+  width: 50px;
+  background-color: #ff385c;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -240px;
+  right: -25px;
+  box-shadow: 0px 0px 10px #4949495b;
 }
 
 /* LOG IN PAGE */
