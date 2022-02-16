@@ -11,7 +11,7 @@
           <div class="card" style="width: 18rem">
             <div class="card-body">
               <img
-                :src="sponsored_apartment.image"
+                :src="'/storage/'+ sponsored_apartment.image"
                 class="card-img-top"
                 alt="..."
               />
@@ -20,6 +20,8 @@
               <p class="card-text">
                 {{ sponsored_apartment.title }}
               </p>
+
+              <router-link :to="'/apartments/' + sponsored_apartment.slug">Vedi l'appartamento</router-link>
             </div>
           </div>
         </div>

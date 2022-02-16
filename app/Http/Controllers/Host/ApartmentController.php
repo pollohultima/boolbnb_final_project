@@ -51,7 +51,7 @@ class ApartmentController extends Controller
         $get_coordinate = Http::withOptions([
             'verify' => false,
         ])
-            ->get("https://api.tomtom.com/search/2/autocomplete/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
+            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
         $get_lat_long = $get_coordinate->json()['results'][0]['position'];
 
         $user = Auth::id();
@@ -81,7 +81,6 @@ class ApartmentController extends Controller
         if ($request->file('image')) {
 
             $image_path = Storage::put('apartment_image', $request->file('image'));
-
 
             $validate_data['image'] = $image_path;
         }
@@ -174,7 +173,7 @@ class ApartmentController extends Controller
 
                 $image_path = Storage::put('apartment_image', $request->file('image'));
 
-                $validated['image'] = $image_path;
+                $validate_data['image'] = $image_path;
             }
 
 
