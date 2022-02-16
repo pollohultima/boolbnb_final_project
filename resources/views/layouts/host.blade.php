@@ -77,7 +77,7 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="">
                             <h3 class="text-primary">
-                                <i class="fas fa-tachometer-alt    "></i>
+                                <i class="fas fa-tachometer-alt"></i>
                                 Dashboard
                             </h3>
                         </a>

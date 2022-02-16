@@ -4,10 +4,8 @@
 <head>
     @include('partials.tag_head')
 
-    <!-- font awesome -->
-
-    <script src="https://kit.fontawesome.com/71acfe6c9b.js" crossorigin="anonymous"></script>
-
+   
+  
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

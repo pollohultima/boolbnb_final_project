@@ -236,6 +236,12 @@ color: $color_grey_sec;}
     font-weight: 600;
     letter-spacing: 2px;
     border: none;
+    transform: scale(1);
+    transition: all 250ms;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 }
 
 
