@@ -16,7 +16,8 @@
             <div class="row g-0">
 
                 <div class="col-md-3">
-                    <img src=" {{ asset('storage/' . $apartment->image) }}" class="img-fluid rounded-start" alt="...">
+                    <img style="max-width: 300px;" src=" {{ asset('storage/' . $apartment->image) }}"
+                        class="img-fluid rounded" alt="...">
                 </div>
 
                 <div class="col-md-7">
@@ -26,16 +27,14 @@
 
                         <div class="row">
                             <div class="col-4">
+                                <p class="card-text">Indirizzo: {{ $apartment->address }}</p>
+                            </div>
+
+                            <div class="col-4">
                                 <p class="card-text">Stanze: {{ $apartment->rooms }}</p>
                                 <p class="card-text">Bagni: {{ $apartment->bathrooms }}</p>
                                 <p class="card-text">Letti: {{ $apartment->beds }}</p>
                                 <p class="card-text">Metri quadrati: {{ $apartment->squared_meters }}</p>
-                            </div>
-
-                            <div class="col-4">
-                                <p class="card-text">Indirizzo: {{ $apartment->address }}</p>
-                                <p class="card-text">Long: {{ $apartment->longitude }}</p>
-                                <p class="card-text">Lat: {{ $apartment->latitude }}</p>
                             </div>
 
                             <div class="col-4">
@@ -58,8 +57,8 @@
                             class="fas fa-pencil-alt fa-lg fa-fw"></i></a>
 
                     <!-- Button trigger modal -->
-                    
-                    <a data-bs-toggle="modal" data-bs-target="#delete{{ $apartment->slug}}">
+
+                    <a data-bs-toggle="modal" data-bs-target="#delete{{ $apartment->slug }}">
                         <i class="fas fa-trash fa-lg fa-fw text-danger"></i>
                     </a>
 
@@ -78,7 +77,8 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <form action="{{ route('host.apartments.destroy', $apartment->slug) }}" method="post">
+                                    <form action="{{ route('host.apartments.destroy', $apartment->slug) }}"
+                                        method="post">
                                         @csrf
                                         @method('DELETE')
 

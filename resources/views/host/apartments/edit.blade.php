@@ -1,9 +1,9 @@
 @extends('layouts.host')
 
 @section('content')
-    <h1>Update an apartment</h1>
+    <h1>Modifica {{ $apartment->title }}</h1>
 
-    <form action="{{ route('host.apartments.update',$apartment->slug) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('host.apartments.update', $apartment->slug) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -37,7 +37,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="beds" class="form-label">Letti</label>
+            <label for="beds" class="form-label">Posti letto</label>
             <input type="text" name="beds" id="beds" class="form-control  @error('beds') is_invalid @enderror"
                 placeholder="Type your beds" aria-describedby="helpId" value="{{ $apartment->beds }}">
         </div>
@@ -58,12 +58,13 @@
         <div class="mb-3">
 
             <div class="row">
-                <div class="col"><img src="{{ asset('storage/' . $apartment->image) }}" alt=""
-                        class="img-fluid">
+                <div class="col"><img style="max-height: 300px;"
+                        src="{{ asset('storage/' . $apartment->image) }}" alt="" class="img-fluid">
                 </div>
-                <div class="col"> <label for="image" class="form-label">Cambia immagine</label>
-                    <input type="file" name="image" id="cover" class="form-control  @error('image') is_invalid @enderror"
-                        placeholder="{{ asset('storage/' . $apartment->image) }}" aria-describedby="helpId" >
+                <div class="col"> <label for="image" class="form-label">Cambia l'immagine
+                        dell'appartamento</label>
+                    <input type="file" name="image" id="image" class="form-control  @error('image') is_invalid @enderror"
+                        placeholder="{{ asset('storage/' . $apartment->image) }}" aria-describedby="helpId">
                 </div>
 
             </div>
@@ -77,24 +78,24 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">price</label>
+            <label for="price" class="form-label">Prezzo</label>
             <input type="text" name="price" id="price" class="form-control  @error('price') is_invalid @enderror"
                 placeholder="Type your price" aria-describedby="helpId" value="{{ $apartment->price }}">
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">description</label>
-            <input type="text" name="description" id="description"
-                class="form-control  @error('description') is_invalid @enderror" placeholder="Type your description"
-                aria-describedby="helpId" value="{{ $apartment->description }}">
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea class="form-control" name="description" id="description" rows="5"
+                @error('description') is_invalid @enderror placeholder="Inserisci una breve descrizione"
+                aria-describedby="helpId">{{ $apartment->description }}</textarea>
         </div>
 
 
         <div class="mb-3">
-            <label for="is_visible" class="form-label">E' visibile?</label>
+            <label for="is_visible" class="form-label">Visibile online</label>
             <select multiple class="form-select" name="is_visible" id="is_visible">
                 <option disabled>Is visible </option>
-                <option {{ $apartment->is_visible = 1 ? 'selected' : '' }} value="1">si</option>
+                <option {{ $apartment->is_visible = 1 ? 'selected' : '' }} value="1">Si</option>
             </select>
         </div>
 
@@ -103,8 +104,8 @@
             <select multiple class="form-select" name="services[]" id="services">
                 <option disabled>Seleziona uno o più servizi</option>
                 @foreach ($services as $service)
-                    <option {{ $apartment->services->contains($service->id) ? 'selected' : '' }} value="{{ $service->id }}"
-                        >{{ $service->name }}
+                    <option value="{{ $service->id }}"
+                        {{ $apartment->services->contains($service->id) ? 'selected' : '' }}>{{ $service->name }}
                     </option>
                 @endforeach
 

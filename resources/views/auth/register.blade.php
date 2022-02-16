@@ -50,8 +50,9 @@
                                 <div class="col-md-6">
                                     <input id="date_of_birth" type="date"
                                         class="form-control @error('date_of_birth') is-invalid @enderror"
-                                        name="date_of_birth" max="2022-01-01" min="1900-01-01" value="{{ old('date_of_birth') }}" required
-                                        autocomplete="date_of_birth" autofocus>
+                                        name="date_of_birth" max="2004-01-01" min="1900-01-01"
+                                        value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth"
+                                        autofocus>
 
                                     @error('date_of_birth')
                                         <span class="invalid-feedback" role="alert">
