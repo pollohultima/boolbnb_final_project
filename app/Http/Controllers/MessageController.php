@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+use App\Models\Apartment;
 
 class MessageController extends Controller
 {
@@ -15,6 +16,7 @@ class MessageController extends Controller
     public function index()
     {
         //
+        /* Decidere se implementare pagina messaggi o no. */
     }
 
     /**
@@ -25,6 +27,9 @@ class MessageController extends Controller
     public function create()
     {
         //
+        $apartments = Apartment::all();
+
+        return view(/* qui andrebbe la solita rotta show degli appartamenti */ compact('messages'));
     }
 
     /**
@@ -36,6 +41,7 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -58,6 +64,7 @@ class MessageController extends Controller
     public function edit(Message $message)
     {
         //
+        /*  */
     }
 
     /**

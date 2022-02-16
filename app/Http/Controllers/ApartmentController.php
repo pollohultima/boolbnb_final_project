@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Apartment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ApartmentController extends Controller
 {
@@ -15,6 +17,9 @@ class ApartmentController extends Controller
     public function index()
     {
         //
+        $apartments = Auth::user()->apartments()->paginate(6);
+
+        return view('guest.apartments.index', compact('apartments'));
     }
 
 
@@ -27,5 +32,6 @@ class ApartmentController extends Controller
     public function show(Apartment $apartment)
     {
         //
+        /* Da reindirizzare alla pagina di vue */
     }
 }

@@ -77,13 +77,22 @@ class ApartmentController extends Controller
 
 
 
-
+/* 
         if ($request->file('image')) {
 
             $image_path = Storage::put('apartment_image', $request->file('image'));
 
 
             $validate_data['image'] = $image_path;
+        }
+ */
+
+
+        if ($request->file('image')) {
+            
+
+            $image_path = $request->file('image')->store('apartment_image');
+            $validated['image'] = $image_path;
         }
 
 
