@@ -5164,6 +5164,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41505,28 +41507,48 @@ var render = function () {
                 "div",
                 { staticClass: "card", staticStyle: { width: "18rem" } },
                 [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("img", {
-                      staticClass: "card-img-top",
-                      attrs: { src: sponsored_apartment.image, alt: "..." },
-                    }),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v(_vm._s(sponsored_apartment.title)),
-                    ]),
-                    _vm._v(" "),
-                    _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-                      _vm._v("Sponsored"),
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v(
-                        "\n              " +
-                          _vm._s(sponsored_apartment.title) +
-                          "\n            "
+                  _c(
+                    "div",
+                    { staticClass: "card-body" },
+                    [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "/storage/" + sponsored_apartment.image,
+                          alt: "...",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(sponsored_apartment.title)),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "h6",
+                        { staticClass: "card-subtitle mb-2 text-muted" },
+                        [_vm._v("Sponsored")]
                       ),
-                    ]),
-                  ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(sponsored_apartment.title) +
+                            "\n            "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: "/apartments/" + sponsored_apartment.slug,
+                          },
+                        },
+                        [_vm._v("Vedi l'appartamento")]
+                      ),
+                    ],
+                    1
+                  ),
                 ]
               ),
             ]
