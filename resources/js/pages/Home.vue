@@ -30,22 +30,6 @@
           v-for="sponsored_apartment in sponsored_apartments_list"
           :key="sponsored_apartment.slug"
         >
-<<<<<<< HEAD
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <img
-                :src="'/storage/'+ sponsored_apartment.image"
-                class="card-img-top"
-                alt="..."
-              />
-              <h5 class="card-title">{{ sponsored_apartment.title }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Sponsored</h6>
-              <p class="card-text">
-                {{ sponsored_apartment.title }}
-              </p>
-
-              <router-link :to="'/apartments/' + sponsored_apartment.slug">Vedi l'appartamento</router-link>
-=======
           <div class="card">
             <div class="card_body">
               <div class="card_img_wrapper">
@@ -124,7 +108,6 @@
 
               </div>
 
->>>>>>> origin/header_style
             </div>
           </div>
         </div>
