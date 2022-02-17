@@ -6,3 +6,69 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Footer
+.footer {
+    hr, h3 {
+        color: white;
+    }
+    background-color: #5b5b5b;
+    // red block
+    .red {
+        width: 90%;
+        margin: auto;
+        height: 300px;
+        background-color: #ff385c;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+
+        h3 {
+            font-size: .8rem;
+            display: inline-block;
+            border: 1px solid white;
+            padding: .5rem;
+            border-radius: 3rem;
+        }
+        h2 {
+            padding: .5rem;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid white;
+            width: 30%;
+            border-top-left-radius: 2rem;
+        }
+
+        .creators {
+            h2 {
+                font-size: .9rem;
+            }
+        }
+    }
+    // top
+    .top_footer {
+        .row {
+            justify-content: space-between;
+        }
+    }
+    .copyright {
+        width: 70%;
+    }
+    .infos {
+        width: 30%;
+    }
+
+    // right
+    .right_footer {
+        border-left: 2px solid white;
+    }
+    // bottom
+    .bottom_footer {
+        h4 {
+            font-size: .7rem;
+            color: silver;
+        }
+    }
+}

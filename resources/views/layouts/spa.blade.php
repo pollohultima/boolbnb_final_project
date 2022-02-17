@@ -9,6 +9,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!-- footer style -->
+    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -21,6 +23,7 @@
             @yield('content')
         </main>
 
+        <!-- footer -->
         @include('partials.footer_spa')
     </div>
 </body>

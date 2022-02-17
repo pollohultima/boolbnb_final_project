@@ -11247,3 +11247,53 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.footer {
+  background-color: #5b5b5b;
+}
+.footer hr, .footer h3, .footer .h3 {
+  color: white;
+}
+.footer .red {
+  width: 90%;
+  margin: auto;
+  height: 300px;
+  background-color: #ff385c;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.footer .red h3, .footer .red .h3 {
+  font-size: 0.8rem;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 3rem;
+}
+.footer .red h2, .footer .red .h2 {
+  padding: 0.5rem;
+}
+.footer .red .info {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid white;
+  width: 30%;
+  border-top-left-radius: 2rem;
+}
+.footer .red .creators h2, .footer .red .creators .h2 {
+  font-size: 0.9rem;
+}
+.footer .top_footer .row {
+  justify-content: space-between;
+}
+.footer .copyright {
+  width: 70%;
+}
+.footer .infos {
+  width: 30%;
+}
+.footer .right_footer {
+  border-left: 2px solid white;
+}
+.footer .bottom_footer h4, .footer .bottom_footer .h4 {
+  font-size: 0.7rem;
+  color: silver;
+}
