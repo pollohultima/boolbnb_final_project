@@ -34,7 +34,7 @@
             <div class="card_body">
               <div class="card_img_wrapper">
                 <img
-                :src="sponsored_apartment.image"
+                :src="'/storage/' + sponsored_apartment.image"
                 class="card-img-top"
                 alt="..."
               />
@@ -47,7 +47,12 @@
                 <div class="sponsored">
                  
                 
-                  <i class="fa-solid fa-crown"></i>
+                 <div class="img_wrapper_sponsor">
+
+                    <img src="../../img/BOOLBNB_white.svg" class="logo_image" alt="">
+
+                 </div> 
+              
                 </div>
 
                 <div class="card_info">
@@ -55,37 +60,44 @@
 
                 
 
-                    <div class="info_type_wrapper">
-                        <i class="fa-solid fa-location-dot"></i>
+                    <div class="info_type_wrapper info_type_wrapper_address">
+
+                        <!-- <i class="fa-solid fa-location-dot"></i> -->
+
                         <p class="card_text">
 
                            {{ sponsored_apartment.address }}
                         </p>
                     </div>
 
-                  
 
-                    <div class="info_type_wrapper">
-                      
-                        <p class="card_text">
-                           
-
-                           {{ sponsored_apartment.squared_meters }}
-                        </p>
-                        
-
-                        m<sup>2</sup>
-
-                    </div>
-
-                    <div class="info_type_wrapper">
-                        <p class="card_text">
+                    <div class="metres_cost">
                           
+                        <div class="info_type_wrapper">
+                          
+                            <p class="card_text">
+                              
 
-                           {{ sponsored_apartment.price }}
-                        </p>
-                         <i class="fa-solid fa-dollar-sign"></i>
+                              {{ sponsored_apartment.squared_meters }}
+                            </p>
+                            
+
+                            m<sup>2</sup>
+
+                        </div>
+
+                        <div class="info_type_wrapper">
+                            <p class="card_text_cost">
+                              
+
+                              {{ sponsored_apartment.price }}
+                            </p>
+                            <p class="dollar">$</p>
+                        </div>
+
                     </div>
+
+                  
 
                    
                     

@@ -5240,6 +5240,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41584,7 +41596,10 @@ var render = function () {
                   _c("div", { staticClass: "card_img_wrapper" }, [
                     _c("img", {
                       staticClass: "card-img-top",
-                      attrs: { src: sponsored_apartment.image, alt: "..." },
+                      attrs: {
+                        src: "/storage/" + sponsored_apartment.image,
+                        alt: "...",
+                      },
                     }),
                   ]),
                   _vm._v(" "),
@@ -41596,42 +41611,49 @@ var render = function () {
                         _vm._v(_vm._s(sponsored_apartment.title)),
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "info_type_wrapper" }, [
-                        _c("i", { staticClass: "fa-solid fa-location-dot" }),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card_text" }, [
-                          _vm._v(
-                            "\n\n                         " +
-                              _vm._s(sponsored_apartment.address) +
-                              "\n                      "
-                          ),
-                        ]),
-                      ]),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "info_type_wrapper info_type_wrapper_address",
+                        },
+                        [
+                          _c("p", { staticClass: "card_text" }, [
+                            _vm._v(
+                              "\n\n                         " +
+                                _vm._s(sponsored_apartment.address) +
+                                "\n                      "
+                            ),
+                          ]),
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "info_type_wrapper" }, [
-                        _c("p", { staticClass: "card_text" }, [
+                      _c("div", { staticClass: "metres_cost" }, [
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text" }, [
+                            _vm._v(
+                              "\n                            \n\n                            " +
+                                _vm._s(sponsored_apartment.squared_meters) +
+                                "\n                          "
+                            ),
+                          ]),
                           _vm._v(
-                            "\n                         \n\n                         " +
-                              _vm._s(sponsored_apartment.squared_meters) +
-                              "\n                      "
+                            "\n                          \n\n                          m"
                           ),
-                        ]),
-                        _vm._v(
-                          "\n                      \n\n                      m"
-                        ),
-                        _c("sup", [_vm._v("2")]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "info_type_wrapper" }, [
-                        _c("p", { staticClass: "card_text" }, [
-                          _vm._v(
-                            "\n                        \n\n                         " +
-                              _vm._s(sponsored_apartment.price) +
-                              "\n                      "
-                          ),
+                          _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
-                        _c("i", { staticClass: "fa-solid fa-dollar-sign" }),
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text_cost" }, [
+                            _vm._v(
+                              "\n                            \n\n                            " +
+                                _vm._s(sponsored_apartment.price) +
+                                "\n                          "
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                        ]),
                       ]),
                     ]),
                   ]),
@@ -41679,7 +41701,12 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "sponsored" }, [
-      _c("i", { staticClass: "fa-solid fa-crown" }),
+      _c("div", { staticClass: "img_wrapper_sponsor" }, [
+        _c("img", {
+          staticClass: "logo_image",
+          attrs: { src: __webpack_require__(/*! ../../img/BOOLBNB_white.svg */ "./resources/img/BOOLBNB_white.svg"), alt: "" },
+        }),
+      ]),
     ])
   },
 ]
@@ -57062,6 +57089,17 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+
+/***/ "./resources/img/BOOLBNB_white.svg":
+/*!*****************************************!*\
+  !*** ./resources/img/BOOLBNB_white.svg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/BOOLBNB_white.svg?3a8cee93f60b71169cbb4ba2e91c1274";
 
 /***/ }),
 
