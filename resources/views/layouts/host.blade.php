@@ -84,16 +84,16 @@
                     <li class="nav-item">
                         <a class="nav_link_aside" aria-current="page" href="">
                             <i class="fas fa-tachometer-alt"></i>
-                            <h3 class="text-primary">
+                            <h4 class="dash_title">
                                 
                                 Dashboard
-                            </h3>
+                            </h4>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav_link_aside" href="{{ route('host.apartments.index') }}">
                             <i class="fas fa-home"></i>
-                            <h4 class="text-primary">
+                            <h4 class="dash_title">
                                 
                                 Apartments
                             </h4>
@@ -103,7 +103,7 @@
                     <li class="nav-item">
                         <a class="nav_link_aside" href="">
                             <i class="fas fa-tags"></i>
-                            <h4 class="text-primary">
+                            <h4 class="dash_title">
                                
                                 Messages
                             </h4>
@@ -115,7 +115,7 @@
             </div>
         </nav>
 
-        <main class="p-4">
+        <main class="p-4 log_co">
             @yield('content')
         </main>
     </div>

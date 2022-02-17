@@ -2,55 +2,75 @@
 
 
 @section('content')
-    <h1>Apartments</h1>
-    <div class="row justify-content-end">
+   
+    <div class="apartments_sec">
+        <div class="add_apartment">
+        <h1>Apartments</h1>
 
 
-        <a name="" id="" class="col-1 btn btn-primary text-white float-end" style="margin-right: 150px;"
+        <a name="" id="" class="button" style="margin-right: 150px;"
             href="{{ route('host.apartments.create') }}" role="button">Create
-            apartment</a>
-    </div>
+            apartment
+        </a>
+        </div>
+   
+    
 
     @foreach ($apartments as $apartment)
-        <div class="card mb-3">
+        <div class="card mb-3 apartment_card">
             <div class="row g-0">
 
-                <div class="col-md-3">
-                    <img style="max-width: 300px;" src=" {{ asset('storage/' . $apartment->image) }}"
-                        class="img-fluid rounded" alt="...">
+                <div class="col-md-3 apartment_card_img">
+                    <img src=" {{ asset('storage/' . $apartment->image) }}"
+                        class="img-fluid" alt="...">
                 </div>
 
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <div class="card-body">
-                        <h4 class="card-title">{{ $apartment->title }}</h4>
-                        <p class="card-text">{{ $apartment->description }}</p>
+                        <h4 class="card_title">{{ $apartment->title }}</h4>
+                        <p class="card_desc card_desc_subtitle">{{ $apartment->description }}</p>
 
                         <div class="row">
-                            <div class="col-4">
-                                <p class="card-text">Indirizzo: {{ $apartment->address }}</p>
+                            <div class="col-12">
+                                <div class="card_desc">
+                                    <p>Indirizzo:</p> 
+                                 <span class="apartment_info apartment_info_adress">{{ $apartment->address }}</span>
+                                </div>
+                                <div class="card_desc">
+                                    <p>Stanze:</p>
+                                     <span class="apartment_info">{{ $apartment->rooms }}</span>
+                                    </div>
+                                <div class="card_desc">
+                                    <p>Bagni:</p>
+                                 <span class="apartment_info">{{ $apartment->bathrooms }}</span>
+                                </div>
+                                <div class="card_desc">
+                                    <p>Letti</p> 
+                                    <span class="apartment_info">{{ $apartment->beds }}</span>
+                                </div>
+                                <div class="card_desc">
+                                    <p>Metri quadrati:</p>
+                                     <span class="apartment_info">{{ $apartment->squared_meters }}</span>
+                                    </div>
+                                <div class="card_desc">
+                                    <p>Piano:</p> 
+                                    <span class="apartment_info">{{ $apartment->floor }}</span>
+                                </div>
+                                <div class="card_desc">
+                                    <p class="card-text">Prezzo:</p>
+                                    <p class="price_info apartment_info">{{ $apartment->price }}
+                                    <span class="dollar">$</span>
+                                    </p>
+                                   
+                                </div>
                             </div>
-
-                            <div class="col-4">
-                                <p class="card-text">Stanze: {{ $apartment->rooms }}</p>
-                                <p class="card-text">Bagni: {{ $apartment->bathrooms }}</p>
-                                <p class="card-text">Letti: {{ $apartment->beds }}</p>
-                                <p class="card-text">Metri quadrati: {{ $apartment->squared_meters }}</p>
-                            </div>
-
-                            <div class="col-4">
-                                <p class="card-text">Piano: {{ $apartment->floor }}</p>
-                                <p class="card-text">Prezzo: €{{ $apartment->price }} </p>
-                            </div>
+                          
                         </div>
-
-
-
-
 
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-1 actions">
                     <a href="{{ route('host.apartments.show', $apartment->slug) }}"><i
                             class="fas fa-eye fa-lg fa-fw "></i></a>
                     <a href="{{ route('host.apartments.edit', $apartment->slug) }}"> <i
@@ -59,7 +79,7 @@
                     <!-- Button trigger modal -->
 
                     <a data-bs-toggle="modal" data-bs-target="#delete{{ $apartment->slug }}">
-                        <i class="fas fa-trash fa-lg fa-fw text-danger"></i>
+                        <i class="fas fa-trash fa-lg fa-fw"></i>
                     </a>
 
                     <!-- Modal -->
@@ -76,13 +96,13 @@
                                     <p>Vuoi davvero cancellare l'appartmento?</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="close_button" data-bs-dismiss="modal">Close</button>
                                     <form action="{{ route('host.apartments.destroy', $apartment->slug) }}"
                                         method="post">
                                         @csrf
                                         @method('DELETE')
 
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="button">Delete</button>
                                     </form>
                                 </div>
                             </div>
@@ -95,6 +115,9 @@
 
         </div>
     @endforeach
+
+
+    </div>
 
     {{ $apartments->links() }}
 @endsection

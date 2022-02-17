@@ -11258,8 +11258,9 @@ body {
 }
 
 #app {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+  padding-left: 2rem;
 }
 
 .feather {
@@ -11394,4 +11395,144 @@ body {
 /* sidebar */
 .nav_link_aside {
   display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #adadad;
+  padding-bottom: 1.5rem;
+}
+.nav_link_aside i {
+  font-size: 1rem;
+  margin-right: 1.3rem;
+  color: #d1d1d1;
+  transition: color 250ms;
+}
+.nav_link_aside .dash_title {
+  margin-bottom: 0;
+  color: #adadad;
+  font-weight: 300;
+  font-size: 0.9rem;
+  transition: color 250ms;
+  letter-spacing: 1px;
+}
+.nav_link_aside:hover i {
+  color: #ff385c;
+}
+
+/* apartaments Page */
+.close_button {
+  padding: 0.5rem 1.7rem !important;
+  color: #5b5b5b !important;
+  background-color: white;
+  border: 1px solid #5b5b5b;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-right: 1rem;
+}
+
+.button {
+  text-align: center;
+  padding: 0.5rem 1.7rem !important;
+  color: white !important;
+  background-color: #ff385c;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  text-decoration: none;
+  transform: scale(1);
+  transition: all 250ms;
+  margin-right: 0 !important;
+}
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.apartments_sec {
+  padding-top: 5rem;
+}
+.apartments_sec .add_apartment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+.apartments_sec .apartment_card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #9797974d;
+}
+.apartments_sec .apartment_card .apartment_card_img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.apartments_sec .apartment_card .card-body {
+  padding: 1.5rem 2.5rem !important;
+}
+.apartments_sec .apartment_card .card-body .card_title {
+  font-size: 2.3rem;
+  margin-bottom: 0;
+  color: #5b5b5b;
+  font-weight: 600;
+}
+.apartments_sec .apartment_card .card-body .card_desc {
+  color: #adadad;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.apartments_sec .apartment_card .card-body .card_desc p {
+  margin-bottom: 0.5rem;
+}
+.apartments_sec .apartment_card .card-body .card_desc_subtitle {
+  font-size: 1.4rem;
+}
+.apartments_sec .apartment_card .card-body .apartment_info {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #5b5b5b;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.apartments_sec .apartment_card .card-body .apartment_info_adress {
+  font-size: 0.8rem;
+}
+.apartments_sec .apartment_card .card-body .price_info {
+  color: #ff385c;
+  font-size: 1.6rem;
+}
+.apartments_sec .apartment_card .card-body .dollar {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-left: 0;
+}
+.apartments_sec .apartment_card .actions {
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.apartments_sec .apartment_card .actions a {
+  color: #d1d1d1;
+  transition: color 250ms;
+}
+.apartments_sec .apartment_card .actions a:hover {
+  color: #5b5b5b;
+}
+.apartments_sec .apartment_card .actions a .fa-trash {
+  color: #ff385c;
+  opacity: 0.5;
+  transition: all 250ms;
+}
+.apartments_sec .apartment_card .actions a .fa-trash:hover {
+  cursor: pointer;
+  opacity: 1;
 }

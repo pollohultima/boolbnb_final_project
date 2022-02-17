@@ -19,8 +19,9 @@ body {
 }
 
 #app {
-   width: 80%;
+   width: 70%;
    margin: 0 auto;
+   padding-left: 2rem;
 }
 
 .feather {
@@ -177,4 +178,172 @@ color: $color_grey_sec;}
 
 .nav_link_aside{
     display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color_grey_ter;
+    padding-bottom: 1.5rem;
+    
+        i{
+        font-size: 1rem;
+        margin-right: 1.3rem;
+        color: $color_grey_quar;
+        transition: color 250ms;
+    }
+    .dash_title{
+        margin-bottom: 0;
+        color: $color_grey_ter;
+        font-weight: 300;
+        font-size: .9rem;
+        transition: color 250ms;
+        letter-spacing: 1px;
+    }
+    &:hover{
+        i{color:$color_logo_primary;}
+    }
 }
+
+
+/* apartaments Page */
+
+.close_button{
+    padding: .5rem 1.7rem !important;
+    color: $color_grey_sec !important;
+    background-color: white;
+    border: 1px solid $color_grey_sec;
+        border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-right: 1rem;
+} 
+
+
+.button{
+    text-align: center;
+    padding: .5rem 1.7rem !important;
+    color: white !important;
+    background-color: $color_logo_primary;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: none;
+    text-decoration: none;
+    transform: scale(1);
+    transition: all 250ms;
+    margin-right: 0 !important;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+.apartments_sec{
+    padding-top: 5rem;
+    .add_apartment{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
+
+    .apartment_card{
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #9797974d;
+        .apartment_card_img{
+            
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-bottom-left-radius: 20px;
+                border-top-left-radius: 20px;
+
+            }
+
+        }
+
+        .card-body{
+            padding:1.5rem 2.5rem !important;
+            
+            .card_title{
+                font-size: 2.3rem;
+                margin-bottom: 0;
+                color: $color_grey_sec;
+                font-weight: 600;
+            }
+           
+            .card_desc{
+                color: $color_grey_ter;
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                p{
+                    margin-bottom: .5rem;
+                }
+            }
+            .card_desc_subtitle{
+                font-size: 1.4rem;
+            }
+            .apartment_info{
+                font-size: 1.3rem;
+                font-weight: 500;
+                color: $color_grey_sec;
+                font-weight: 700;
+                letter-spacing: 1px;
+                
+                
+            }
+            .apartment_info_adress{
+                font-size: .8rem;
+            }
+            .price_info{
+                color: $color_logo_primary;
+                font-size: 1.6rem;
+                
+                
+            }
+            .dollar{
+                font-size: 1.2rem;
+                margin-top: 0;
+                margin-left: 0;
+            }
+
+        }
+
+    .actions{
+        background-color:#f8fafc ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        a{
+            color: $color_grey_quar;
+            transition: color 250ms;
+            &:hover{
+                color: $color_grey_sec;
+            }
+            .fa-trash{
+                color: $color_logo_primary;
+                opacity: .5;
+                transition: all 250ms;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 1;
+                }
+
+            }
+        }
+    }
+
+  
+
+    
+    }
+
+    
+        
+}
+
+
