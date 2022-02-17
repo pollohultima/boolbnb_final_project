@@ -11484,10 +11484,14 @@ textarea.form-control-lg {
 }
 .log_container .form-group label {
   text-align: end;
+  color: #5b5b5b;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 .log_container .form-group input {
   border-radius: 50px;
   background-color: white;
+  color: #adadad;
 }
 .log_container .form-group .form-control:focus {
   border-color: #3d0e16;

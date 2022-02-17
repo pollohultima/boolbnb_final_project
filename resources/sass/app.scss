@@ -295,11 +295,15 @@ color: $color_grey_sec;}
     margin-bottom: 1.5rem;
     label{
         text-align: end;
+        color: $color_grey_sec;
+        font-weight: 500;
+        letter-spacing: 1px;
        
     }
     input{
         border-radius: 50px;
         background-color: white;
+        color: $color_grey_ter
       
     }
 

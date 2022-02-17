@@ -5,7 +5,7 @@
    
     <div class="apartments_sec">
         <div class="add_apartment">
-        <h1>Apartments</h1>
+        <h1 class="title_page">Apartments</h1>
 
 
         <a name="" id="" class="button" style="margin-right: 150px;"
