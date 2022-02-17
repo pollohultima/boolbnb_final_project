@@ -60,7 +60,7 @@
 
             <div class="row py-5">
                 <div class="col-3">
-                    <img style="max-height: 300px;"
+                    <img style="max-width: 300px; max-height: 300px;"
                         src="{{ asset('storage/' . $apartment->image) }}" alt="" class="img_thumbnail">
                 </div>
                 <div class="col">
