@@ -1,7 +1,8 @@
 @extends('layouts.host')
 
 @section('content')
-    <h1>Modifica {{ $apartment->title }}</h1>
+<div class="edit_sec">
+    <h1 class="title_page">Modifica {{ $apartment->title }}</h1>
 
     <form action="{{ route('host.apartments.update', $apartment->slug) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -57,11 +58,13 @@
 
         <div class="mb-3">
 
-            <div class="row">
-                <div class="col"><img style="max-height: 300px;"
-                        src="{{ asset('storage/' . $apartment->image) }}" alt="" class="img-fluid">
+            <div class="row py-5">
+                <div class="col-3">
+                    <img style="max-height: 300px;"
+                        src="{{ asset('storage/' . $apartment->image) }}" alt="" class="img_thumbnail">
                 </div>
-                <div class="col"> <label for="image" class="form-label">Cambia l'immagine
+                <div class="col">
+                     <label for="image" class="form-label">Cambia l'immagine
                         dell'appartamento</label>
                     <input type="file" accept="images/*" name="image" id="image"
                         class="form-control  @error('image') is_invalid @enderror" placeholder="image"
@@ -115,7 +118,8 @@
 
 
 
-        <button type="submit" class="btn btn-primary">Applica le modifiche</button>
+        <button type="submit" class="button">Applica le modifiche</button>
 
     </form>
+</div>
 @endsection

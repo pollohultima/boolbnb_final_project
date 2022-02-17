@@ -17,8 +17,11 @@
         {{-- Navbar --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand px-3 rounded border-0 bg-white shadow-none fs-2" href="{{ url('/') }}">
-                    {{ config('app.name', 'BoolBnB') }}
+                <a class="" href="{{ url('/') }}">
+                    <div class="logo_wrapper">
+                    <img src="{{asset('img/BOOLBNB.svg')}}" class="logo_image" alt="">
+
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -44,10 +47,13 @@
 
                             @auth
                                 <li class="nav-item dropdown">
+                                    <div class="user_box">
+                                    <i class="fa-solid fa-user"></i>
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
+                                    
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -60,6 +66,7 @@
                                             class="d-none">
                                             @csrf
                                         </form>
+                                    </div>
                                     </div>
                                 </li>
                             @endauth
@@ -75,26 +82,29 @@
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">
-                            <h3 class="text-primary">
-                                <i class="fas fa-tachometer-alt    "></i>
+                        <a class="nav_link_aside" aria-current="page" href="">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h4 class="dash_title">
+                                
                                 Dashboard
-                            </h3>
+                            </h4>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('host.apartments.index') }}">
-                            <h4 class="text-primary">
-                                <i class="fas fa-home"></i>
+                        <a class="nav_link_aside" href="{{ route('host.apartments.index') }}">
+                            <i class="fas fa-home"></i>
+                            <h4 class="dash_title">
+                                
                                 Apartments
                             </h4>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <h4 class="text-primary">
-                                <i class="fas fa-tags    "></i>
+                        <a class="nav_link_aside" href="">
+                            <i class="fas fa-tags"></i>
+                            <h4 class="dash_title">
+                               
                                 Messages
                             </h4>
 
@@ -105,7 +115,7 @@
             </div>
         </nav>
 
-        <main class="p-4">
+        <main class="p-4 log_co">
             @yield('content')
         </main>
     </div>

@@ -4,6 +4,8 @@
 <head>
     @include('partials.tag_head')
 
+   
+  
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -17,7 +19,7 @@
         {{-- Navbar --}}
         @include('partials.header_spa')
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
 

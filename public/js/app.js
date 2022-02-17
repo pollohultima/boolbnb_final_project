@@ -5166,6 +5166,95 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
+=======
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> origin/header_style
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41487,22 +41576,25 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-center py-5" }, [
-      _vm._v("Sponsored Apartments"),
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
+      _c("h1", { staticClass: "py-5 page_title" }, [
+        _vm._v("Sponsored Apartments"),
+      ]),
+      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row justify-content-center" },
+        { staticClass: "row justify-content-center g-5" },
         _vm._l(_vm.sponsored_apartments_list, function (sponsored_apartment) {
           return _c(
             "div",
             {
               key: sponsored_apartment.slug,
-              staticClass: "col-3 sponsored_apartment_card",
+              staticClass: "col-4 sponsored_apartment_card",
             },
             [
+<<<<<<< HEAD
               _c(
                 "div",
                 { staticClass: "card", staticStyle: { width: "18rem" } },
@@ -41520,10 +41612,30 @@ var render = function () {
                       }),
                       _vm._v(" "),
                       _c("h5", { staticClass: "card-title" }, [
+=======
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "card_body" }, [
+                  _c("div", { staticClass: "card_img_wrapper" }, [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: {
+                        src: "/storage/" + sponsored_apartment.image,
+                        alt: "...",
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card_bottom" }, [
+                    _vm._m(1, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card_info" }, [
+                      _c("h5", { staticClass: " card_title" }, [
+>>>>>>> origin/header_style
                         _vm._v(_vm._s(sponsored_apartment.title)),
                       ]),
                       _vm._v(" "),
                       _c(
+<<<<<<< HEAD
                         "h6",
                         { staticClass: "card-subtitle mb-2 text-muted" },
                         [_vm._v("Sponsored")]
@@ -41551,6 +41663,55 @@ var render = function () {
                   ),
                 ]
               ),
+=======
+                        "div",
+                        {
+                          staticClass:
+                            "info_type_wrapper info_type_wrapper_address",
+                        },
+                        [
+                          _c("p", { staticClass: "card_text" }, [
+                            _vm._v(
+                              "\n\n                         " +
+                                _vm._s(sponsored_apartment.address) +
+                                "\n                      "
+                            ),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "metres_cost" }, [
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text" }, [
+                            _vm._v(
+                              "\n                            \n\n                            " +
+                                _vm._s(sponsored_apartment.squared_meters) +
+                                "\n                          "
+                            ),
+                          ]),
+                          _vm._v(
+                            "\n                          \n\n                          m"
+                          ),
+                          _c("sup", [_vm._v("2")]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text_cost" }, [
+                            _vm._v(
+                              "\n                            \n\n                            " +
+                                _vm._s(sponsored_apartment.price) +
+                                "\n                          "
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                        ]),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+              ]),
+>>>>>>> origin/header_style
             ]
           )
         }),
@@ -41559,7 +41720,49 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "heroSec" }, [
+      _c("div", { staticClass: "hero" }, [
+        _c("h2", { staticClass: "welcome_title" }, [
+          _vm._v("Non sai dove andare? "),
+          _c("br"),
+          _vm._v(" Nessun problema!"),
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn_visit d-flex align-items-center",
+            attrs: { href: "#" },
+          },
+          [
+            _c("span", { staticClass: "gradient" }, [
+              _vm._v("\n                parti adesso     \n                 "),
+              _c("i", { staticClass: "fa-solid fa-rocket" }),
+            ]),
+          ]
+        ),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sponsored" }, [
+      _c("div", { staticClass: "img_wrapper_sponsor" }, [
+        _c("img", {
+          staticClass: "logo_image",
+          attrs: { src: __webpack_require__(/*! ../../img/BOOLBNB_white.svg */ "./resources/img/BOOLBNB_white.svg"), alt: "" },
+        }),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -56939,6 +57142,17 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+
+/***/ "./resources/img/BOOLBNB_white.svg":
+/*!*****************************************!*\
+  !*** ./resources/img/BOOLBNB_white.svg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/BOOLBNB_white.svg?3a8cee93f60b71169cbb4ba2e91c1274";
 
 /***/ }),
 

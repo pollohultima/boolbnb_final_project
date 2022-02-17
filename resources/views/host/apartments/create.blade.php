@@ -1,6 +1,7 @@
 @extends('layouts.host')
 
 @section('content')
+<div class="create_sec">
     <h1>Aggiungi un nuovo appartamento</h1>
 
     <form action="{{ route('host.apartments.store') }}" method="post" enctype="multipart/form-data">
@@ -104,7 +105,8 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Aggiungi appartamento</button>
+        <button type="submit" class="button">Aggiungi appartamento</button>
 
     </form>
+</div>
 @endsection
