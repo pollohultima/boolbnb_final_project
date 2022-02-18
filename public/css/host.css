@@ -11610,85 +11610,87 @@ body {
   width: 100%;
 }
 
-.show {
+.show_sec {
   padding-top: 5rem;
 }
-.show .card {
+.show_sec .card {
   border-radius: 2rem;
   color: #5b5b5b;
 }
-.show .card h2, .show .card .h2 {
+.show_sec .card h2, .show_sec .card .h2 {
   letter-spacing: 2px;
 }
-.show .card h3, .show .card .h3 {
+.show_sec .card h3, .show_sec .card .h3 {
   letter-spacing: 1.5px;
   font-size: 0.9rem;
   font-weight: 300;
   padding-left: 0;
 }
-.show .card .top {
+.show_sec .card .top {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   height: 300px;
 }
-.show .card .top .image {
+.show_sec .card .top .image {
   padding: 0;
   height: 100%;
 }
-.show .card .top .image img {
+.show_sec .card .top .image img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
   border-top-left-radius: 2rem;
+  -o-object-position: top;
+     object-position: top;
   border-top-right-radius: 2rem;
 }
-.show .card .mid .map {
+.show_sec .card .mid .map {
   padding-left: 1.5rem;
   padding-top: 1rem;
 }
-.show .card .mid .map .map_square {
+.show_sec .card .mid .map .map_square {
   max-width: 100%;
   height: 300px;
   background-color: #adadad;
   border-radius: 2rem;
 }
-.show .card .mid .infos .info_address {
+.show_sec .card .mid .infos .info_address {
   font-size: 1.1rem;
   font-weight: 500;
 }
-.show .card .mid .details {
+.show_sec .card .mid .details {
   padding-left: 0;
 }
-.show .card .mid .details .col .item_price .value {
+.show_sec .card .mid .details .col .item_price .value {
   color: #ff385c;
 }
-.show .card .mid .details .col .item {
+.show_sec .card .mid .details .col .item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-.show .card .mid .details .col .item .value {
+.show_sec .card .mid .details .col .item .value {
   font-size: 1.2rem;
   font-weight: 700;
 }
-.show .card .bottom {
+.show_sec .card .bottom {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.show .card .bottom h2, .show .card .bottom .h2 {
+.show_sec .card .bottom h2, .show_sec .card .bottom .h2 {
   margin-bottom: 0.5rem;
 }
-.show .card .bottom .services .row {
+.show_sec .card .bottom .services .row {
   padding: 0;
 }
-.show .card .bottom .services ul {
+.show_sec .card .bottom .services ul {
   list-style: none;
 }
-.show .card .bottom .services ul li {
+.show_sec .card .bottom .services ul li {
   margin: 0;
 }
-.show .card .bottom .services ul li i {
+.show_sec .card .bottom .services ul li i {
   color: #d1d1d1;
   margin-right: 0.4rem;
 }

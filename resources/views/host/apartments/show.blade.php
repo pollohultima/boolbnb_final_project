@@ -1,7 +1,7 @@
 @extends('layouts.host')
 
 @section('content')
-<div class="show">
+<div class="show_sec">
     <div class="card m-4">
 
         <!-- image -->
