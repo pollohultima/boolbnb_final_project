@@ -95,6 +95,7 @@
                             <p class="dollar">$</p>
                         </div>
 
+
                     </div>
 
                   
@@ -117,6 +118,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -124,7 +127,7 @@ export default {
     };
   },
   mounted() {
-    axios.get("../api/apartments").then((r) => {
+    axios.get("../api/apartments").then(r => {
       this.sponsored_apartments_list = r.data;
     });
   },

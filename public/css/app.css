@@ -11532,7 +11532,9 @@ textarea.form-control-lg {
 .footer {
   background-color: #5b5b5b;
 }
-.footer hr, .footer h3, .footer .h3 {
+.footer hr,
+.footer h3,
+.footer .h3 {
   color: white;
 }
 .footer .red {

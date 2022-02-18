@@ -1,0 +1,99 @@
+<template>
+    <div>
+        <h1 class="text-center page_title py-5">Apartments List</h1>
+
+        <div class="sponsored_apartments_container container">
+        <div class="row justify-content-center g-5">
+            <div
+                class="col-4 sponsored_apartment_card"
+                v-for="apartment in apartments"
+                :key="apartment.slug"
+            >
+                <div class="card">
+                    <div class="card_body">
+                        <div class="card_img_wrapper">
+                            <img
+                                :src="'/storage/' + apartment.image"
+                                class="card-img-top"
+                                alt="..."
+                            />
+                        </div>
+
+                        <div class="card_bottom">
+                            <!-- <h6 class="card-subtitle mb-2 text-muted">Sponsored</h6> -->
+                            <div class="sponsored">
+                                <div class="img_wrapper_sponsor">
+                                    <img
+                                        src="../../img/BOOLBNB_white.svg"
+                                        class="logo_image"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="card_info">
+                                <h5 class="card_title">
+                                    {{ apartment.title }}
+                                </h5>
+
+                                <div
+                                    class="info_type_wrapper info_type_wrapper_address"
+                                >
+                                    <!-- <i class="fa-solid fa-location-dot"></i> -->
+
+                                    <p class="card_text">
+                                        {{ apartment.address }}
+                                    </p>
+                                </div>
+
+                                <div class="metres_cost">
+                                    <div class="info_type_wrapper">
+                                        <p class="card_text">
+                                            {{ apartment.squared_meters }}
+                                        </p>
+
+                                        m<sup>2</sup>
+                                    </div>
+
+                                    <div class="info_type_wrapper">
+                                        <p class="card_text_cost">
+                                            {{ apartment.price }}
+                                        </p>
+                                        <p class="dollar">$</p>
+                                    </div>
+
+                                    <router-link
+                                        :to="'/apartments/' + apartment.slug"
+                                        >cane</router-link
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</template>
+
+<script>
+
+
+export default {
+    data() {
+        return {
+            apartments: [],
+        };
+    },
+    mounted() {
+        axios.get("../api/apartments").then((r) => {
+            this.apartments = r.data;
+        });
+    },
+
+  
+};
+</script>
+
+<style></style>
