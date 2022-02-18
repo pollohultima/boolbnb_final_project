@@ -62,7 +62,76 @@ header{
 /* PAGE home.vue */
 
 /* HERO SEC*/
+/* SEARCH HERO */
 
+
+.search_sec{
+    padding: 4rem 1.5rem;
+    padding-bottom: 3rem;
+    border-radius: 25px;
+    width: 65%;
+    margin:0  auto;
+    .search_form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    .search_input_wrapper{
+        display: flex;
+        flex-direction: column;
+        label{
+            color: $color_grey_sec;
+            font-size:.8rem;
+            margin-bottom: .5rem;
+            letter-spacing: 1px;
+            padding-left: .6rem;
+            color: white;
+        }
+        input,
+        select{
+            padding: .4rem .5rem;
+            border-radius: 50px;
+            border: none;
+            width: 250px;
+            background-color: #fafafa3d;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
+            option{
+                color: $color_grey_sec;
+            }
+
+            &:focus-visible{
+                /* outline: 0; */
+                outline: 0;
+                box-shadow: 0px 0px 10px #ffffff3d;
+            }
+        }
+      
+    }
+    .submit_search{
+      align-self: flex-end;
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+      background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      margin-top: .5rem;
+      transform: scale(1);
+      transition: all 250ms;
+      &:hover{
+          transform: scale(1.1);
+      }
+      i{
+          font-size: 1rem;
+          color: white;
+      }
+
+    }
+    }
+}
 .heroSec {
     width: 100%;
     height:760px;
@@ -417,71 +486,108 @@ header{
 
 
 
+/* appartment show */
 
-.search_sec{
-    padding: 4rem 1.5rem;
-    padding-bottom: 3rem;
-    border-radius: 25px;
-    width: 65%;
-    margin:0  auto;
-    .search_form{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    .search_input_wrapper{
-        display: flex;
-        flex-direction: column;
-        label{
-            color: $color_grey_sec;
-            font-size:.8rem;
-            margin-bottom: .5rem;
-            letter-spacing: 1px;
-            padding-left: .6rem;
-            color: white;
+
+.sponsored_apartments_container{
+    padding-top: 5rem;
+    .card {
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #9797974d;
+        height: 480px;
+        .card_body {
+            height: 100%;
         }
-        input,
-        select{
-            padding: .4rem .5rem;
-            border-radius: 50px;
-            border: none;
-            width: 250px;
-            background-color: #fafafa3d;
-            color: white;
-            font-weight: 600;
-            letter-spacing: 1px;
-            option{
-                color: $color_grey_sec;
-            }
+    }
 
-            &:focus-visible{
-                /* outline: 0; */
-                outline: 0;
-                box-shadow: 0px 0px 10px #ffffff3d;
+    .card_img_wrapper {
+        height: 50%;
+        position: relative;
+        cursor: pointer;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(34, 44, 56, 0) 40%,
+                rgba(22, 22, 31, 0.452) 90%
+            );
+            mix-blend-mode: multiply;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            &:hover {
+                width: 120%;
+                height: 120%;
             }
         }
-      
     }
-    .submit_search{
-      align-self: flex-end;
-      width: 50px;
-      height: 50px;
-      border-radius: 100px;
-      background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: none;
-      margin-top: .5rem;
-      transform: scale(1);
-      transition: all 250ms;
-      &:hover{
-          transform: scale(1.1);
-      }
-      i{
-          font-size: 1rem;
-          color: white;
-      }
 
+    .card_bottom {
+        padding: 1rem;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+        height: 50%;
+        position: relative;
+        background: linear-gradient(
+            0deg,
+            #ff3895 -30%,
+            $color_logo_primary 85%,
+            #ff384d 100%
+        );
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        color: white;
     }
+
+    .card_info {
+        .card_title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .info_type_wrapper_address {
+            padding-top: 0.2rem;
+            font-size: 0.7rem;
+        }
+        .info_type_wrapper {
+            display: flex;
+            align-items: baseline;
+            .card_text {
+                font-size: 0.8rem;
+                margin: 0;
+            }
+            .fa-location-dot {
+                font-size: 1.4rem;
+                margin-right: 0.5rem;
+            }
+        }
+
+        .metres_cost {
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card_text_cost {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .dollar {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-left: 0.2rem;
+        }
     }
 }

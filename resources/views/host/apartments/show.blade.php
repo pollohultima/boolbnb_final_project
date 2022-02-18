@@ -77,7 +77,7 @@
 
         <div class="container">
             <div class="bottom py-3">
-            <div class="services">
+                <div class="services">
                     <h2>Servizi</h2>
                     
                     <ul class="row">
