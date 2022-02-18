@@ -5474,18 +5474,8 @@ __webpack_require__.r(__webpack_exports__);
   * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
-<<<<<<< HEAD
 
-
-=======
-
-
->>>>>>> map_testing
 /**
- * --------------------------------------------------------------------------
- * Bootstrap (v5.1.3): util/index.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
  */
 const MAX_UID = 1000000;
 const MILLISECONDS_MULTIPLIER = 1000;
@@ -6651,30 +6641,11 @@ class Carousel extends BaseComponent {
     // or the carousel or its parent isn't visible
     if (!document.hidden && isVisible(this._element)) {
       this.next();
-<<<<<<< HEAD
-=======
-    }
-  }
+    };
 
   prev() {
     this._slide(ORDER_PREV);
-  }
-
-  pause(event) {
-    if (!event) {
-      this._isPaused = true;
-    }
-
-    if (SelectorEngine.findOne(SELECTOR_NEXT_PREV, this._element)) {
-      triggerTransitionEnd(this._element);
-      this.cycle(true);
->>>>>>> map_testing
-    }
-
-<<<<<<< HEAD
-  prev() {
-    this._slide(ORDER_PREV);
-  }
+  };
 
   pause(event) {
     if (!event) {
@@ -6686,8 +6657,6 @@ class Carousel extends BaseComponent {
       this.cycle(true);
     }
 
-=======
->>>>>>> map_testing
     clearInterval(this._interval);
     this._interval = null;
   }
@@ -58522,15 +58491,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
-=======
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
->>>>>>> map_testing
 
 
 /***/ })

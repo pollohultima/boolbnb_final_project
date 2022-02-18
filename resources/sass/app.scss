@@ -97,7 +97,7 @@
     }
     .gradient {
         background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
-        -webkit-background-clip: text;
+        //-webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 }
@@ -316,7 +316,7 @@
 
 /* register PAGE */
 // Footer
-.footer {
+/* .footer {
     hr,
     h3 {
         color: white;
@@ -380,4 +380,14 @@
             color: silver;
         }
     }
+} */
+
+
+
+
+/* FOOTER */
+
+footer{
+    
+    background-color: $color_grey_sec_light;
 }
