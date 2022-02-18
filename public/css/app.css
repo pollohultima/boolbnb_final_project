@@ -11595,21 +11595,43 @@ textarea.form-control-lg {
 } */
 /* FOOTER */
 footer {
-  background-color: #686868;
+  background-color: #d1d1d1;
+  color: #686868;
 }
-footer .social {
-  width: 28%;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+footer .logo img {
+  width: 120px;
+  margin: 15px 0;
+  filter: grayscale(100%);
+}
+footer .contatti .mail p:hover {
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
 }
 footer .social a {
-  width: 35px;
+  width: 30px;
+  margin-right: 25px;
 }
-footer .social img {
+footer .social a img {
   width: 30px;
 }
-footer .social img:hover {
+footer .social a img:hover {
   opacity: 70%;
+}
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer ul li {
+  line-height: 1.5rem;
+}
+footer ul li a {
+  text-decoration: none;
+  color: #686868;
+}
+footer ul li a:hover {
+  text-decoration: underline;
+  color: #ff385c;
+}
+footer .soft {
+  font-size: 0.7rem;
 }

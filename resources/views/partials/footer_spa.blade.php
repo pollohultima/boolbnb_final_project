@@ -1,64 +1,111 @@
 <footer class="footer">
     <!-- 20px border radius;  fontawesom-6?; -->
 
-    <div class="container footer-main">
+    <div class="container footer-header">
 
         <div class="logo">
             <img src="{{asset('img/logo_BoolBnB_100px.png')}}" alt="Logo sito">
         </div>
+
+    </div>
+    
+    <div class="container d-flex justify-content-between footer-main">
         
-        <!-- section contatti -->
         <div class="contatti">
+            
+            <div class="mail">
+    
+                <h4>
+                    Puoi contattarci qui:
+                </h4>
+    
+                <p>
+                    terms@bollbnb.com
+                </p>
+    
+            </div>
+    
+            <div class="social">
+                <h4>
+                    Seguici sui social:
+                </h4>
+    
+                <div class="icons">
 
-            <h3>
-                Puoi contattarci qui:
-            </h3>
+                    <a href="#">
+                        <img src="{{asset('img/logo-facebook.png')}}" alt="">
+                    </a>
+                        
+                    <a href="#">
+                        <img src="{{asset('img/logo-twitter.png')}}" alt="">
+                    </a>
+        
+                    <a href="#">
+                        <img src="{{asset('img/logo-instagram.png')}}" alt="">
+                    </a>
 
-            <p>
-                terms@bollbnb.com
-            </p>
-
-        </div>
-
-        <!-- section social -->
-        <div class="social">
-            <h3>
-                Seguici sui social:
-            </h3>
-
-            <!-- icone per i social -->
-            <img src="{{asset('img/footer-facebook.png')}}" alt="">
-            <a href="#">
-            </a>
-                
-            <a href="#">
-                <img src="{{asset('img/footer-twitter.png')}}" alt="">
-            </a>
-
-            <a href="#">
-                <img src="{{asset('img/footer-youtube.png')}}" alt="">
-            </a>
-
-            <a href="#">
-                <img src="{{asset('img/footer-periscope.png')}}" alt="">
-            </a>
+                </div>
+                <!-- icone per i social -->
+    
+            </div>
 
         </div>
 
         <!-- link-map -->
 
+        <div class="about">
+
+            <h4 class="text-uppercase">about bollbnb</h4>
+        
+            <ul>
+                <li>
+                    <a href="#">Chi siamo</a>
+                </li>
+                <li>
+                    <a href="#">Lavora con noi</a>
+                </li>
+                <li>
+                    <a href="#">Domande frequenti</a>                   
+                </li>
+            </ul>
+        </div> 
+
+        <div class="new_host">
+
+            <h4 class="text-uppercase">diventa host</h4>
+        
+            <ul>
+                <li>
+                    <a href="#">Prova ad ospitare</a>
+                </li>
+                <li>
+                    <a href="#">Protezione host</a>
+                </li>
+                <li>
+                    <a href="#">Esplora le risorse per gli host</a>
+                </li>
+                <li>
+                    <a href="#">Ospitare responsabilmente</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
-    <div class="container copyright">
+    <div class="container footer_footer">
 
         <hr>
         <!-- copyright -->
-        <div class="copyright">
-            <h5> &bull; Privacy Policy &bull; User ageement</h5>
-        </div>
+        <div class="d-flex justify-content-evenly">
 
-        <div class="infos pb-2">
-            <h5> &copy; 2022 BoolBnb &bull; project42 &bull; team 2 &bull; All rights reserved</h5>
+            <div class="copyright soft">
+                <p> &bull; Privacy Policy &bull; User ageement</p>
+            </div>
+    
+            <div class="infos soft">
+                <p> &copy; 2022 BoolBnb &bull; project42 &bull; team 2 &bull; All rights reserved</p>
+            </div>
+
         </div>
 
     </div>

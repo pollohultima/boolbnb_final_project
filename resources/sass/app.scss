@@ -388,25 +388,60 @@
 /* FOOTER */
 
 footer{
-    background-color: $color_grey_sec_light;
+    background-color: $color_grey_quar;
+    color: $color_grey_sec_light;
+
+    .logo img{
+        width: 120px;
+        margin: 15px 0;
+        filter: grayscale(100%);
+
+    }
+
+    .contatti .mail p:hover{
+        text-decoration:dotted;
+    }
 
     .social{
-        width: 28%;
-        color: black;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
 
         a{
-            width: 35px;
-        }
-
-        img{
             width: 30px;
+            margin-right: 25px;
 
-            &:hover{
-                opacity: (70%);
+            img{
+                width: 30px;
+    
+                &:hover{
+                    opacity: (70%);
+                }
             }
         }
+
+    }
+
+
+    ul{
+        list-style: none;
+        padding-left: 0;
+        
+        li{
+            line-height: 1.5rem;
+
+            a{
+                text-decoration: none;
+                color: $color_grey_sec_light;
+
+                &:hover{
+                    text-decoration: underline;
+                    color: $color_logo_primary;
+                }
+            }
+
+        }
+    }
+
+    .soft{
+        font-size: 0.7rem;
     }
 }
