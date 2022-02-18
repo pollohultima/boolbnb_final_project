@@ -53768,11 +53768,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\js\host.js */"./resources/js/host.js");
-=======
-module.exports = __webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/js/host.js */"./resources/js/host.js");
->>>>>>> origin/footer
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\host.js */"./resources/js/host.js");
 
 
 /***/ })

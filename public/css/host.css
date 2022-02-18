@@ -11562,7 +11562,7 @@ body {
 .create_sec input {
   border-radius: 50px;
   background-color: white;
-  color: #adadad;
+  color: #5b5b5b;
 }
 .edit_sec .form-control:focus,
 .create_sec .form-control:focus {
