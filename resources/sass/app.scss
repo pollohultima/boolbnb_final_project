@@ -388,6 +388,15 @@
 /* FOOTER */
 
 footer{
-    
     background-color: $color_grey_sec_light;
+
+    .social{
+        a{
+            width: 20px;
+
+           img{
+               width: 100%;
+           }
+        }
+    }
 }
