@@ -6,7 +6,7 @@
      <div class="heroSec">
         <div class="hero">
               <h2 class="welcome_title">Non sai dove andare? <br> Nessun problema!</h2>
-              <a href="#" class="btn_visit d-flex align-items-center">
+             <!--  <a href="#" class="btn_visit d-flex align-items-center">
                   <span class="gradient">
                   parti adesso     
                    <i class="fa-solid fa-rocket"></i>             
@@ -15,11 +15,58 @@
                   
                 
               </a>
+ -->
+                <div class="search_sec">
+
+                  
+
+                  <form action="" class="search_form">
+
+                    <div class="search_input_wrapper">
+                        <label for="beds">letti</label>
+                        <input type="number" id="beds" name="beds">
+                    </div>
+
+                    <div class="search_input_wrapper">
+                        <label for="beds">stanze</label>
+                        <input type="number" id="rooms" name="rooms">
+                    </div>
+
+                    <div class="search_input_wrapper">
+                      <label for="services">scegli un servizio:</label>
+                      <select name="services" id="services">
+                        <option value="1">WiFi</option>
+                        <option value="2">Posto Macchina</option>
+                        <option value="3">piscina</option>
+                        <option value="4">Portineria</option>
+                        <option value="5">Sauna</option>
+                        <option value="6">Vista Mare</option>
+                      </select>
+
+
+                    </div>
+                    
+                    
+                    
+                    
+
+                      <button type="submit" value="Submit" class="submit_search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </button>
+
+
+                  </form>
+
+                </div>
+
                
         </div>
 
+
+
      </div>
 
+   
 
     
     <div class="sponsored_apartments_container container">

@@ -5282,6 +5282,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5310,6 +5313,53 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -41799,11 +41849,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-center page_title py-5" }, [
-      _vm._v("Apartments List"),
-    ]),
-    _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
+      _c("h1", { staticClass: "page_title py-5" }, [_vm._v("Apartments List")]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row justify-content-center g-5" },
@@ -41853,38 +41901,47 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
+                      _c("div", { staticClass: "metres_cost" }, [
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text" }, [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(apartment.squared_meters) +
+                                "\n                                    "
+                            ),
+                          ]),
+                          _vm._v("\n\n                                    m"),
+                          _c("sup", [_vm._v("2")]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text_cost" }, [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(apartment.price) +
+                                "\n                                    "
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "metres_cost" },
+                        { staticClass: "button_wrapper" },
                         [
-                          _c("div", { staticClass: "info_type_wrapper" }, [
-                            _c("p", { staticClass: "card_text" }, [
-                              _vm._v(
-                                "\n                                        " +
-                                  _vm._s(apartment.squared_meters) +
-                                  "\n                                    "
-                              ),
-                            ]),
-                            _vm._v("\n\n                                    m"),
-                            _c("sup", [_vm._v("2")]),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "info_type_wrapper" }, [
-                            _c("p", { staticClass: "card_text_cost" }, [
-                              _vm._v(
-                                "\n                                        " +
-                                  _vm._s(apartment.price) +
-                                  "\n                                    "
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
-                          ]),
-                          _vm._v(" "),
                           _c(
                             "router-link",
-                            { attrs: { to: "/apartments/" + apartment.slug } },
-                            [_vm._v("cane")]
+                            {
+                              staticClass: "button_view",
+                              attrs: { to: "/apartments/" + apartment.slug },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                visita\n                                "
+                              ),
+                            ]
                           ),
                         ],
                         1
@@ -41985,9 +42042,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n\n                         " +
+                              "\n\n                          " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                      "
+                                "\n                       "
                             ),
                           ]),
                         ]
@@ -41997,13 +42054,13 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                            \n\n                            " +
+                              "\n                             \n\n                             " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                          "
+                                "\n                           "
                             ),
                           ]),
                           _vm._v(
-                            "\n                          \n\n                          m"
+                            "\n                           \n\n                           m"
                           ),
                           _c("sup", [_vm._v("2")]),
                         ]),
@@ -42011,9 +42068,9 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                            \n\n                            " +
+                              "\n                             \n\n                             " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                          "
+                                "\n                           "
                             ),
                           ]),
                           _vm._v(" "),
@@ -42045,19 +42102,56 @@ var staticRenderFns = [
           _vm._v(" Nessun problema!"),
         ]),
         _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn_visit d-flex align-items-center",
-            attrs: { href: "#" },
-          },
-          [
-            _c("span", { staticClass: "gradient" }, [
-              _vm._v("\n                parti adesso     \n                 "),
-              _c("i", { staticClass: "fa-solid fa-rocket" }),
+        _c("div", { staticClass: "search_sec" }, [
+          _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "beds" } }, [_vm._v("letti")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "number", id: "beds", name: "beds" },
+              }),
             ]),
-          ]
-        ),
+            _vm._v(" "),
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "beds" } }, [_vm._v("stanze")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "number", id: "rooms", name: "rooms" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "services" } }, [
+                _vm._v("scegli un servizio:"),
+              ]),
+              _vm._v(" "),
+              _c("select", { attrs: { name: "services", id: "services" } }, [
+                _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "2" } }, [
+                  _vm._v("Posto Macchina"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "submit_search",
+                attrs: { type: "submit", value: "Submit" },
+              },
+              [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+            ),
+          ]),
+        ]),
       ]),
     ])
   },
