@@ -9,6 +9,7 @@
         
         <!-- section contatti -->
         <div class="contatti">
+
             <h3>
                 Puoi contattarci qui:
             </h3>
@@ -16,6 +17,7 @@
             <p>
                 terms@bollbnb.com
             </p>
+
         </div>
 
         <!-- section social -->
@@ -25,15 +27,18 @@
             </h3>
 
             <!-- icone per i social -->
+            <img src="{{asset('img/footer-facebook.png')}}" alt="">
             <a href="#">
-                <img src="{{asset('img/footer-facebook.png')}}" alt="">
             </a>
+                
             <a href="#">
                 <img src="{{asset('img/footer-twitter.png')}}" alt="">
             </a>
+
             <a href="#">
                 <img src="{{asset('img/footer-youtube.png')}}" alt="">
             </a>
+
             <a href="#">
                 <img src="{{asset('img/footer-periscope.png')}}" alt="">
             </a>
@@ -46,7 +51,17 @@
 
     <div class="container copyright">
 
+        <hr>
         <!-- copyright -->
+        <div class="copyright">
+            <h5> &bull; Privacy Policy &bull; User ageement</h5>
+        </div>
+
+        <div class="infos pb-2">
+            <h5> &copy; 2022 BoolBnb &bull; project42 &bull; team 2 &bull; All rights reserved</h5>
+        </div>
+
+    </div>
 
     </div>
 
