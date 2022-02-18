@@ -66,8 +66,9 @@
                 <div class="col">
                      <label for="image" class="form-label">Cambia l'immagine
                         dell'appartamento</label>
-                    <input type="file" name="image" id="image" class="form-control  @error('image') is_invalid @enderror"
-                        placeholder="{{ asset('storage/' . $apartment->image) }}" aria-describedby="helpId">
+                    <input type="file" accept="images/*" name="image" id="image"
+                        class="form-control  @error('image') is_invalid @enderror" placeholder="image"
+                        aria-describedby="helpId">
                 </div>
 
             </div>
