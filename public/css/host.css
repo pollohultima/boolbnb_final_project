@@ -11554,7 +11554,7 @@ body {
 .edit_sec label,
 .create_sec label {
   text-align: end;
-  color: #5b5b5b;
+  color: #686868;
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -11607,4 +11607,5 @@ body {
 .create_sec .img_thumbnail {
   border-radius: 15px;
   box-shadow: 0px 0px 10px #9c9c9cb4;
+  width: 100%;
 }

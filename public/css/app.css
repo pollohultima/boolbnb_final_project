@@ -11259,7 +11259,7 @@ textarea.form-control-lg {
 
 .navbar-nav li a {
   text-decoration: none;
-  color: #686868;
+  color: #5b5b5b;
 }
 
 .logo_wrapper {
@@ -11280,9 +11280,9 @@ textarea.form-control-lg {
 
 .login_button {
   padding: 0.5rem 1.7rem !important;
-  color: #686868 !important;
+  color: #5b5b5b !important;
   background-color: none;
-  border: 1px solid #686868;
+  border: 1px solid #5b5b5b;
   border-radius: 50px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -11477,21 +11477,21 @@ textarea.form-control-lg {
   background: none;
   font-size: 2.3rem;
   letter-spacing: 1px;
-  color: #686868;
+  color: #5b5b5b;
 }
 .log_container .form-group {
   margin-bottom: 1.5rem;
 }
 .log_container .form-group label {
   text-align: end;
-  color: #686868;
+  color: #5b5b5b;
   font-weight: 500;
   letter-spacing: 1px;
 }
 .log_container .form-group input {
   border-radius: 50px;
   background-color: white;
-  color: #adadad;
+  color: #686868;
 }
 .log_container .form-group .form-control:focus {
   border-color: #3d0e16;

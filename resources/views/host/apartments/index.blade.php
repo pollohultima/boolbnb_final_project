@@ -33,27 +33,40 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="card_desc">
-                                    <p>Indirizzo:</p> 
+                                    <p>
+                                    
+
+                                    Indirizzo:
+                                </p> 
                                  <span class="apartment_info apartment_info_adress">{{ $apartment->address }}</span>
                                 </div>
                                 <div class="card_desc">
-                                    <p>Stanze:</p>
+                                    <p>
+                                  
+                                    Stanze:</p>
                                      <span class="apartment_info">{{ $apartment->rooms }}</span>
                                     </div>
                                 <div class="card_desc">
-                                    <p>Bagni:</p>
+
+                                    <p>
+                                    Bagni:</p>
                                  <span class="apartment_info">{{ $apartment->bathrooms }}</span>
                                 </div>
                                 <div class="card_desc">
-                                    <p>Letti</p> 
+                                    <p>
+                                    Letti:</p> 
                                     <span class="apartment_info">{{ $apartment->beds }}</span>
                                 </div>
                                 <div class="card_desc">
-                                    <p>Metri quadrati:</p>
+                                    <p>
+                                    
+                                        Metri quadrati:</p>
                                      <span class="apartment_info">{{ $apartment->squared_meters }}</span>
                                     </div>
                                 <div class="card_desc">
-                                    <p>Piano:</p> 
+                                    <p>
+                                    
+                                        Piano:</p> 
                                     <span class="apartment_info">{{ $apartment->floor }}</span>
                                 </div>
                                 <div class="card_desc">
