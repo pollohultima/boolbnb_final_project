@@ -21,9 +21,11 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-Vue.component('App', require('./App.vue').default);
 const Home = Vue.component('Home', require('./pages/Home.vue').default);
-const Apartments = Vue.component('Apartment', require('./pages/Apartment.vue').default);
+const Apartments = Vue.component('Apartments', require('./pages/Apartments.vue').default);
+const Apartment = Vue.component('Apartment', require('./pages/Apartment.vue').default);
+
+Vue.component('App', require('./App.vue').default);                         
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -38,8 +40,13 @@ const routes = [
     },
     {
         path: '/apartments',
-        name: 'apartment',
+        name: 'apartments',
         component: Apartments
+    },
+    {
+        path: '/apartments/:slug',
+        name: 'apartment',
+        component: Apartment
     }
 ]
 

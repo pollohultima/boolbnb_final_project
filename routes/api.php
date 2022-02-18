@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/* Route::get('apartments', 'API\ApartmentController@index'); */
-Route::resource('apartments', API\ApartmentController::class);
+Route::get('apartments', 'API\ApartmentController@index');
+Route::get('apartments/{apartment}', 'API\ApartmentController@show');

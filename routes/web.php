@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 
-Route::get('/', 'HomeController@index')->name('home');
 
 
 /* Routes for Host */
