@@ -391,12 +391,18 @@ footer{
     background-color: $color_grey_sec_light;
 
     .social{
-        a{
-            width: 20px;
+        width: 28%;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-           img{
-               width: 100%;
-           }
+        img{
+            width: 30px;
+
+            &:hover{
+                opacity: (70%);
+            }
         }
     }
 }
