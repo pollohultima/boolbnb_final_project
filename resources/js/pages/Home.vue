@@ -1,27 +1,21 @@
 <template>
-    
   <div>
+    <!-- herosec SEC -->
+    <div class="heroSec">
+      <div class="hero">
+        <h2 class="welcome_title">
+          Non sai dove andare? <br />
+          Nessun problema!
+        </h2>
+        <a href="#" class="btn_visit d-flex align-items-center">
+          <span class="gradient">
+            parti adesso
+            <i class="fa-solid fa-rocket"></i>
+          </span>
+        </a>
+      </div>
+    </div>
 
-     <!-- herosec SEC -->
-     <div class="heroSec">
-        <div class="hero">
-              <h2 class="welcome_title">Non sai dove andare? <br> Nessun problema!</h2>
-              <a href="#" class="btn_visit d-flex align-items-center">
-                  <span class="gradient">
-                  parti adesso     
-                   <i class="fa-solid fa-rocket"></i>             
-                  </span>
-
-                  
-                
-              </a>
-               
-        </div>
-
-     </div>
-
-
-    
     <div class="sponsored_apartments_container container">
       <h1 class="py-5 page_title">Sponsored Apartments</h1>
       <div class="row justify-content-center g-5">
@@ -34,81 +28,53 @@
             <div class="card_body">
               <div class="card_img_wrapper">
                 <img
-                :src="'/storage/' + sponsored_apartment.image"
-                class="card-img-top"
-                alt="..."
-              />
+                  :src="'/storage/' + sponsored_apartment.image"
+                  class="card-img-top"
+                  alt="..."
+                />
               </div>
-              
 
               <div class="card_bottom">
-
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Sponsored</h6> -->
                 <div class="sponsored">
-                 
-                
-                 <div class="img_wrapper_sponsor">
-
-                    <img src="../../img/BOOLBNB_white.svg" class="logo_image" alt="">
-
-                 </div> 
-              
+                  <div class="img_wrapper_sponsor">
+                    <img
+                      src="../../img/BOOLBNB_white.svg"
+                      class="logo_image"
+                      alt=""
+                    />
+                  </div>
                 </div>
 
                 <div class="card_info">
-                   <h5 class=" card_title">{{ sponsored_apartment.title }}</h5>
+                  <h5 class="card_title">{{ sponsored_apartment.title }}</h5>
 
-                
+                  <div class="info_type_wrapper info_type_wrapper_address">
+                    <!-- <i class="fa-solid fa-location-dot"></i> -->
 
-                    <div class="info_type_wrapper info_type_wrapper_address">
+                    <p class="card_text">
+                      {{ sponsored_apartment.address }}
+                    </p>
+                  </div>
 
-                        <!-- <i class="fa-solid fa-location-dot"></i> -->
+                  <div class="metres_cost">
+                    <div class="info_type_wrapper">
+                      <p class="card_text">
+                        {{ sponsored_apartment.squared_meters }}
+                      </p>
 
-                        <p class="card_text">
-
-                           {{ sponsored_apartment.address }}
-                        </p>
+                      m<sup>2</sup>
                     </div>
 
-
-                    <div class="metres_cost">
-                          
-                        <div class="info_type_wrapper">
-                          
-                            <p class="card_text">
-                              
-
-                              {{ sponsored_apartment.squared_meters }}
-                            </p>
-                            
-
-                            m<sup>2</sup>
-
-                        </div>
-
-                        <div class="info_type_wrapper">
-                            <p class="card_text_cost">
-                              
-
-                              {{ sponsored_apartment.price }}
-                            </p>
-                            <p class="dollar">$</p>
-                        </div>
-
-
+                    <div class="info_type_wrapper">
+                      <p class="card_text_cost">
+                        {{ sponsored_apartment.price }}
+                      </p>
+                      <p class="dollar">$</p>
                     </div>
-
-                  
-
-                   
-                    
+                  </div>
                 </div>
-
-
-               
-
               </div>
-
             </div>
           </div>
         </div>
@@ -127,8 +93,8 @@ export default {
     };
   },
   mounted() {
-    axios.get("../api/apartments").then(r => {
-      this.sponsored_apartments_list = r.data;
+    axios.get("../api/apartments").then((r) => {
+      this.sponsored_apartments_list = r.data.data;
     });
   },
 };

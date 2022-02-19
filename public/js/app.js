@@ -5395,40 +5395,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5440,7 +5406,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("../api/apartments").then(function (r) {
-      _this.sponsored_apartments_list = r.data;
+      _this.sponsored_apartments_list = r.data.data;
     });
   }
 });
@@ -41972,7 +41938,7 @@ var render = function () {
                     _vm._m(1, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
-                      _c("h5", { staticClass: " card_title" }, [
+                      _c("h5", { staticClass: "card_title" }, [
                         _vm._v(_vm._s(sponsored_apartment.title)),
                       ]),
                       _vm._v(" "),
@@ -41985,9 +41951,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n\n                         " +
+                              "\n                    " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                      "
+                                "\n                  "
                             ),
                           ]),
                         ]
@@ -41997,23 +41963,21 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                            \n\n                            " +
+                              "\n                      " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                          "
+                                "\n                    "
                             ),
                           ]),
-                          _vm._v(
-                            "\n                          \n\n                          m"
-                          ),
+                          _vm._v("\n\n                    m"),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                            \n\n                            " +
+                              "\n                      " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                          "
+                                "\n                    "
                             ),
                           ]),
                           _vm._v(" "),
@@ -42040,9 +42004,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "heroSec" }, [
       _c("div", { staticClass: "hero" }, [
         _c("h2", { staticClass: "welcome_title" }, [
-          _vm._v("Non sai dove andare? "),
+          _vm._v("\n        Non sai dove andare? "),
           _c("br"),
-          _vm._v(" Nessun problema!"),
+          _vm._v("\n        Nessun problema!\n      "),
         ]),
         _vm._v(" "),
         _c(
@@ -42053,7 +42017,7 @@ var staticRenderFns = [
           },
           [
             _c("span", { staticClass: "gradient" }, [
-              _vm._v("\n                parti adesso     \n                 "),
+              _vm._v("\n          parti adesso\n          "),
               _c("i", { staticClass: "fa-solid fa-rocket" }),
             ]),
           ]
