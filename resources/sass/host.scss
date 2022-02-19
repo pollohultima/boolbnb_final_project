@@ -7,21 +7,18 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-
-*{
-    font-family: 'Poppins', sans-serif;
+* {
+    font-family: "Poppins", sans-serif;
 }
-
-
 
 body {
     font-size: 0.875rem;
 }
 
-#app {
-   width: 70%;
-   margin: 0 auto;
-   padding-left: 2rem;
+.app_cont {
+    width: 70%;
+    margin: 0 auto;
+    padding-left: 2rem;
 }
 
 .feather {
@@ -37,12 +34,12 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
-  
+
     bottom: 0;
- 
+
     left: 0;
-    z-index: 100; 
-    padding:5rem 1rem 0;
+    z-index: 100;
+    padding: 5rem 1rem 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
     width: 200px;
 }
@@ -86,30 +83,26 @@ body {
     text-transform: uppercase;
 } */
 
-
-
-
 /*
  * Navbar - header
  */
 
- .logo_wrapper{
-    width:120px;
-    .logo_image{
+.logo_wrapper {
+    width: 120px;
+    .logo_image {
         width: 100%;
     }
 }
 
-
-.user_box{
+.user_box {
     display: flex;
     align-items: center;
     border: 1px solid $color_grey_sec;
-    padding: .2rem 1rem;
+    padding: 0.2rem 1rem;
     border-radius: 25px;
-    .fa-user{
-        margin-right: .3rem;
-        color:$color_grey_sec
+    .fa-user {
+        margin-right: 0.3rem;
+        color: $color_grey_sec;
     }
 }
 
@@ -145,85 +138,74 @@ body {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
 
-
 /* YOU ARE LOG IN  */
 
-.log_container{
+.log_container {
     padding-top: 8rem;
-    .card{
+    .card {
         border: none;
         border-radius: 20px;
         box-shadow: 0px 0px 10px #9797974d;
-        padding: 2rem;}
+        padding: 2rem;
+    }
 
-    .card-header{background:none;
-    font-size: 2.3rem;
-    letter-spacing: 1px;
-color: $color_grey_sec;}
-
-
-        
+    .card-header {
+        background: none;
+        font-size: 2.3rem;
+        letter-spacing: 1px;
+        color: $color_grey_sec;
+    }
 }
-
-
-
-
-
-
-
 
 /* sidebar */
 
-
-
-.nav_link_aside{
+.nav_link_aside {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: $color_grey_ter;
     padding-bottom: 1.5rem;
-    
-        i{
+
+    i {
         font-size: 1rem;
         margin-right: 1.3rem;
         color: $color_grey_quar;
         transition: color 250ms;
     }
-    .dash_title{
+    .dash_title {
         margin-bottom: 0;
         color: $color_grey_ter;
         font-weight: 300;
-        font-size: .9rem;
+        font-size: 0.9rem;
         transition: color 250ms;
         letter-spacing: 1px;
     }
-    &:hover{
-        i{color:$color_logo_primary;}
+    &:hover {
+        i {
+            color: $color_logo_primary;
+        }
     }
 }
 
-
 /* apartaments Page */
-.title_page{
+.title_page {
     color: $color_grey_sec;
 }
 
-
-.close_button{
-    padding: .5rem 1.7rem !important;
+.close_button {
+    padding: 0.5rem 1.7rem !important;
     color: $color_grey_sec !important;
     background-color: white;
     border: 1px solid $color_grey_sec;
-        border-radius: 50px;
+    border-radius: 50px;
     font-weight: 600;
     letter-spacing: 2px;
     margin-right: 1rem;
-} 
+}
 
-
-.button{
+.button {
     text-align: center;
-    padding: .5rem 1.7rem !important;
+    padding: 0.5rem 1.7rem !important;
     color: white !important;
     background-color: $color_logo_primary;
     border-radius: 50px;
@@ -234,172 +216,148 @@ color: $color_grey_sec;}
     transform: scale(1);
     transition: all 250ms;
     margin-right: 0 !important;
-    &:hover{
+    &:hover {
         cursor: pointer;
         transform: scale(1.05);
     }
 }
 
-.apartments_sec{
+.apartments_sec {
     padding-top: 5rem;
-    .add_apartment{
+    .add_apartment {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 3rem;
     }
 
-    .apartment_card{
+    .apartment_card {
         border: none;
         border-radius: 20px;
         box-shadow: 0px 0px 10px #9797974d;
-        .apartment_card_img{
-            
-            img{
+        .apartment_card_img {
+            img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
                 border-bottom-left-radius: 20px;
                 border-top-left-radius: 20px;
-
             }
-
         }
 
-        .card-body{
-            padding:1.5rem 2.5rem !important;
-            
-            .card_title{
+        .card-body {
+            padding: 1.5rem 2.5rem !important;
+
+            .card_title {
                 font-size: 2.3rem;
                 margin-bottom: 0;
                 color: $color_grey_sec;
                 font-weight: 600;
             }
-           
-            .card_desc{
+
+            .card_desc {
                 color: $color_grey_ter;
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
-                p{
-                    margin-bottom: .5rem;
-                    
+                p {
+                    margin-bottom: 0.5rem;
                 }
             }
-            .card_desc_subtitle{
+            .card_desc_subtitle {
                 font-size: 1.4rem;
             }
-            .apartment_info{
+            .apartment_info {
                 font-size: 1.3rem;
                 font-weight: 500;
                 color: $color_grey_sec;
                 font-weight: 700;
                 letter-spacing: 1px;
-                
-                
             }
-            .apartment_info_adress{
-                font-size: .8rem;
+            .apartment_info_adress {
+                font-size: 0.8rem;
             }
-            .price_info{
+            .price_info {
                 color: $color_logo_primary;
                 font-size: 1.6rem;
-                
-                
             }
-            .dollar{
+            .dollar {
                 font-size: 1.2rem;
                 margin-top: 0;
                 margin-left: 0;
             }
-
         }
 
-    .actions{
-        background-color:#f8fafc ;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        a{
-            color: $color_grey_quar;
-            transition: color 250ms;
-            &:hover{
-                color: $color_grey_sec;
-            }
-            .fa-trash{
-                color: $color_logo_primary;
-                opacity: .5;
-                transition: all 250ms;
-                &:hover{
-                    cursor: pointer;
-                    opacity: 1;
+        .actions {
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            a {
+                color: $color_grey_quar;
+                transition: color 250ms;
+                &:hover {
+                    color: $color_grey_sec;
                 }
-
+                .fa-trash {
+                    color: $color_logo_primary;
+                    opacity: 0.5;
+                    transition: all 250ms;
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
-
-  
-
-    
-    }
-
-    
-        
 }
-
-
 
 /* EDIT SEC */
 
 .edit_sec,
-.create_sec{
+.create_sec {
     padding-top: 5rem;
-    h1{
+    h1 {
         margin-bottom: 2rem;
     }
-  
 
-
-    label{
+    label {
         text-align: end;
         color: $color_grey_sec_light;
         font-weight: 500;
         letter-spacing: 1px;
-       
     }
-    input{
+    input {
         border-radius: 50px;
         background-color: white;
         color: $color_grey_sec;
-      
     }
 
-    .form-control:focus{
-        border-color:#3d0e16;
+    .form-control:focus {
+        border-color: #3d0e16;
         box-shadow: 0 0 0 0.25rem #ff385d11;
     }
-    .form-check-input:checked{
+    .form-check-input:checked {
         background-color: $color_logo_primary;
-        border-color:#3d0e16
+        border-color: #3d0e16;
     }
-    .form-check-input:focus{
+    .form-check-input:focus {
         box-shadow: 0 0 0 0.25rem #ff385d11;
-        border-color:#3d0e16;
-
+        border-color: #3d0e16;
     }
-    .forgot_link{
-        color:$color_logo_primary;
-        font-size: .8rem;
+    .forgot_link {
+        color: $color_logo_primary;
+        font-size: 0.8rem;
         letter-spacing: 1px;
         text-decoration: none;
     }
 
-    .button{
-        padding: .5rem 1.7rem !important;
+    .button {
+        padding: 0.5rem 1.7rem !important;
         color: white !important;
         background-color: $color_logo_primary;
         border-radius: 50px;
@@ -408,28 +366,21 @@ color: $color_grey_sec;}
         border: none;
         transform: scale(1);
         transition: all 250ms;
-        &:hover{
+        &:hover {
             cursor: pointer;
             transform: scale(1.05);
         }
     }
 
-    .img_thumbnail{
+    .img_thumbnail {
         border-radius: 15px;
         box-shadow: 0px 0px 10px #9c9c9cb4;
         width: 100%;
     }
-
-
 }
 
-
-
-
-
-
 // SHOW SEC
-.show_sec{
+.show_sec {
     padding-top: 5rem;
     .card {
         border-radius: 2rem;
@@ -440,7 +391,7 @@ color: $color_grey_sec;}
         }
         h3 {
             letter-spacing: 1.5px;
-            font-size: .9rem;
+            font-size: 0.9rem;
             font-weight: 300;
             padding-left: 0;
         }
@@ -464,7 +415,7 @@ color: $color_grey_sec;}
                 }
             }
         }
-// middle
+        // middle
         .mid {
             .map {
                 padding-left: 1.5rem;
@@ -486,9 +437,9 @@ color: $color_grey_sec;}
                 padding-left: 0;
                 .col {
                     .item_price {
-                       .value {
-                           color: $color_logo_primary;
-                       }
+                        .value {
+                            color: $color_logo_primary;
+                        }
                     }
                     .item {
                         display: flex;
@@ -502,12 +453,12 @@ color: $color_grey_sec;}
                 }
             }
         }
-// bottom
+        // bottom
         .bottom {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
             h2 {
-                margin-bottom: .5rem;
+                margin-bottom: 0.5rem;
             }
             .services {
                 .row {
@@ -519,7 +470,7 @@ color: $color_grey_sec;}
                         margin: 0;
                         i {
                             color: $color_grey_quar;
-                            margin-right: .4rem;
+                            margin-right: 0.4rem;
                         }
                     }
                 }
