@@ -11315,6 +11315,13 @@ header {
 .search_sec .search_form .search_input_wrapper {
   display: flex;
   flex-direction: column;
+  /* regola per eliminare le freccette nell'imput! */
+  /* /regola per eliminare le freccette nell'imput! */
+}
+.search_sec .search_form .search_input_wrapper input[type=number]::-webkit-inner-spin-button,
+.search_sec .search_form .search_input_wrapper input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .search_sec .search_form .search_input_wrapper label {
   color: #5b5b5b;
