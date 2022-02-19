@@ -19,9 +19,9 @@
                     Puoi contattarci qui:
                 </h4>
     
-                <p>
+                <address>
                     terms@bollbnb.com
-                </p>
+                </address>
     
             </div>
     
@@ -33,15 +33,15 @@
                 <div class="icons">
 
                     <a href="#">
-                        <img src="{{asset('img/logo-facebook.png')}}" alt="">
+                        <img id="facebook" src="{{asset('img/pngegg(0).png')}}" alt="">
                     </a>
                         
                     <a href="#">
-                        <img src="{{asset('img/logo-twitter.png')}}" alt="">
+                        <img id="twitter" src="{{asset('img/pngegg(1).png')}}" alt="">
                     </a>
         
                     <a href="#">
-                        <img src="{{asset('img/logo-instagram.png')}}" alt="">
+                        <img id="instagram" src="{{asset('img/pngegg(2).png')}}" alt="">
                     </a>
 
                 </div>

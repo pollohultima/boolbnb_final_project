@@ -11527,72 +11527,6 @@ textarea.form-control-lg {
   transform: scale(1.05);
 }
 
-/* register PAGE */
-/* .footer {
-    hr,
-    h3 {
-        color: white;
-    }
-    background-color: #5b5b5b;
-    // red block
-    .red {
-        width: 90%;
-        margin: auto;
-        height: 300px;
-        background-color: #ff385c;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-
-        h3 {
-            font-size: 0.8rem;
-            display: inline-block;
-            border: 1px solid white;
-            padding: 0.5rem;
-            border-radius: 3rem;
-        }
-        h2 {
-            padding: 0.5rem;
-        }
-
-        .info {
-            display: flex;
-            align-items: center;
-            border-top: 1px solid white;
-            width: 30%;
-            border-top-left-radius: 2rem;
-        }
-
-        .creators {
-            h2 {
-                font-size: 0.9rem;
-            }
-        }
-    }
-    // top
-    .top_footer {
-        .row {
-            justify-content: space-between;
-        }
-    }
-    .copyright {
-        width: 70%;
-    }
-    .infos {
-        width: 30%;
-    }
-
-    // right
-    .right_footer {
-        border-left: 2px solid white;
-    }
-    // bottom
-    .bottom_footer {
-        h4 {
-            font-size: 0.7rem;
-            color: silver;
-        }
-    }
-} */
 /* FOOTER */
 footer {
   background-color: #d1d1d1;
@@ -11600,22 +11534,25 @@ footer {
 }
 footer .logo img {
   width: 120px;
-  margin: 15px 0;
+  margin: 29.12px 0 20px;
   filter: grayscale(100%);
 }
-footer .contatti .mail p:hover {
-  -webkit-text-decoration: dotted;
-          text-decoration: dotted;
+footer address {
+  font-style: italic;
 }
-footer .social a {
+footer .icons {
+  line-height: 35px;
+}
+footer .icons a {
   width: 30px;
   margin-right: 25px;
 }
-footer .social a img {
+footer .icons a img {
   width: 30px;
+  border-radius: 7px;
 }
-footer .social a img:hover {
-  opacity: 70%;
+footer .icons a img:hover {
+  box-shadow: 0 0 2px #ff385c;
 }
 footer ul {
   list-style: none;
