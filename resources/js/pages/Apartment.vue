@@ -1,5 +1,6 @@
 <template>
-<div class="spondored_apartment_container container">
+<div class="sponsored_apartments_container container">
+    <h1 class="page_title py-5">Apartments List</h1>
      <div class="card">
         <div class="card_body">
             <div class="card_img_wrapper">
