@@ -376,24 +376,38 @@ footer{
     
     }
 
+    .about, .new_host{
+        h4{
+            padding: 0 5px;
+        }
 
-    ul{
-        list-style: none;
-        padding-left: 0;
-        
-        li{
-            line-height: 1.5rem;
 
-            a{
-                text-decoration: none;
-                color: $color_grey_sec_light;
-
-                &:hover{
-                    text-decoration: underline;
-                    color: $color_logo_primary;
+        ul{
+            list-style: none;
+            padding-left: 0;
+            
+            li{
+                line-height: 1.5rem;
+    
+                a{
+                    padding: 0 5px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: $color_grey_sec_light;
+    
+                    /* &:hover{
+                        text-decoration: underline;
+                        color: $color_logo_primary;
+                    } */
+    
+                    &:hover{
+                        text-decoration: underline;
+                        color: whitesmoke;
+                        background-image: radial-gradient(closest-corner at 50% 43%, rgba(255, 56, 92, 1), rgba(255, 56, 92, 0.3));
+                    }
                 }
+    
             }
-
         }
     }
 

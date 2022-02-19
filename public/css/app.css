@@ -11558,20 +11558,30 @@ footer .icons a img {
 footer .icons a img:hover {
   box-shadow: 0 0 2px #ff385c;
 }
-footer ul {
+footer .about h4, footer .about .h4, footer .new_host h4, footer .new_host .h4 {
+  padding: 0 5px;
+}
+footer .about ul, footer .new_host ul {
   list-style: none;
   padding-left: 0;
 }
-footer ul li {
+footer .about ul li, footer .new_host ul li {
   line-height: 1.5rem;
 }
-footer ul li a {
+footer .about ul li a, footer .new_host ul li a {
+  padding: 0 5px;
+  border-radius: 10px;
   text-decoration: none;
   color: #686868;
+  /* &:hover{
+      text-decoration: underline;
+      color: $color_logo_primary;
+  } */
 }
-footer ul li a:hover {
+footer .about ul li a:hover, footer .new_host ul li a:hover {
   text-decoration: underline;
-  color: #ff385c;
+  color: whitesmoke;
+  background-image: radial-gradient(closest-corner at 50% 43%, #ff385c, rgba(255, 56, 92, 0.3));
 }
 footer .soft {
   font-size: 0.7rem;
