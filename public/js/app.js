@@ -41941,7 +41941,7 @@ var render = function () {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
-      _c("h1", { staticClass: "py-5 page_title" }, [
+      _c("h1", { staticClass: "pb-5 page_title" }, [
         _vm._v("Sponsored Apartments"),
       ]),
       _vm._v(" "),

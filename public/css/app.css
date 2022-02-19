@@ -11290,6 +11290,10 @@ textarea.form-control-lg {
 }
 
 /* PAGE home.vue */
+.sponsored_apartments_container {
+  padding: 55px 0;
+}
+
 /* HERO SEC*/
 .heroSec {
   width: 100%;

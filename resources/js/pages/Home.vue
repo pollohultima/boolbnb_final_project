@@ -23,7 +23,7 @@
 
     
     <div class="sponsored_apartments_container container">
-      <h1 class="py-5 page_title">Sponsored Apartments</h1>
+      <h1 class="pb-5 page_title">Sponsored Apartments</h1>
       <div class="row justify-content-center g-5">
         <div
           class="col-4 sponsored_apartment_card"
