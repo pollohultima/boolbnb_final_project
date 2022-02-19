@@ -11257,7 +11257,7 @@ body {
   font-size: 0.875rem;
 }
 
-#app {
+.app_cont {
   width: 70%;
   margin: 0 auto;
   padding-left: 2rem;
