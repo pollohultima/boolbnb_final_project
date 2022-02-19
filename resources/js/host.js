@@ -32,7 +32,8 @@ const app = new Vue({
             searchOptions: {
                 key: 'L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs',
                 language: 'it-IT',
-                limit: 5
+                limit: 5,
+                countrySet: 'IT'
             },
             autocompleteOptions: {
                 key: 'L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs',
@@ -42,5 +43,8 @@ const app = new Vue({
         var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
         var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
         document.getElementById('searchbox').append(searchBoxHTML);
+        document.getElementsByClassName('tt-search-box-input')[0].id = 'address';
+        document.getElementsByClassName('tt-search-box-input')[0].name = 'address';
+        document.getElementsByClassName('tt-search-box-input')[0].placeholder = 'Inserisci il tuo indirizzo';
     }
 });

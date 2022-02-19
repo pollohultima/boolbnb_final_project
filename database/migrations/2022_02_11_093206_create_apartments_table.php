@@ -22,8 +22,8 @@ class CreateApartmentsTable extends Migration
             $table->tinyInteger('beds');
             $table->smallInteger('squared_meters');
             $table->string('address');
-            $table->string('longitude')->default(0);
             $table->string('latitude')->default(0);
+            $table->string('longitude')->default(0);
             $table->string('image');
             $table->boolean('is_visible')->default(true);
             $table->tinyInteger('floor')->nullable();
