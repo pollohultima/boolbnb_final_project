@@ -11581,7 +11581,7 @@ footer .about ul li a, footer .new_host ul li a {
 footer .about ul li a:hover, footer .new_host ul li a:hover {
   text-decoration: underline;
   color: whitesmoke;
-  background-image: radial-gradient(closest-corner at 50% 43%, #ff385c, rgba(255, 56, 92, 0.3));
+  background-image: radial-gradient(closest-corner at 50% 63%, #ff385c 55%, rgba(255, 56, 92, 0.3));
 }
 footer .soft {
   font-size: 0.7rem;
