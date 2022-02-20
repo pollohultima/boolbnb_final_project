@@ -11647,17 +11647,27 @@ footer .icons a img {
 footer .icons a img:hover {
   box-shadow: 0 0 2px #ff385c;
 }
-footer .about h4, footer .about .h4, footer .new_host h4, footer .new_host .h4 {
+footer .about h4, footer .about .h4,
+footer .new_host h4,
+footer .new_host .h4,
+footer .suggestions h4,
+footer .suggestions .h4 {
   padding: 0 5px;
 }
-footer .about ul, footer .new_host ul {
+footer .about ul,
+footer .new_host ul,
+footer .suggestions ul {
   list-style: none;
   padding-left: 0;
 }
-footer .about ul li, footer .new_host ul li {
+footer .about ul li,
+footer .new_host ul li,
+footer .suggestions ul li {
   line-height: 1.5rem;
 }
-footer .about ul li a, footer .new_host ul li a {
+footer .about ul li a,
+footer .new_host ul li a,
+footer .suggestions ul li a {
   padding: 0 5px;
   border-radius: 10px;
   text-decoration: none;
@@ -11668,7 +11678,9 @@ footer .about ul li a, footer .new_host ul li a {
       background-image: radial-gradient(closest-corner at 50% 63%, rgba(255, 56, 92, 1) 55%, rgba(255, 56, 92, 0.3));
   } */
 }
-footer .about ul li a:hover, footer .new_host ul li a:hover {
+footer .about ul li a:hover,
+footer .new_host ul li a:hover,
+footer .suggestions ul li a:hover {
   text-decoration: underline;
   color: #ff385c;
 }
