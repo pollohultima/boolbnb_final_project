@@ -23,7 +23,7 @@ class ApartmentController extends Controller
 
     public function advanced_search(Request $request)
     {
-        ddd($request);
+        ddd($request->all());
     }
 
     /**
