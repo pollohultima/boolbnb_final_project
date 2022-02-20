@@ -13,6 +13,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
 
+use function GuzzleHttp\json_encode;
+
 class ApartmentController extends Controller
 {
     /**
@@ -113,8 +115,14 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        $lati = $apartment['latitude'];
 
-        return view('host.apartments.show', compact('apartment'));
+        $long = $apartment['longitude'];
+
+
+
+
+        return view('host.apartments.show', compact('apartment', 'lati', 'long'));
     }
 
     /**
