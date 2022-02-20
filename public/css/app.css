@@ -11252,11 +11252,17 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/* header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+} */
 header {
   width: 100%;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  z-index: 10000;
   top: 0;
+  left: 0;
 }
 
 .navbar {
