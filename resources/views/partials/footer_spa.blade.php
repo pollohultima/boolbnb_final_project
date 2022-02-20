@@ -61,34 +61,73 @@
                 <li>
                     <a href="#">Chi siamo</a>
                 </li>
+
                 <li>
                     <a href="#">Lavora con noi</a>
                 </li>
+
                 <li>
                     <a href="#">Domande frequenti</a>                   
                 </li>
             </ul>
+
         </div> 
 
-        <div class="new_host">
 
-            <h4 class="text-uppercase">diventa host</h4>
+        @if (Route::has('login'))
         
-            <ul>
-                <li>
-                    <a href="#">Prova ad ospitare</a>
-                </li>
-                <li>
-                    <a href="#">Protezione host</a>
-                </li>
-                <li>
-                    <a href="#">Esplora le risorse per gli host</a>
-                </li>
-                <li>
-                    <a href="#">Ospitare responsabilmente</a>
-                </li>
-            </ul>
-        </div>
+            @auth
+
+                <div class="suggestions">
+
+                    <h4 class="text-uppercase">potrebbe interessarti</h4>
+
+                    <ul>
+                        <li>
+                            <a href="#">Protezione host</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Esplora le risorse per gli host</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Ospitare responsabilmente</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            @else
+
+                <div class="new_host">
+        
+                    <h4 class="text-uppercase">diventa host</h4>
+                
+                    <ul>
+                        <li>
+                            <a href="#">Prova ad ospitare</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Protezione host</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Esplora le risorse per gli host</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Ospitare responsabilmente</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+
+            @endauth
+
+        @endif
+
 
     </div>
 
