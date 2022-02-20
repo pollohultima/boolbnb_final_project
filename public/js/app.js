@@ -5176,6 +5176,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5203,6 +5204,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -5395,40 +5399,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5440,7 +5410,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("../api/apartments").then(function (r) {
-      _this.sponsored_apartments_list = r.data;
+      _this.sponsored_apartments_list = r.data.data;
     });
   }
 });
@@ -41715,66 +41685,72 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "spondored_apartment_container container" }, [
-    _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card_body" }, [
-        _c("div", { staticClass: "card_img_wrapper" }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: "/storage/" + _vm.apartment.image, alt: "..." },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card_bottom" }, [
-          _c("div", { staticClass: "card_info" }, [
-            _c("h5", { staticClass: "card_title" }, [
-              _vm._v(_vm._s(_vm.apartment.title)),
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "info_type_wrapper info_type_wrapper_address" },
-              [
-                _c("p", { staticClass: "card_text" }, [
-                  _vm._v(
-                    "\r\n                            " +
-                      _vm._s(_vm.apartment.address) +
-                      "\r\n                        "
-                  ),
-                ]),
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "metres_cost" }, [
-              _c("div", { staticClass: "info_type_wrapper" }, [
-                _c("p", { staticClass: "card_text" }, [
-                  _vm._v(
-                    "\r\n                                " +
-                      _vm._s(_vm.apartment.squared_meters) +
-                      "\r\n                            "
-                  ),
-                ]),
-                _vm._v("\r\n\r\n                            m"),
-                _c("sup", [_vm._v("2")]),
+  return _c(
+    "div",
+    { staticClass: "sponsored_apartments_container container" },
+    [
+      _c("h1", { staticClass: "page_title py-5" }, [_vm._v("Apartments List")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card_body" }, [
+          _c("div", { staticClass: "card_img_wrapper" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "/storage/" + _vm.apartment.image, alt: "..." },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card_bottom" }, [
+            _c("div", { staticClass: "card_info" }, [
+              _c("h5", { staticClass: "card_title" }, [
+                _vm._v(_vm._s(_vm.apartment.title)),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "info_type_wrapper" }, [
-                _c("p", { staticClass: "card_text_cost" }, [
-                  _vm._v(
-                    "\r\n                                " +
-                      _vm._s(_vm.apartment.price) +
-                      "\r\n                            "
-                  ),
+              _c(
+                "div",
+                { staticClass: "info_type_wrapper info_type_wrapper_address" },
+                [
+                  _c("p", { staticClass: "card_text" }, [
+                    _vm._v(
+                      "\r\n                            " +
+                        _vm._s(_vm.apartment.address) +
+                        "\r\n                        "
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "metres_cost" }, [
+                _c("div", { staticClass: "info_type_wrapper" }, [
+                  _c("p", { staticClass: "card_text" }, [
+                    _vm._v(
+                      "\r\n                                " +
+                        _vm._s(_vm.apartment.squared_meters) +
+                        "\r\n                            "
+                    ),
+                  ]),
+                  _vm._v("\r\n\r\n                            m"),
+                  _c("sup", [_vm._v("2")]),
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                _c("div", { staticClass: "info_type_wrapper" }, [
+                  _c("p", { staticClass: "card_text_cost" }, [
+                    _vm._v(
+                      "\r\n                                " +
+                        _vm._s(_vm.apartment.price) +
+                        "\r\n                            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                ]),
               ]),
             ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41799,11 +41775,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "text-center page_title py-5" }, [
-      _vm._v("Apartments List"),
-    ]),
-    _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
+      _c("h1", { staticClass: "page_title py-5" }, [_vm._v("Apartments List")]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row justify-content-center g-5" },
@@ -41853,38 +41827,47 @@ var render = function () {
                         ]
                       ),
                       _vm._v(" "),
+                      _c("div", { staticClass: "metres_cost" }, [
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text" }, [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(apartment.squared_meters) +
+                                "\n                                    "
+                            ),
+                          ]),
+                          _vm._v("\n\n                                    m"),
+                          _c("sup", [_vm._v("2")]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "info_type_wrapper" }, [
+                          _c("p", { staticClass: "card_text_cost" }, [
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(apartment.price) +
+                                "\n                                    "
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "metres_cost" },
+                        { staticClass: "button_wrapper" },
                         [
-                          _c("div", { staticClass: "info_type_wrapper" }, [
-                            _c("p", { staticClass: "card_text" }, [
-                              _vm._v(
-                                "\n                                        " +
-                                  _vm._s(apartment.squared_meters) +
-                                  "\n                                    "
-                              ),
-                            ]),
-                            _vm._v("\n\n                                    m"),
-                            _c("sup", [_vm._v("2")]),
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "info_type_wrapper" }, [
-                            _c("p", { staticClass: "card_text_cost" }, [
-                              _vm._v(
-                                "\n                                        " +
-                                  _vm._s(apartment.price) +
-                                  "\n                                    "
-                              ),
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
-                          ]),
-                          _vm._v(" "),
                           _c(
                             "router-link",
-                            { attrs: { to: "/apartments/" + apartment.slug } },
-                            [_vm._v("cane")]
+                            {
+                              staticClass: "button_view",
+                              attrs: { to: "/apartments/" + apartment.slug },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                visita\n                                "
+                              ),
+                            ]
                           ),
                         ],
                         1
@@ -41972,7 +41955,7 @@ var render = function () {
                     _vm._m(1, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
-                      _c("h5", { staticClass: " card_title" }, [
+                      _c("h5", { staticClass: "card_title" }, [
                         _vm._v(_vm._s(sponsored_apartment.title)),
                       ]),
                       _vm._v(" "),
@@ -41985,9 +41968,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n\n                         " +
+                              "\n                    " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                      "
+                                "\n                  "
                             ),
                           ]),
                         ]
@@ -41997,23 +41980,21 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                            \n\n                            " +
+                              "\n                      " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                          "
+                                "\n                    "
                             ),
                           ]),
-                          _vm._v(
-                            "\n                          \n\n                          m"
-                          ),
+                          _vm._v("\n\n                    m"),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                            \n\n                            " +
+                              "\n                      " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                          "
+                                "\n                    "
                             ),
                           ]),
                           _vm._v(" "),
@@ -42040,9 +42021,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "heroSec" }, [
       _c("div", { staticClass: "hero" }, [
         _c("h2", { staticClass: "welcome_title" }, [
-          _vm._v("Non sai dove andare? "),
+          _vm._v("\n        Non sai dove andare? "),
           _c("br"),
-          _vm._v(" Nessun problema!"),
+          _vm._v("\n        Nessun problema!\n      "),
         ]),
         _vm._v(" "),
         _c(
@@ -42053,7 +42034,7 @@ var staticRenderFns = [
           },
           [
             _c("span", { staticClass: "gradient" }, [
-              _vm._v("\n                parti adesso     \n                 "),
+              _vm._v("\n          parti adesso\n          "),
               _c("i", { staticClass: "fa-solid fa-rocket" }),
             ]),
           ]

@@ -1,8 +1,9 @@
 <template>
     <div>
-        <h1 class="text-center page_title py-5">Apartments List</h1>
+        
 
         <div class="sponsored_apartments_container container">
+            <h1 class="page_title py-5">Apartments List</h1>
         <div class="row justify-content-center g-5">
             <div
                 class="col-4 sponsored_apartment_card"
@@ -62,10 +63,12 @@
                                         <p class="dollar">$</p>
                                     </div>
 
-                                    <router-link
-                                        :to="'/apartments/' + apartment.slug"
-                                        >cane</router-link
-                                    >
+                                    
+                                </div>
+                                <div class="button_wrapper">
+                                <router-link :to="'/apartments/' + apartment.slug" class="button_view">
+                                    visita
+                                    </router-link>
                                 </div>
                             </div>
                         </div>

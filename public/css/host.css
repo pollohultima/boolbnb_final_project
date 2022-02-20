@@ -11257,7 +11257,7 @@ body {
   font-size: 0.875rem;
 }
 
-#app {
+.app_cont {
   width: 70%;
   margin: 0 auto;
   padding-left: 2rem;
@@ -11616,6 +11616,7 @@ body {
 .show_sec .card {
   border-radius: 2rem;
   color: #5b5b5b;
+  box-shadow: 0px 0px 10px rgba(109, 109, 109, 0.158);
 }
 .show_sec .card h2, .show_sec .card .h2 {
   letter-spacing: 2px;

@@ -88,8 +88,8 @@ class ApartmentController extends Controller
 
         $validate_data['slug'] = Str::slug($validate_data['title']);
         $validate_data = Arr::add($validate_data, 'user_id', "$user");
-        $validate_data['latitude'] = $get_lat_long['lat'];
         $validate_data['longitude'] = $get_lat_long['lon'];
+        $validate_data['latitude'] = $get_lat_long['lat'];
         $apartment = Apartment::create($validate_data);
 
 

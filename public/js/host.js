@@ -53494,7 +53494,27 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  mounted: function mounted() {
+    var options = {
+      searchOptions: {
+        key: 'L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs',
+        language: 'it-IT',
+        limit: 5,
+        countrySet: 'IT'
+      },
+      autocompleteOptions: {
+        key: 'L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs',
+        language: 'it-IT'
+      }
+    };
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    document.getElementById('searchbox').append(searchBoxHTML);
+    document.getElementsByClassName('tt-search-box-input')[0].id = 'address';
+    document.getElementsByClassName('tt-search-box-input')[0].name = 'address';
+    document.getElementsByClassName('tt-search-box-input')[0].placeholder = 'Inserisci il tuo indirizzo';
+  }
 });
 
 /***/ }),
@@ -53506,7 +53526,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\host.js */"./resources/js/host.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\js\host.js */"./resources/js/host.js");
 
 
 /***/ })
