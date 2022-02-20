@@ -11249,6 +11249,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.tt-search-box {
+  border-radius: 50px !important;
+}
+
+.tt-search-box-input-container {
+  border-radius: 50px !important;
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
