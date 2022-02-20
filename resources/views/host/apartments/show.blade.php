@@ -100,9 +100,21 @@
     </div>
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
     <script>
+        var lati = "<?php echo "$lati"; ?>";
+        var long = "<?php echo "$long"; ?>";
+
+
+        console.log(lati);
+
+        var HomeCoordinates = [long, lati];
+
         var map = tt.map({
             key: '3a6pOX546txENpMTLIdG3as2UoLVCypG',
             container: 'map',
+            center: HomeCoordinates,
+            zoom: 15
         });
+
+        var marker = new tt.Marker().setLngLat(HomeCoordinates).addTo(map);
     </script>
 @endsection
