@@ -21,6 +21,11 @@ class ApartmentController extends Controller
         /* return ApartmentResource::collection(Apartment::all()->keyBy->slug); */
     }
 
+    public function advanced_search(Request $request)
+    {
+        ddd($request);
+    }
+
     /**
      * Display a listing of the resource.
      *
