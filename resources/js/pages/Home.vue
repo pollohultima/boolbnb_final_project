@@ -21,7 +21,7 @@
             </div>
 
             <div class="search_input_wrapper">
-              <label for="beds">stanze</label>
+              <label for="rooms">stanze</label>
               <input type="number" id="rooms" name="rooms" />
             </div>
 
