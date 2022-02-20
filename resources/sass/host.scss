@@ -487,3 +487,89 @@ body {
         }
     }
 }
+
+
+
+/* footer */
+
+footer{
+    width: calc(100% - 200px);
+    position: sticky;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    background-color: $color_grey_quar;
+    color: $color_grey_sec_light;
+
+    .logo img{
+        width: 120px;
+        margin: 29.12px 0 20px;
+        filter: grayscale(100%);
+
+    }
+
+    address{
+        font-style: italic;
+    }
+
+    .icons{
+        line-height: 35px;
+
+        a{
+            width: 30px;
+            margin-right: 25px;
+
+            
+            img{
+                width: 30px;
+                border-radius: 7px;
+                
+                &:hover{
+                    box-shadow: 0 0 2px $color_logo_primary;
+                }
+            }
+        }
+    
+    }
+
+    .about,
+    .new_host,
+    .suggestions{
+        h4{
+            padding: 0 5px;
+        }
+
+
+        ul{
+            list-style: none;
+            padding-left: 0;
+            
+            li{
+                line-height: 1.5rem;
+    
+                a{
+                    padding: 0 5px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: $color_grey_sec_light;
+    
+                    &:hover{
+                        text-decoration: underline;
+                        color: $color_logo_primary;
+                    }
+    
+                    /* &:hover{
+                        text-decoration: underline;
+                        color: whitesmoke;
+                        background-image: radial-gradient(closest-corner at 50% 63%, rgba(255, 56, 92, 1) 55%, rgba(255, 56, 92, 0.3));
+                    } */
+                }
+    
+            }
+        }
+    }
+
+    .soft{
+        font-size: 0.7rem;
+    }
+}

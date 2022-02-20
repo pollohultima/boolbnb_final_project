@@ -158,6 +158,9 @@
         </main>
     </div>
 
+    <!-- footer -->
+    @include('partials.footer_spa')
+
 </body>
 
 </html>
