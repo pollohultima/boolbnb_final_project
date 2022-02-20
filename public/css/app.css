@@ -11298,6 +11298,10 @@ header {
 }
 
 /* PAGE home.vue */
+.sponsored_apartments_container {
+  padding: 55px 0;
+}
+
 /* HERO SEC*/
 /* SEARCH HERO */
 .search_sec {
@@ -11416,7 +11420,6 @@ header {
 }
 .btn_visit .gradient {
   background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -11612,58 +11615,60 @@ header {
   transform: scale(1.05);
 }
 
-/* register PAGE */
-.footer {
-  background-color: #5b5b5b;
+/* FOOTER */
+footer {
+  background-color: #d1d1d1;
+  color: #686868;
 }
-.footer hr,
-.footer h3,
-.footer .h3 {
-  color: white;
+footer .logo img {
+  width: 120px;
+  margin: 29.12px 0 20px;
+  filter: grayscale(100%);
 }
-.footer .red {
-  width: 90%;
-  margin: auto;
-  height: 300px;
-  background-color: #ff385c;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
+footer address {
+  font-style: italic;
 }
-.footer .red h3, .footer .red .h3 {
-  font-size: 0.8rem;
-  display: inline-block;
-  border: 1px solid white;
-  padding: 0.5rem;
-  border-radius: 3rem;
+footer .icons {
+  line-height: 35px;
 }
-.footer .red h2, .footer .red .h2 {
-  padding: 0.5rem;
+footer .icons a {
+  width: 30px;
+  margin-right: 25px;
 }
-.footer .red .info {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid white;
-  width: 30%;
-  border-top-left-radius: 2rem;
+footer .icons a img {
+  width: 30px;
+  border-radius: 7px;
 }
-.footer .red .creators h2, .footer .red .creators .h2 {
-  font-size: 0.9rem;
+footer .icons a img:hover {
+  box-shadow: 0 0 2px #ff385c;
 }
-.footer .top_footer .row {
-  justify-content: space-between;
+footer .about h4, footer .about .h4, footer .new_host h4, footer .new_host .h4 {
+  padding: 0 5px;
 }
-.footer .copyright {
-  width: 70%;
+footer .about ul, footer .new_host ul {
+  list-style: none;
+  padding-left: 0;
 }
-.footer .infos {
-  width: 30%;
+footer .about ul li, footer .new_host ul li {
+  line-height: 1.5rem;
 }
-.footer .right_footer {
-  border-left: 2px solid white;
+footer .about ul li a, footer .new_host ul li a {
+  padding: 0 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #686868;
+  /* &:hover{
+      text-decoration: underline;
+      color: $color_logo_primary;
+  } */
 }
-.footer .bottom_footer h4, .footer .bottom_footer .h4 {
+footer .about ul li a:hover, footer .new_host ul li a:hover {
+  text-decoration: underline;
+  color: whitesmoke;
+  background-image: radial-gradient(closest-corner at 50% 63%, #ff385c 55%, rgba(255, 56, 92, 0.3));
+}
+footer .soft {
   font-size: 0.7rem;
-  color: silver;
 }
 
 /* APPARTMENTS.VUE */

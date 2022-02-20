@@ -5399,6 +5399,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -41924,7 +41953,7 @@ var render = function () {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
-      _c("h1", { staticClass: "py-5 page_title" }, [
+      _c("h1", { staticClass: "pb-5 page_title" }, [
         _vm._v("Sponsored Apartments"),
       ]),
       _vm._v(" "),
@@ -42039,6 +42068,57 @@ var staticRenderFns = [
             ]),
           ]
         ),
+        _vm._v(" "),
+        _c("div", { staticClass: "search_sec" }, [
+          _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "beds" } }, [_vm._v("letti")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "number", id: "beds", name: "beds" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "beds" } }, [_vm._v("stanze")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "number", id: "rooms", name: "rooms" },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "services" } }, [
+                _vm._v("scegli un servizio:"),
+              ]),
+              _vm._v(" "),
+              _c("select", { attrs: { name: "services", id: "services" } }, [
+                _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "2" } }, [
+                  _vm._v("Posto Macchina"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "submit_search",
+                attrs: { type: "submit", value: "Submit" },
+              },
+              [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+            ),
+          ]),
+        ]),
       ]),
     ])
   },

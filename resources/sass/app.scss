@@ -61,6 +61,10 @@ header{
 
 /* PAGE home.vue */
 
+.sponsored_apartments_container{
+    padding: 55px 0;
+}
+
 /* HERO SEC*/
 /* SEARCH HERO */
 
@@ -191,7 +195,7 @@ header{
     }
     .gradient {
         background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
-        -webkit-background-clip: text;
+        //-webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 }
@@ -214,6 +218,7 @@ header{
 
 .sponsored_apartment_card {
     padding-top: 3rem;
+
     .card {
         border: none;
         border-radius: 20px;
@@ -228,6 +233,7 @@ header{
         height: 50%;
         position: relative;
         cursor: pointer;
+
         &::after {
             content: "";
             width: 100%;
@@ -243,6 +249,7 @@ header{
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
+
         img {
             width: 100%;
             height: 100%;
@@ -274,22 +281,27 @@ header{
     }
 
     .card_info {
+
         .card_title {
             font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
+
         .info_type_wrapper_address {
             padding-top: 0.2rem;
             font-size: 0.7rem;
         }
+
         .info_type_wrapper {
             display: flex;
             align-items: baseline;
+
             .card_text {
                 font-size: 0.8rem;
                 margin: 0;
             }
+
             .fa-location-dot {
                 font-size: 1.4rem;
                 margin-right: 0.5rem;
@@ -301,12 +313,14 @@ header{
             display: flex;
             justify-content: space-between;
         }
+
         .card_text_cost {
             font-size: 2rem;
             margin: 0;
             font-weight: 700;
             letter-spacing: 2px;
         }
+
         .dollar {
             font-size: 1.3rem;
             margin-top: 0;
@@ -328,9 +342,11 @@ header{
         top: -230px;
         right: -25px;
         box-shadow: 0px 0px 10px #4949495b;
+
         .img_wrapper_sponsor {
             width: 22px;
             height: 22px;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -344,6 +360,7 @@ header{
 
 .log_container {
     padding-top: 5rem;
+
     .card {
         border: none;
         border-radius: 20px;
@@ -360,12 +377,14 @@ header{
 
     .form-group {
         margin-bottom: 1.5rem;
+
         label {
             text-align: end;
             color: $color_grey_sec;
             font-weight: 500;
             letter-spacing: 1px;
         }
+
         input {
             border-radius: 50px;
             background-color: white;
@@ -376,14 +395,17 @@ header{
             border-color: #3d0e16;
             box-shadow: 0 0 0 0.25rem #ff385d11;
         }
+
         .form-check-input:checked {
             background-color: $color_logo_primary;
             border-color: #3d0e16;
         }
+
         .form-check-input:focus {
             box-shadow: 0 0 0 0.25rem #ff385d11;
             border-color: #3d0e16;
         }
+
         .forgot_link {
             color: $color_logo_primary;
             font-size: 0.8rem;
@@ -403,77 +425,89 @@ header{
     border: none;
     transform: scale(1);
     transition: all 250ms;
+
     &:hover {
         cursor: pointer;
         transform: scale(1.05);
     }
 }
 
-/* register PAGE */
-// Footer
-.footer {
-    hr,
-    h3 {
-        color: white;
+
+
+/* FOOTER */
+
+footer{
+    background-color: $color_grey_quar;
+    color: $color_grey_sec_light;
+
+    .logo img{
+        width: 120px;
+        margin: 29.12px 0 20px;
+        filter: grayscale(100%);
+
     }
-    background-color: #5b5b5b;
-    // red block
-    .red {
-        width: 90%;
-        margin: auto;
-        height: 300px;
-        background-color: #ff385c;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
 
-        h3 {
-            font-size: 0.8rem;
-            display: inline-block;
-            border: 1px solid white;
-            padding: 0.5rem;
-            border-radius: 3rem;
+    address{
+        font-style: italic;
+    }
+
+    .icons{
+        line-height: 35px;
+
+        a{
+            width: 30px;
+            margin-right: 25px;
+
+            
+            img{
+                width: 30px;
+                border-radius: 7px;
+                
+                &:hover{
+                    box-shadow: 0 0 2px $color_logo_primary;
+                }
+            }
         }
-        h2 {
-            padding: 0.5rem;
+    
+    }
+
+    .about, .new_host{
+        h4{
+            padding: 0 5px;
         }
 
-        .info {
-            display: flex;
-            align-items: center;
-            border-top: 1px solid white;
-            width: 30%;
-            border-top-left-radius: 2rem;
-        }
 
-        .creators {
-            h2 {
-                font-size: 0.9rem;
+        ul{
+            list-style: none;
+            padding-left: 0;
+            
+            li{
+                line-height: 1.5rem;
+    
+                a{
+                    padding: 0 5px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    color: $color_grey_sec_light;
+    
+                    /* &:hover{
+                        text-decoration: underline;
+                        color: $color_logo_primary;
+                    } */
+    
+                    &:hover{
+                        text-decoration: underline;
+                        color: whitesmoke;
+                        background-image: radial-gradient(closest-corner at 50% 63%, rgba(255, 56, 92, 1) 55%, rgba(255, 56, 92, 0.3));
+                    }
+                }
+    
             }
         }
     }
-    // top
-    .top_footer {
-        .row {
-            justify-content: space-between;
-        }
-    }
-    .copyright {
-        width: 70%;
-    }
-    .infos {
-        width: 30%;
-    }
 
-    // right
-    .right_footer {
-        border-left: 2px solid white;
-    }
-    // bottom
-    .bottom_footer {
-        h4 {
-            font-size: 0.7rem;
-            color: silver;
-        }
+    .soft{
+        font-size: 0.7rem;
     }
 }
 
