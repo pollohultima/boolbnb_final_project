@@ -1,9 +1,9 @@
 <template>
-<div class="sponsored_apartments_container container">
-    <h1 class="page_title py-5">Apartments List</h1>
+<div class="sponsored_apartments_container container" style="margin-top: 100px">
+  
      <div class="card">
         <div class="card_body">
-            <div class="card_img_wrapper">
+            <div class="card_img_wrapper" >
                 <img
                     :src="'/storage/' + apartment.image"
                     class="card-img-top"
@@ -26,18 +26,11 @@
                 <div class="card_info">
                     <h5 class="card_title">{{ apartment.title }}</h5>
 
-                    <div class="info_type_wrapper info_type_wrapper_address">
-                        <!-- <i class="fa-solid fa-location-dot"></i> -->
-
-                        <p class="card_text">
-                            {{ apartment.address }}
-                        </p>
-                    </div>
 
                     <div class="metres_cost">
                         <div class="info_type_wrapper">
                             <p class="card_text">
-                                {{ apartment.squared_meters }}
+                             Superficie: {{ apartment.squared_meters }}
                             </p>
 
                             m<sup>2</sup>
@@ -45,9 +38,19 @@
 
                         <div class="info_type_wrapper">
                             <p class="card_text_cost">
-                                {{ apartment.price }}
+                                Prezzo: {{ apartment.price }}
                             </p>
                             <p class="dollar">$</p>
+                        </div>
+                    </div>
+                    <div class="info_type_wrapper info_type_wrapper_address">
+                        <!-- <i class="fa-solid fa-location-dot"></i> -->
+
+                        <p class="card_text">
+                           Indirizzo: {{ apartment.address }}
+                        </p>
+                        <div id="map" class="map col-5">
+
                         </div>
                     </div>
                 </div>
@@ -64,7 +67,7 @@ import axios from "axios";
 export default {
     data() {
         return {
-            apartment: {            }
+            apartment: []
         };
     },
 

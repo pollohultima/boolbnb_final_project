@@ -11703,3 +11703,77 @@ body {
   color: #d1d1d1;
   margin-right: 0.4rem;
 }
+
+/* footer */
+footer {
+  width: calc(100% - 200px);
+  position: -webkit-sticky;
+  position: sticky;
+  right: 0;
+  bottom: 0;
+  left: 200px;
+  background-color: #d1d1d1;
+  color: #686868;
+}
+footer .logo img {
+  width: 120px;
+  margin: 29.12px 0 20px;
+  filter: grayscale(100%);
+}
+footer address {
+  font-style: italic;
+}
+footer .icons {
+  line-height: 35px;
+}
+footer .icons a {
+  width: 30px;
+  margin-right: 25px;
+}
+footer .icons a img {
+  width: 30px;
+  border-radius: 7px;
+}
+footer .icons a img:hover {
+  box-shadow: 0 0 2px #ff385c;
+}
+footer .about h4, footer .about .h4,
+footer .new_host h4,
+footer .new_host .h4,
+footer .suggestions h4,
+footer .suggestions .h4 {
+  padding: 0 5px;
+}
+footer .about ul,
+footer .new_host ul,
+footer .suggestions ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer .about ul li,
+footer .new_host ul li,
+footer .suggestions ul li {
+  line-height: 1.5rem;
+}
+footer .about ul li a,
+footer .new_host ul li a,
+footer .suggestions ul li a {
+  padding: 0 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #686868;
+  /* &:hover{
+      text-decoration: underline;
+      color: whitesmoke;
+      background-image: radial-gradient(closest-corner at 50% 63%, rgba(255, 56, 92, 1) 55%, rgba(255, 56, 92, 0.3));
+  } */
+}
+footer .about ul li a:hover,
+footer .new_host ul li a:hover,
+footer .suggestions ul li a:hover {
+  text-decoration: underline;
+  color: #ff385c;
+}
+footer .soft {
+  font-size: 0.7rem;
+}

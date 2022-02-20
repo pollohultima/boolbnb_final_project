@@ -19,9 +19,6 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-
-
-
 /* Routes for Host */
 Route::middleware('auth')->prefix('host')->namespace('Host')->name('host.')->group(function () {
 
@@ -32,3 +29,7 @@ Route::middleware('auth')->prefix('host')->namespace('Host')->name('host.')->gro
     Route::resource('sponsors', SponsorController::class);
     Route::resource('views', ViewController::class);
 });
+
+Route::get('/{any}', function () {
+    return view('guest.welcome');
+})->where('any', '.*');
