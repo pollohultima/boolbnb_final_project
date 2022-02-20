@@ -96,7 +96,7 @@ class ApartmentController extends Controller
 
         foreach ($apartment_list as $p) {
             if ($km_radius > 0) {
-                if (haversineGreatCircleDistance($p->latitude, $p->longitude, $lon_from, $lat_from) * 1000 > $km_radius) {
+                if (haversineGreatCircleDistance($p->latitude, $p->longitude, $lon_from, $lat_from) / 1000 > $km_radius) {
                     unset($p);
                 };
             }
