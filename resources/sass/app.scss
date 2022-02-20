@@ -515,6 +515,96 @@ footer{
 
 
 /* APPARTMENTS.VUE */
+
+//form
+
+.search_apartment{
+    padding: 4rem 1.5rem;
+    padding-bottom: 3rem;
+    border-radius: 25px;
+    width: 65%;
+    margin:0  auto;
+
+    .search_form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search_input_wrapper{
+            display: flex;
+            flex-direction: column;
+
+            /* regola per eliminare le freccette nell'imput! */
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button{   
+
+                -webkit-appearance: none;
+                margin: 0;
+            }   
+            /* /regola per eliminare le freccette nell'imput! */
+
+            label{
+                color: $color_grey_sec;
+                font-size:.8rem;
+                margin-bottom: .5rem;
+                letter-spacing: 1px;
+                padding-left: .6rem;
+                color: black;
+            }
+
+            input,
+            select{
+                padding: .4rem .5rem;
+                border-radius: 50px;
+                border: none;
+                width: 250px;
+                background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
+                color: white;
+                font-weight: 600;
+                letter-spacing: 1px;
+
+                option{
+                    color: $color_grey_sec;
+                }
+
+                &:focus-visible{
+                    /* outline: 0; */
+                    outline: 0;
+                    box-shadow: 0px 0px 10px #ffffff3d;
+                }
+            }
+        
+        }
+
+        .submit_search{
+            align-self: flex-end;
+            width: 50px;
+            height: 50px;
+            border-radius: 100px;
+            background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            margin-top: .5rem;
+            transform: scale(1);
+            transition: all 250ms;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+
+            i{
+                font-size: 1rem;
+                color: white;
+            }
+
+        }
+    }
+
+}
+
+
 .button_wrapper{
     margin-top: 1rem;
 }
@@ -540,7 +630,6 @@ footer{
 
 
 /* appartment show */
-
 
 .sponsored_apartments_container{
     padding-top: 5rem;

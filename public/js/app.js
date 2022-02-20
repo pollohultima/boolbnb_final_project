@@ -5286,6 +5286,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41804,6 +41838,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
       _c("h1", { staticClass: "page_title py-5" }, [_vm._v("Apartments List")]),
       _vm._v(" "),
@@ -41828,7 +41864,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(0, true),
+                    _vm._m(1, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
@@ -41914,6 +41950,57 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "search_apartment mt-5" }, [
+      _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
+        _c("div", { staticClass: "search_input_wrapper" }, [
+          _c("label", { attrs: { for: "beds" } }, [_vm._v("letti")]),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "number", id: "beds", name: "beds" } }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "search_input_wrapper" }, [
+          _c("label", { attrs: { for: "beds" } }, [_vm._v("stanze")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "number", id: "rooms", name: "rooms" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "search_input_wrapper" }, [
+          _c("label", { attrs: { for: "services" } }, [
+            _vm._v("scegli un servizio:"),
+          ]),
+          _vm._v(" "),
+          _c("select", { attrs: { name: "services", id: "services" } }, [
+            _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "2" } }, [_vm._v("Posto Macchina")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "submit_search",
+            attrs: { type: "submit", value: "Submit" },
+          },
+          [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+        ),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -42080,7 +42167,7 @@ var staticRenderFns = [
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "search_input_wrapper" }, [
-              _c("label", { attrs: { for: "beds" } }, [_vm._v("stanze")]),
+              _c("label", { attrs: { for: "rooms" } }, [_vm._v("stanze")]),
               _vm._v(" "),
               _c("input", {
                 attrs: { type: "number", id: "rooms", name: "rooms" },
