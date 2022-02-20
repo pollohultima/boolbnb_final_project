@@ -2,7 +2,6 @@
     <div>
 
         <div class="search_apartment mt-5">
-
             <form action="" class="search_form">
 
                 <div class="search_input_wrapper">
@@ -37,7 +36,7 @@
         
 
         <div class="sponsored_apartments_container container">
-            <h1 class="page_title py-5">Apartments List</h1>
+            <h1 class="page_title py-5">Scopri la soluzione più adatta a te</h1>
         <div class="row justify-content-center g-5">
             <div
                 class="col-4 sponsored_apartment_card"

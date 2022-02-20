@@ -4,15 +4,14 @@
 <head>
     @include('partials.tag_head')
 
-   
-  
+
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <!-- footer style -->
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
+    <!-- footer style -->
 </head>
 
 <body>
@@ -28,6 +27,7 @@
         <!-- footer -->
         @include('partials.footer_spa')
     </div>
+
 </body>
 
 </html>
