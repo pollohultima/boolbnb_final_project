@@ -53,7 +53,7 @@
 
             <div class="mb-3">
                 <label for="address" class="form-label">Indirizzo</label>
-                <div id="searchbox" style="border-radius: 50px;"></div>
+                <div id="searchbox" value="{{ old('address') }}" style="border-radius: 50px;"></div>
                 {{-- <input type="text" name="address" id="address" class="form-control  @error('address') is_invalid @enderror"
                 placeholder="Esempio: Via Roma 1 Padova Italy" aria-describedby="helpId" value="{{ old('address') }}"> --}}
             </div>
@@ -83,8 +83,8 @@
                 class="form-control  @error('description') is_invalid @enderror"
                 placeholder="Inserisci una breve descrizione" aria-describedby="helpId" value="{{ old('description') }}"> --}}
                 <textarea class="form-control" name="description" id="description" rows="5"
-                    @error('description') is_invalid @enderror placeholder="Inserisci una breve descrizione"
-                    aria-describedby="helpId" value="{{ old('description') }}"></textarea>
+                    @error('description') is_invalid @enderror placeholder="{{ old('description') }}"
+                    aria-describedby="helpId"></textarea>
             </div>
 
 
