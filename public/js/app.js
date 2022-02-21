@@ -5543,6 +5543,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -42297,29 +42301,29 @@ var render = function () {
                           _vm._v(" "),
                           _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
                         ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "button_wrapper" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "button_view",
-                                attrs: {
-                                  to: "/apartments/" + sponsored_apartment.slug,
-                                },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                            visita\n                                        "
-                                ),
-                              ]
-                            ),
-                          ],
-                          1
-                        ),
                       ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "button_wrapper" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "button_view",
+                              attrs: {
+                                to: "/apartments/" + sponsored_apartment.slug,
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                        visita\n                                    "
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
+                      ),
                     ]),
                   ]),
                 ]),
@@ -58240,9 +58244,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })

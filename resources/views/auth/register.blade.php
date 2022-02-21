@@ -1,7 +1,7 @@
 @extends('layouts.spa')
 
 @section('content')
-    <div class="container log_container">
+    <div class="container log_container padding_top">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">

@@ -11520,6 +11520,7 @@ header {
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 .sponsored_apartment_card .card_info .card_text_cost {
   font-size: 2rem;
