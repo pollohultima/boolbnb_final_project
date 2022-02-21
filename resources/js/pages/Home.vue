@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <!-- herosec SEC -->
         <div class="heroSec">
@@ -8,40 +7,13 @@
                     Non sai dove andare? <br />
                     Nessun problema!
                 </h2>
-                <a href="#" class="btn_visit d-flex align-items-center">
-                    <span class="gradient">
-                        parti adesso
-                        <i class="fa-solid fa-rocket"></i>
-                    </span>
-                </a>
+               
                 <div class="search_sec">
                     <form action="" class="search_form">
                         <div class="search_input_wrapper">
                             <label for="beds">letti</label>
                             <input type="number" id="beds" name="beds" />
                         </div>
-=======
-  <div>
-    <!-- herosec SEC -->
-    <div class="heroSec">
-      <div class="hero">
-        <h2 class="welcome_title">
-          Non sai dove andare? <br />
-          Nessun problema!
-        </h2>
-       <!--  <a href="#" class="btn_visit d-flex align-items-center">
-          <span class="gradient">
-            parti adesso
-            <i class="fa-solid fa-rocket"></i>
-          </span>
-        </a> -->
-        <div class="search_sec">
-          <form action="" class="search_form">
-            <div class="search_input_wrapper">
-              <label for="beds">letti</label>
-              <input type="number" id="beds" name="beds" />
-            </div>
->>>>>>> e96d33904ebfc7a216c31527aa54333c7b07640f
 
                         <div class="search_input_wrapper">
                             <label for="rooms">stanze</label>
