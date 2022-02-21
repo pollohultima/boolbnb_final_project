@@ -3,7 +3,7 @@
     <div class="search_apartment mt-5">
       <div class="search_form">
         <div class="search_input_wrapper">
-          <label for="beds">letti</label>
+          <label for="beds">Letti</label>
           <input v-model="beds" type="number" id="beds" name="beds" />
         </div>
 
@@ -13,7 +13,7 @@
         </div>
 
         <div class="search_input_wrapper">
-          <label for="beds">stanze</label>
+          <label for="beds">Stanze</label>
           <input v-model="rooms" type="number" id="rooms" name="rooms" />
         </div>
 
@@ -30,7 +30,7 @@
         </div> -->
 
         <div class="search_input_wrapper">
-          <label for="km_radius">Raggio di ricerca(km)</label>
+          <label for="km_radius">Tolleranza(km)</label>
           <input
             v-model="km_radius"
             type="number"
