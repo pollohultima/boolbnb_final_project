@@ -5487,6 +5487,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -42128,7 +42141,7 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
       _c("h1", { staticClass: "pb-5 page_title" }, [
-        _vm._v("Sponsored Apartments"),
+        _vm._v("Appartamenti sponsorizzati"),
       ]),
       _vm._v(" "),
       _c(
@@ -42159,7 +42172,11 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
-                        _vm._v(_vm._s(sponsored_apartment.title)),
+                        _vm._v(
+                          "\n                                    " +
+                            _vm._s(sponsored_apartment.title) +
+                            "\n                                "
+                        ),
                       ]),
                       _vm._v(" "),
                       _c(
@@ -42171,9 +42188,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                    " +
+                              "\n                                        " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                  "
+                                "\n                                    "
                             ),
                           ]),
                         ]
@@ -42183,21 +42200,23 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                                            " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                    "
+                                "\n                                        "
                             ),
                           ]),
-                          _vm._v("\n\n                    m"),
+                          _vm._v(
+                            "\n\n                                        m"
+                          ),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                                            " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                    "
+                                "\n                                        "
                             ),
                           ]),
                           _vm._v(" "),
@@ -42218,7 +42237,7 @@ var render = function () {
                               },
                               [
                                 _vm._v(
-                                  "\n                                  visita\n                                  "
+                                  "\n                                            visita\n                                        "
                                 ),
                               ]
                             ),
@@ -42246,9 +42265,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "heroSec" }, [
       _c("div", { staticClass: "hero" }, [
         _c("h2", { staticClass: "welcome_title" }, [
-          _vm._v("\n        Non sai dove andare? "),
+          _vm._v("\n                Non sai dove andare? "),
           _c("br"),
-          _vm._v("\n        Nessun problema!\n      "),
+          _vm._v("\n                Nessun problema!\n            "),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "search_sec" }, [
@@ -58128,9 +58147,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })

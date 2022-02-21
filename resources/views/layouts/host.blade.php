@@ -96,7 +96,7 @@
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                                                                                 document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
 
@@ -123,7 +123,6 @@
                         <a class="nav_link_aside" aria-current="page" href="">
                             <i class="fas fa-tachometer-alt"></i>
                             <h4 class="dash_title">
-
                                 Dashboard
                             </h4>
                         </a>
@@ -132,8 +131,7 @@
                         <a class="nav_link_aside" href="{{ route('host.apartments.index') }}">
                             <i class="fas fa-home"></i>
                             <h4 class="dash_title">
-
-                                Apartments
+                                Appartamenti
                             </h4>
                         </a>
                     </li>
@@ -142,8 +140,7 @@
                         <a class="nav_link_aside" href="">
                             <i class="fas fa-tags"></i>
                             <h4 class="dash_title">
-
-                                Messages
+                                Messaggi
                             </h4>
 
                         </a>
@@ -159,7 +156,6 @@
     </div>
 
     <!-- footer -->
-    @include('partials.footer_spa')
 
 </body>
 
