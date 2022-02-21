@@ -47,11 +47,13 @@
         <div class="sponsored_apartments_container container">
             <h1 class="pb-5 page_title">Appartamenti sponsorizzati</h1>
             <div class="row justify-content-center g-5">
+
                 <div
                     class="col-4 sponsored_apartment_card"
                     v-for="sponsored_apartment in sponsored_apartments_list"
                     :key="sponsored_apartment.slug"
                 >
+                    <!-- inizio card -->
                     <div class="card">
                         <div class="card_body">
                             <div class="card_img_wrapper">
@@ -65,7 +67,8 @@
                             </div>
 
                             <div class="card_bottom">
-                                <!-- <h6 class="card-subtitle mb-2 text-muted">Sponsored</h6> -->
+
+                                <!-- Bollino solo sponsorizzati -->
                                 <div class="sponsored">
                                     <div class="img_wrapper_sponsor">
                                         <img
@@ -75,17 +78,17 @@
                                         />
                                     </div>
                                 </div>
+                                <!-- /Bollino solo sponsorizzati -->
+
 
                                 <div class="card_info">
                                     <h5 class="card_title">
                                         {{ sponsored_apartment.title }}
                                     </h5>
 
-                                    <div
-                                        class="info_type_wrapper info_type_wrapper_address"
-                                    >
+                                    <div class="info_type_wrapper info_type_wrapper_address">
+                                        
                                         <!-- <i class="fa-solid fa-location-dot"></i> -->
-
                                         <p class="card_text">
                                             {{ sponsored_apartment.address }}
                                         </p>
@@ -108,23 +111,24 @@
                                             </p>
                                             <p class="dollar">$</p>
                                         </div>
-                                        <div class="button_wrapper">
-                                            <router-link
-                                                :to="
-                                                    '/apartments/' +
-                                                    sponsored_apartment.slug
-                                                "
-                                                class="button_view"
-                                            >
-                                                visita
-                                            </router-link>
-                                        </div>
                                     </div>
+
+                                    <div class="button_wrapper">
+                                        <router-link
+                                            :to="'/apartments/' + sponsored_apartment.slug"                                    
+                                            class="button_view"
+                                            >
+                                            visita
+                                        </router-link>
+                                    </div>    
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /fine card -->
+
                 </div>
+
             </div>
         </div>
     </div>

@@ -15,7 +15,9 @@
 /* header{
     width: 100%;
     position: sticky;
+    z-index: 10000;
     top: 0;
+    left: 0;
 } */
 header{
     width: 100%;
@@ -317,6 +319,7 @@ header{
             padding-top: 1rem;
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
         }
 
         .card_text_cost {
@@ -418,6 +421,10 @@ header{
             text-decoration: none;
         }
     }
+}
+
+.padding_top{
+    padding: 10rem 0;
 }
 
 .button {
@@ -579,6 +586,10 @@ footer{
                 color: white;
                 font-weight: 600;
                 letter-spacing: 1px;
+
+               /*  &:-internal-autofill-selected{
+                    background-color: red;
+                } */
 
                 option{
                     color: $color_grey_sec;
@@ -749,4 +760,64 @@ footer{
             margin-left: 0.2rem;
         }
     }
+}
+
+
+
+
+/* APARTMENTS_page */
+
+
+
+
+.apartments_page{
+    padding-top: 8rem;
+    .search_form{
+        display: flex;
+        flex-direction: column;
+
+        .form_search_top,
+        .form_search_bottom{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+
+
+            
+            #beds,
+            #rooms,
+            #km_radius{
+                width: 264px;
+            }
+
+            #address{
+                width: 530px;
+            }
+
+
+
+            .search_input_wrapper{
+                label{
+                    font-size:0.7rem;
+                    margin-bottom: 0.2rem;
+                    
+                }
+
+                input,
+                select{
+                    color: $color_grey_sec;
+                    background: white;
+                    box-shadow:0px 0px 10px rgba(141, 140, 140, 0.322);
+                }
+            }
+        }
+
+        .form_search_top{
+          padding-bottom: 2rem;
+        }
+
+
+    }
+
+ 
 }

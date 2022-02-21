@@ -11255,7 +11255,9 @@ textarea.form-control-lg {
 /* header{
     width: 100%;
     position: sticky;
+    z-index: 10000;
     top: 0;
+    left: 0;
 } */
 header {
   width: 100%;
@@ -11518,6 +11520,7 @@ header {
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 .sponsored_apartment_card .card_info .card_text_cost {
   font-size: 2rem;
@@ -11602,6 +11605,10 @@ header {
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-decoration: none;
+}
+
+.padding_top {
+  padding: 10rem 0;
 }
 
 .button {
@@ -11738,6 +11745,9 @@ footer .soft {
   color: white;
   font-weight: 600;
   letter-spacing: 1px;
+  /*  &:-internal-autofill-selected{
+       background-color: red;
+   } */
 }
 .search_apartment .search_form .search_input_wrapper input option,
 .search_apartment .search_form .search_input_wrapper select option {
@@ -11880,4 +11890,46 @@ footer .soft {
   font-size: 1.3rem;
   margin-top: 0;
   margin-left: 0.2rem;
+}
+
+/* APARTMENTS_page */
+.apartments_page {
+  padding-top: 8rem;
+}
+.apartments_page .search_form {
+  display: flex;
+  flex-direction: column;
+}
+.apartments_page .search_form .form_search_top,
+.apartments_page .search_form .form_search_bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.apartments_page .search_form .form_search_top #beds,
+.apartments_page .search_form .form_search_top #rooms,
+.apartments_page .search_form .form_search_top #km_radius,
+.apartments_page .search_form .form_search_bottom #beds,
+.apartments_page .search_form .form_search_bottom #rooms,
+.apartments_page .search_form .form_search_bottom #km_radius {
+  width: 264px;
+}
+.apartments_page .search_form .form_search_top #address,
+.apartments_page .search_form .form_search_bottom #address {
+  width: 530px;
+}
+.apartments_page .search_form .form_search_top .search_input_wrapper label,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper label {
+  font-size: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+.apartments_page .search_form .form_search_top .search_input_wrapper input,
+.apartments_page .search_form .form_search_top .search_input_wrapper select,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper input,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper select {
+  background: white;
+  box-shadow: 0px 0px 10px rgba(141, 140, 140, 0.322);
+}
+.apartments_page .search_form .form_search_top {
+  padding-bottom: 2rem;
 }

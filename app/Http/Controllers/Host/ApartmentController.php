@@ -65,15 +65,15 @@ class ApartmentController extends Controller
 
         $validate_data = $request->validate([
             'title' => ['required', 'unique:apartments', 'max:200'],
-            'rooms' => ['required'],
-            'bathrooms' => ['required'],
-            'beds' => ['required'],
-            'squared_meters' => ['required'],
+            'rooms' => ['required', 'numeric'],
+            'bathrooms' => ['required', 'numeric'],
+            'beds' => ['required', 'numeric'],
+            'squared_meters' => ['required', 'numeric'],
             'address' => ['required'],
             'image' => ['required', 'image', 'max:500'],
             'is_visible' => ['required'],
-            'floor' => ['nullable'],
-            'price' => ['nullable'],
+            'floor' => ['nullable', 'numeric'],
+            'price' => ['nullable', 'numeric'],
             'description' => ['nullable'],
         ]);
 
@@ -163,15 +163,15 @@ class ApartmentController extends Controller
 
             $validate_data = $request->validate([
                 'title' => ['required', Rule::unique('apartments')->ignore($apartment->id), 'max:200'],
-                'rooms' => ['required'],
-                'bathrooms' => ['required'],
-                'beds' => ['required'],
-                'squared_meters' => ['required'],
+                'rooms' => ['required', 'numeric'],
+                'bathrooms' => ['required', 'numeric'],
+                'beds' => ['required', 'numeric'],
+                'squared_meters' => ['required', 'numeric'],
                 'address' => ['required'],
                 'image' => ['nullable', 'image', 'max:500'],
                 'is_visible' => ['required'],
-                'floor' => ['nullable'],
-                'price' => ['nullable'],
+                'floor' => ['nullable', 'numeric'],
+                'price' => ['nullable', 'numeric'],
                 'description' => ['nullable'],
             ]);
 
@@ -215,6 +215,7 @@ class ApartmentController extends Controller
     {
 
         if (Auth::id() === $apartment->user_id) {
+
             $apartment->delete();
             return redirect()->route('host.apartments.index');
         } else {

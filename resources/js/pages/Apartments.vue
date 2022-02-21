@@ -1,22 +1,74 @@
 <template>
   <div>
-    <div class="search_apartment mt-5">
+    <div class="search_apartment mt-5 apartments_page">
       <div class="search_form">
-        <div class="search_input_wrapper">
-          <label for="beds">Letti</label>
-          <input v-model="beds" type="number" id="beds" name="beds" />
+        <div class="form_search_top">
+
+            <div class="search_input_wrapper">
+              <label for="address">Indirizzo</label>
+              <input v-model="address" type="text" id="address" name="address" />
+            </div>
+
+            <div class="search_input_wrapper">
+            <label for="km_radius">Raggio(km)</label>
+            <input v-model="km_radius" type="number" id="km_radius" name="km_radius"/>
+           </div>
+
+           
+
         </div>
 
-        <div class="search_input_wrapper">
-          <label for="address">Indirizzo</label>
-          <input v-model="address" type="text" id="address" name="address" />
+        <div class="form_search_bottom">
+
+           <div class="search_input_wrapper">
+              <label for="beds">Letti</label>
+              <input v-model="beds" type="number" id="beds" name="beds" />
+            </div>
+
+            
+
+            <div class="search_input_wrapper">
+             <label for="beds">Stanze</label>
+             <input v-model="rooms" type="number" id="rooms" name="rooms" />
+            </div>
+
+
+                 <div class="search_input_wrapper">
+                            <label for="services">Scegli un servizio:</label>
+                            <select name="services" id="services">
+                                <option value="1">WiFi</option>
+                                <option value="2">Posto Macchina</option>
+                                <option value="3">piscina</option>
+                                <option value="4">Portineria</option>
+                                <option value="5">Sauna</option>
+                                <option value="6">Vista Mare</option>
+                            </select>
+
+                            
+
+
+
+                </div>
+
+
+
+           <button @click="get_apartments" class="submit_search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+
         </div>
 
-        <div class="search_input_wrapper">
-          <label for="beds">Stanze</label>
-          <input v-model="rooms" type="number" id="rooms" name="rooms" />
-        </div>
 
+      
+       
+
+
+
+
+        
+
+       
         <!-- <div class="search_input_wrapper">
           <label for="services">scegli un servizio:</label>
           <select name="services" id="services">
@@ -29,24 +81,15 @@
           </select>
         </div> -->
 
-        <div class="search_input_wrapper">
-          <label for="km_radius">Tolleranza(km)</label>
-          <input
-            v-model="km_radius"
-            type="number"
-            id="km_radius"
-            name="km_radius"
-          />
-        </div>
+        
 
-        <button @click="get_apartments" class="submit_search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+       
+
       </div>
     </div>
 
     <div class="sponsored_apartments_container container">
-      <h1 class="page_title py-5">Apartments List</h1>
+      <h1 class="page_title py-5">Scopri la soluzione più adatta a te</h1>
       <div class="row justify-content-center g-5">
         <div
           class="col-4 sponsored_apartment_card"
