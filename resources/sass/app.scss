@@ -529,13 +529,14 @@ footer{
     padding: 4rem 1.5rem;
     padding-bottom: 3rem;
     border-radius: 25px;
-    width: 65%;
+    width: 70%;
     margin:0  auto;
 
     .search_form{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items:center;
+        flex-wrap: wrap;
 
         .search_input_wrapper{
             display: flex;
@@ -559,12 +560,21 @@ footer{
                 color: black;
             }
 
+            #beds,
+            #rooms,
+            #km_radius{
+                width: 100px;
+            }
+
+            #address{
+                width: 350px;
+            }
+
             input,
             select{
                 padding: .4rem .5rem;
                 border-radius: 50px;
                 border: none;
-                width: 250px;
                 background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
                 color: white;
                 font-weight: 600;
