@@ -5347,7 +5347,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.encoded_address = encodeURIComponent(this.address);
-      axios.get("../api/advanced_search?rooms=" + this.rooms + "&km_radius=" + this.km_radius + "&address=" + this.encoded_address).then(function (r) {
+      axios.get("../api/advanced_search?rooms=" + this.rooms + "&beds=" + this.beds + "&km_radius=" + this.km_radius + "&address=" + this.encoded_address).then(function (r) {
         _this.apartments = r.data;
         console.log(r);
       });
@@ -5368,6 +5368,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -41981,7 +41992,9 @@ var render = function () {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
-      _c("h1", { staticClass: "page_title py-5" }, [_vm._v("Apartments List")]),
+      _c("h1", { staticClass: "page_title py-5" }, [
+        _vm._v("Scopri la soluzione più adatta a te"),
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -42130,7 +42143,7 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
       _c("h1", { staticClass: "pb-5 page_title" }, [
-        _vm._v("Sponsored Apartments"),
+        _vm._v("Appartamenti sponsorizzati"),
       ]),
       _vm._v(" "),
       _c(
@@ -42161,7 +42174,11 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
-                        _vm._v(_vm._s(sponsored_apartment.title)),
+                        _vm._v(
+                          "\n                                    " +
+                            _vm._s(sponsored_apartment.title) +
+                            "\n                                "
+                        ),
                       ]),
                       _vm._v(" "),
                       _c(
@@ -42173,9 +42190,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                    " +
+                              "\n                                        " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                  "
+                                "\n                                    "
                             ),
                           ]),
                         ]
@@ -42185,49 +42202,51 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                                            " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                    "
+                                "\n                                        "
                             ),
                           ]),
-                          _vm._v("\n\n                    m"),
+                          _vm._v(
+                            "\n\n                                        m"
+                          ),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                                            " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                    "
+                                "\n                                        "
                             ),
                           ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
                         ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "button_wrapper" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "button_view",
-                              attrs: {
-                                to: "/apartments/" + sponsored_apartment.slug,
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "button_wrapper" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "button_view",
+                                attrs: {
+                                  to: "/apartments/" + sponsored_apartment.slug,
+                                },
                               },
-                            },
-                            [
-                              _vm._v(
-                                "\n                                  visita\n                                  "
-                              ),
-                            ]
-                          ),
-                        ],
-                        1
-                      ),
+                              [
+                                _vm._v(
+                                  "\n                                            visita\n                                        "
+                                ),
+                              ]
+                            ),
+                          ],
+                          1
+                        ),
+                      ]),
                     ]),
                   ]),
                 ]),
@@ -42248,9 +42267,9 @@ var staticRenderFns = [
     return _c("div", { staticClass: "heroSec" }, [
       _c("div", { staticClass: "hero" }, [
         _c("h2", { staticClass: "welcome_title" }, [
-          _vm._v("\n        Non sai dove andare? "),
+          _vm._v("\n                Non sai dove andare? "),
           _c("br"),
-          _vm._v("\n        Nessun problema!\n      "),
+          _vm._v("\n                Nessun problema!\n            "),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "search_sec" }, [
