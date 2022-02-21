@@ -3,72 +3,63 @@
     <div class="search_apartment mt-5 apartments_page">
       <div class="search_form">
         <div class="form_search_top">
+          <div class="search_input_wrapper">
+            <label for="address">Indirizzo</label>
+            <input v-model="address" type="text" id="address" name="address" />
+          </div>
 
-            <div class="search_input_wrapper">
-              <label for="address">Indirizzo</label>
-              <input v-model="address" type="text" id="address" name="address" />
-            </div>
-
-            <div class="search_input_wrapper">
+          <div class="search_input_wrapper">
             <label for="km_radius">Raggio(km)</label>
-            <input v-model="km_radius" type="number" id="km_radius" name="km_radius"/>
-           </div>
-
-           
-
+            <input
+              v-model.number="km_radius"
+              @keypress="onlyNumber"
+              type="number"
+              id="km_radius"
+              name="km_radius"
+            />
+          </div>
         </div>
 
         <div class="form_search_bottom">
+          <div class="search_input_wrapper">
+            <label for="beds">Letti</label>
+            <input
+              v-model.number="beds"
+              @keypress="onlyNumber"
+              type="number"
+              id="beds"
+              name="beds"
+            />
+          </div>
 
-           <div class="search_input_wrapper">
-              <label for="beds">Letti</label>
-              <input v-model="beds" type="number" id="beds" name="beds" />
-            </div>
+          <div class="search_input_wrapper">
+            <label for="beds">Stanze</label>
+            <input
+              v-model.number="rooms"
+              type="number"
+              @keypress="onlyNumber"
+              id="rooms"
+              name="rooms"
+            />
+          </div>
 
-            
+          <div class="search_input_wrapper">
+            <label for="services">Scegli un servizio:</label>
+            <select name="services" id="services" multiple>
+              <option value="1">WiFi</option>
+              <option value="2">Posto Macchina</option>
+              <option value="3">piscina</option>
+              <option value="4">Portineria</option>
+              <option value="5">Sauna</option>
+              <option value="6">Vista Mare</option>
+            </select>
+          </div>
 
-            <div class="search_input_wrapper">
-             <label for="beds">Stanze</label>
-             <input v-model="rooms" type="number" id="rooms" name="rooms" />
-            </div>
-
-
-                 <div class="search_input_wrapper">
-                            <label for="services">Scegli un servizio:</label>
-                            <select name="services" id="services">
-                                <option value="1">WiFi</option>
-                                <option value="2">Posto Macchina</option>
-                                <option value="3">piscina</option>
-                                <option value="4">Portineria</option>
-                                <option value="5">Sauna</option>
-                                <option value="6">Vista Mare</option>
-                            </select>
-
-                            
-
-
-
-                </div>
-
-
-
-           <button @click="get_apartments" class="submit_search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-
-
+          <button @click="get_apartments" class="submit_search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
 
-
-      
-       
-
-
-
-
-        
-
-       
         <!-- <div class="search_input_wrapper">
           <label for="services">scegli un servizio:</label>
           <select name="services" id="services">
@@ -80,11 +71,6 @@
             <option value="6">Vista Mare</option>
           </select>
         </div> -->
-
-        
-
-       
-
       </div>
     </div>
 
@@ -175,19 +161,37 @@ export default {
       rooms: "",
       km_radius: "",
       encoded_address: "",
+      url_rooms: "&rooms=0",
+      url_beds: "&beds=0",
+      url_km_radius: "&km_radius=0",
     };
   },
   methods: {
+    onlyNumber($event) {
+      //console.log($event.keyCode); //keyCodes value
+      let keyCode = $event.keyCode ? $event.keyCode : $event.which;
+      if (keyCode < 48 || keyCode > 57) {
+        // 46 is dot
+        $event.preventDefault();
+      }
+    },
     get_apartments() {
+      if (this.rooms > 0) {
+        this.url_rooms = "&rooms=" + this.rooms;
+      }
+      if (this.beds > 0) {
+        this.url_beds = "&beds=" + this.beds;
+      }
+      if (this.km_radius > 0) {
+        this.url_km_radius = "&km_radius=" + this.km_radius;
+      }
       this.encoded_address = encodeURIComponent(this.address);
       axios
         .get(
-          "../api/advanced_search?rooms=" +
-            this.rooms +
-            "&beds=" +
-            this.beds +
-            "&km_radius=" +
-            this.km_radius +
+          "../api/advanced_search?" +
+            this.url_rooms +
+            this.url_beds +
+            this.url_km_radius +
             "&address=" +
             this.encoded_address
         )

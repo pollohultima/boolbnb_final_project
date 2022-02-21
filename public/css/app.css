@@ -11927,6 +11927,7 @@ footer .soft {
 .apartments_page .search_form .form_search_top .search_input_wrapper select,
 .apartments_page .search_form .form_search_bottom .search_input_wrapper input,
 .apartments_page .search_form .form_search_bottom .search_input_wrapper select {
+  color: #5b5b5b;
   background: white;
   box-shadow: 0px 0px 10px rgba(141, 140, 140, 0.322);
 }
