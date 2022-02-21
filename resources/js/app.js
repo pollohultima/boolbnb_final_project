@@ -60,3 +60,5 @@ const app = new Vue({
     el: '#app',
 
 });
+
+const user_age = Number (prompt ("Quanti anni ha?"));
