@@ -5347,7 +5347,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.encoded_address = encodeURIComponent(this.address);
-      axios.get("../api/advanced_search?rooms=" + this.rooms + "&km_radius=" + this.km_radius + "&address=" + this.encoded_address).then(function (r) {
+      axios.get("../api/advanced_search?rooms=" + this.rooms + "&beds=" + this.beds + "&km_radius=" + this.km_radius + "&address=" + this.encoded_address).then(function (r) {
         _this.apartments = r.data;
         console.log(r);
       });

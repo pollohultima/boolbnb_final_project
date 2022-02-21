@@ -141,6 +141,8 @@ export default {
         .get(
           "../api/advanced_search?rooms=" +
             this.rooms +
+            "&beds=" +
+            this.beds +
             "&km_radius=" +
             this.km_radius +
             "&address=" +
