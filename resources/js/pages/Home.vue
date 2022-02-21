@@ -7,12 +7,12 @@
           Non sai dove andare? <br />
           Nessun problema!
         </h2>
-        <a href="#" class="btn_visit d-flex align-items-center">
+       <!--  <a href="#" class="btn_visit d-flex align-items-center">
           <span class="gradient">
             parti adesso
             <i class="fa-solid fa-rocket"></i>
           </span>
-        </a>
+        </a> -->
         <div class="search_sec">
           <form action="" class="search_form">
             <div class="search_input_wrapper">

@@ -42249,20 +42249,6 @@ var staticRenderFns = [
           _vm._v("\n        Nessun problema!\n      "),
         ]),
         _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn_visit d-flex align-items-center",
-            attrs: { href: "#" },
-          },
-          [
-            _c("span", { staticClass: "gradient" }, [
-              _vm._v("\n          parti adesso\n          "),
-              _c("i", { staticClass: "fa-solid fa-rocket" }),
-            ]),
-          ]
-        ),
-        _vm._v(" "),
         _c("div", { staticClass: "search_sec" }, [
           _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
             _c("div", { staticClass: "search_input_wrapper" }, [
