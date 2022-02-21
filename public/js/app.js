@@ -41869,7 +41869,7 @@ var render = function () {
     _c("div", { staticClass: "search_apartment mt-5" }, [
       _c("div", { staticClass: "search_form" }, [
         _c("div", { staticClass: "search_input_wrapper" }, [
-          _c("label", { attrs: { for: "beds" } }, [_vm._v("letti")]),
+          _c("label", { attrs: { for: "beds" } }, [_vm._v("Letti")]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -41919,7 +41919,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "search_input_wrapper" }, [
-          _c("label", { attrs: { for: "beds" } }, [_vm._v("stanze")]),
+          _c("label", { attrs: { for: "beds" } }, [_vm._v("Stanze")]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -41945,7 +41945,7 @@ var render = function () {
         _vm._v(" "),
         _c("div", { staticClass: "search_input_wrapper" }, [
           _c("label", { attrs: { for: "km_radius" } }, [
-            _vm._v("Raggio di ricerca(km)"),
+            _vm._v("Tolleranza(km)"),
           ]),
           _vm._v(" "),
           _c("input", {
@@ -42250,20 +42250,6 @@ var staticRenderFns = [
           _c("br"),
           _vm._v("\n        Nessun problema!\n      "),
         ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "btn_visit d-flex align-items-center",
-            attrs: { href: "#" },
-          },
-          [
-            _c("span", { staticClass: "gradient" }, [
-              _vm._v("\n          parti adesso\n          "),
-              _c("i", { staticClass: "fa-solid fa-rocket" }),
-            ]),
-          ]
-        ),
         _vm._v(" "),
         _c("div", { staticClass: "search_sec" }, [
           _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
