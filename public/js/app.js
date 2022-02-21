@@ -5174,12 +5174,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -41812,22 +41806,18 @@ var render = function () {
                 _c("div", { staticClass: "info_type_wrapper" }, [
                   _c("p", { staticClass: "card_text" }, [
                     _vm._v(
-                      "\r\n                             Superficie: " +
+                      "\n                Superficie: " +
                         _vm._s(_vm.apartment.squared_meters) +
-                        "\r\n                            "
+                        "\n              "
                     ),
                   ]),
-                  _vm._v("\r\n\r\n                            m"),
+                  _vm._v("\n\n              m"),
                   _c("sup", [_vm._v("2")]),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "info_type_wrapper" }, [
                   _c("p", { staticClass: "card_text_cost" }, [
-                    _vm._v(
-                      "\r\n                                Prezzo: " +
-                        _vm._s(_vm.apartment.price) +
-                        "\r\n                            "
-                    ),
+                    _vm._v("Prezzo: " + _vm._s(_vm.apartment.price)),
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
@@ -41839,11 +41829,7 @@ var render = function () {
                 { staticClass: "info_type_wrapper info_type_wrapper_address" },
                 [
                   _c("p", { staticClass: "card_text" }, [
-                    _vm._v(
-                      "\r\n                           Indirizzo: " +
-                        _vm._s(_vm.apartment.address) +
-                        "\r\n                        "
-                    ),
+                    _vm._v("Indirizzo: " + _vm._s(_vm.apartment.address)),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "map col-5", attrs: { id: "map" } }),
@@ -58147,9 +58133,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })

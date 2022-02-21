@@ -94,10 +94,10 @@ class ApartmentController extends Controller
             return $angle * $earthRadius;
         }
 
-        foreach ($apartment_list as $p) {
+        foreach ($apartment_list as $key => $p) {
             if ($km_radius > 0) {
                 if (haversineGreatCircleDistance($p->latitude, $p->longitude, $lat_from, $lon_from) / 1000 > $km_radius) {
-                    unset($p);
+                    unset($apartment_list[$key]);
                 };
             }
         }
