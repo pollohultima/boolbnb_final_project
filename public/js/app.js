@@ -5338,16 +5338,18 @@ __webpack_require__.r(__webpack_exports__);
       address: "",
       beds: "",
       rooms: "",
-      km_radius: ""
+      km_radius: "",
+      encoded_address: ""
     };
   },
   methods: {
     get_apartments: function get_apartments() {
       var _this = this;
 
-      console.log("ciao");
-      axios.get("../api/advanced_search?rooms=" + this.rooms).then(function (r) {
+      this.encoded_address = encodeURIComponent(this.address);
+      axios.get("../api/advanced_search?rooms=" + this.rooms + "&km_radius=" + this.km_radius + "&address=" + this.encoded_address).then(function (r) {
         _this.apartments = r.data;
+        console.log(r);
       });
     }
   }
@@ -58126,9 +58128,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\laravel-project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })

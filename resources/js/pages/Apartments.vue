@@ -131,14 +131,25 @@ export default {
       beds: "",
       rooms: "",
       km_radius: "",
+      encoded_address: "",
     };
   },
   methods: {
     get_apartments() {
-      console.log("ciao");
-      axios.get("../api/advanced_search?rooms=" + this.rooms).then((r) => {
-        this.apartments = r.data;
-      });
+      this.encoded_address = encodeURIComponent(this.address);
+      axios
+        .get(
+          "../api/advanced_search?rooms=" +
+            this.rooms +
+            "&km_radius=" +
+            this.km_radius +
+            "&address=" +
+            this.encoded_address
+        )
+        .then((r) => {
+          this.apartments = r.data;
+          console.log(r);
+        });
     },
   },
 };

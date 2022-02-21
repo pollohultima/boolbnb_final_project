@@ -26,7 +26,7 @@ class ApartmentController extends Controller
     public function advanced_search(Request $request)
     {
         if ($request->has('address')) {
-            $address_input = urlencode($request->all()['address']);
+            $address_input = $request->all()['address'];
             $get_coordinate = Http::withOptions([
                 'verify' => false,
             ])
