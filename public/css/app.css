@@ -11558,10 +11558,6 @@ header {
 }
 
 /* LOG IN PAGE */
-.padding_top {
-  padding: 10rem 0;
-}
-
 .log_container {
   padding-top: 5rem;
 }
@@ -11608,6 +11604,10 @@ header {
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-decoration: none;
+}
+
+.padding_top {
+  padding: 10rem 0;
 }
 
 .button {

@@ -1,11 +1,11 @@
 @extends('layouts.spa')
 
 @section('content')
-    <div class="container log_container">
+    <div class="container log_container padding_top">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Reset Password') }}</div>
+                    <div class="card-header">{{ __('Resetta Password') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -36,7 +36,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="button">
-                                        {{ __('Send Password Reset Link') }}
+                                        {{ __('Invia link') }}
                                     </button>
                                 </div>
                             </div>

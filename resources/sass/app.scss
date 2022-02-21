@@ -364,9 +364,7 @@ header{
 }
 
 /* LOG IN PAGE */
-.padding_top{
-    padding: 10rem 0;
-}
+
 .log_container {
     padding-top: 5rem;
 
@@ -422,6 +420,10 @@ header{
             text-decoration: none;
         }
     }
+}
+
+.padding_top{
+    padding: 10rem 0;
 }
 
 .button {
