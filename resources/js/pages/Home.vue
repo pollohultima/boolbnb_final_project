@@ -101,12 +101,14 @@
                       </p>
                       <p class="dollar">$</p>
                     </div>
-                       <div class="button_wrapper">
+                     
+
+                  </div>
+                    <div class="button_wrapper">
                                 <router-link :to="'/apartments/' + sponsored_apartment.slug" class="button_view">
                                     visita
                                     </router-link>
-                                </div>
-                  </div>
+                      </div>
                 </div>
               </div>
             </div>

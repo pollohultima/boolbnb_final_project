@@ -5487,6 +5487,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -42203,29 +42205,29 @@ var render = function () {
                           _vm._v(" "),
                           _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
                         ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "button_wrapper" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "button_view",
-                                attrs: {
-                                  to: "/apartments/" + sponsored_apartment.slug,
-                                },
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                  visita\n                                  "
-                                ),
-                              ]
-                            ),
-                          ],
-                          1
-                        ),
                       ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "button_wrapper" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "button_view",
+                              attrs: {
+                                to: "/apartments/" + sponsored_apartment.slug,
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                                  visita\n                                  "
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
+                      ),
                     ]),
                   ]),
                 ]),

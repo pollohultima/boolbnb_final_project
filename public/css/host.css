@@ -11658,6 +11658,10 @@ body {
   padding-left: 1.5rem;
   padding-top: 1rem;
 }
+.show_sec .card .mid .map canvas {
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
 .show_sec .card .mid .map .map_square {
   max-width: 100%;
   height: 300px;
