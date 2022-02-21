@@ -5331,6 +5331,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -41879,115 +41922,121 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "search_apartment mt-5" }, [
+    _c("div", { staticClass: "search_apartment mt-5 apartments_page" }, [
       _c("div", { staticClass: "search_form" }, [
-        _c("div", { staticClass: "search_input_wrapper" }, [
-          _c("label", { attrs: { for: "beds" } }, [_vm._v("Letti")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.beds,
-                expression: "beds",
+        _c("div", { staticClass: "form_search_top" }, [
+          _c("div", { staticClass: "search_input_wrapper" }, [
+            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.address,
+                  expression: "address",
+                },
+              ],
+              attrs: { type: "text", id: "address", name: "address" },
+              domProps: { value: _vm.address },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.address = $event.target.value
+                },
               },
-            ],
-            attrs: { type: "number", id: "beds", name: "beds" },
-            domProps: { value: _vm.beds },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.beds = $event.target.value
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "search_input_wrapper" }, [
-          _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.address,
-                expression: "address",
-              },
-            ],
-            attrs: { type: "text", id: "address", name: "address" },
-            domProps: { value: _vm.address },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.address = $event.target.value
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "search_input_wrapper" }, [
-          _c("label", { attrs: { for: "beds" } }, [_vm._v("Stanze")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.rooms,
-                expression: "rooms",
-              },
-            ],
-            attrs: { type: "number", id: "rooms", name: "rooms" },
-            domProps: { value: _vm.rooms },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.rooms = $event.target.value
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "search_input_wrapper" }, [
-          _c("label", { attrs: { for: "km_radius" } }, [
-            _vm._v("Tolleranza(km)"),
+            }),
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.km_radius,
-                expression: "km_radius",
+          _c("div", { staticClass: "search_input_wrapper" }, [
+            _c("label", { attrs: { for: "km_radius" } }, [
+              _vm._v("Raggio(km)"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.km_radius,
+                  expression: "km_radius",
+                },
+              ],
+              attrs: { type: "number", id: "km_radius", name: "km_radius" },
+              domProps: { value: _vm.km_radius },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.km_radius = $event.target.value
+                },
               },
-            ],
-            attrs: { type: "number", id: "km_radius", name: "km_radius" },
-            domProps: { value: _vm.km_radius },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.km_radius = $event.target.value
-              },
-            },
-          }),
+            }),
+          ]),
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "submit_search", on: { click: _vm.get_apartments } },
-          [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
-        ),
+        _c("div", { staticClass: "form_search_bottom" }, [
+          _c("div", { staticClass: "search_input_wrapper" }, [
+            _c("label", { attrs: { for: "beds" } }, [_vm._v("Letti")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.beds,
+                  expression: "beds",
+                },
+              ],
+              attrs: { type: "number", id: "beds", name: "beds" },
+              domProps: { value: _vm.beds },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.beds = $event.target.value
+                },
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "search_input_wrapper" }, [
+            _c("label", { attrs: { for: "beds" } }, [_vm._v("Stanze")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.rooms,
+                  expression: "rooms",
+                },
+              ],
+              attrs: { type: "number", id: "rooms", name: "rooms" },
+              domProps: { value: _vm.rooms },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.rooms = $event.target.value
+                },
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "submit_search", on: { click: _vm.get_apartments } },
+            [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+          ),
+        ]),
       ]),
     ]),
     _vm._v(" "),
@@ -42017,7 +42066,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(0, true),
+                    _vm._m(1, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
@@ -42103,6 +42152,30 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "search_input_wrapper" }, [
+      _c("label", { attrs: { for: "services" } }, [
+        _vm._v("Scegli un servizio:"),
+      ]),
+      _vm._v(" "),
+      _c("select", { attrs: { name: "services", id: "services" } }, [
+        _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "2" } }, [_vm._v("Posto Macchina")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
+      ]),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
