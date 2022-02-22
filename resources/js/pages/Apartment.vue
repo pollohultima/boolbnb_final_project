@@ -68,7 +68,10 @@ export default {
   mounted() {
     axios.get("/api/apartments/" + this.$route.params.slug).then((r) => {
       this.apartment = r.data;
+      return this.apartment
     });
+
+    console.log(this.apartment);
   },
 };
 </script>
