@@ -29,7 +29,7 @@
         <!-- footer -->
         @include('partials.footer_spa')
     </div>
-
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
 </body>
 
 </html>

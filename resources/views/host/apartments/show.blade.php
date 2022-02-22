@@ -79,11 +79,11 @@
                 <div class="bottom py-3">
                     <div class="services">
                         <h2>Servizi</h2>
-
                         <ul class="row">
-                            <li class="col-4"><i class="fa-solid fa-circle-check"></i> piscina</li>
-                            <li class="col-4"><i class="fa-solid fa-circle-check"></i> sauna</li>
-                            <li class="col-4"><i class="fa-solid fa-circle-check"></i> wifi</li>
+                            @foreach ($apartment->services as $service)
+                                <li class="col-4"><i class="fa-solid fa-circle-check"></i> {{ $service->name }}
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <hr>

@@ -19,7 +19,7 @@
     top: 0;
     left: 0;
 } */
-header{
+header {
     width: 100%;
     position: fixed;
     z-index: 10000;
@@ -68,51 +68,49 @@ header{
 
 /* PAGE home.vue */
 
-.sponsored_apartments_container{
+.sponsored_apartments_container {
     padding: 55px 0;
 }
 
 /* HERO SEC*/
 /* SEARCH HERO */
 
-
-.search_sec{
+.search_sec {
     padding: 4rem 1.5rem;
     padding-bottom: 3rem;
     border-radius: 25px;
     width: 65%;
-    margin:0  auto;
+    margin: 0 auto;
 
-    .search_form{
+    .search_form {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .search_input_wrapper{
+        .search_input_wrapper {
             display: flex;
             flex-direction: column;
 
             /* regola per eliminare le freccette nell'imput! */
-            input[type=number]::-webkit-inner-spin-button,
-            input[type=number]::-webkit-outer-spin-button{   
-
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
-            }   
+            }
             /* /regola per eliminare le freccette nell'imput! */
 
-            label{
+            label {
                 color: $color_grey_sec;
-                font-size:.8rem;
-                margin-bottom: .5rem;
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
                 letter-spacing: 1px;
-                padding-left: .6rem;
+                padding-left: 0.6rem;
                 color: white;
             }
 
             input,
-            select{
-                padding: .4rem .5rem;
+            select {
+                padding: 0.4rem 0.5rem;
                 border-radius: 50px;
                 border: none;
                 width: 250px;
@@ -121,20 +119,19 @@ header{
                 font-weight: 600;
                 letter-spacing: 1px;
 
-                option{
+                option {
                     color: $color_grey_sec;
                 }
 
-                &:focus-visible{
+                &:focus-visible {
                     /* outline: 0; */
                     outline: 0;
                     box-shadow: 0px 0px 10px #ffffff3d;
                 }
             }
-        
         }
 
-        .submit_search{
+        .submit_search {
             align-self: flex-end;
             width: 50px;
             height: 50px;
@@ -144,26 +141,25 @@ header{
             justify-content: center;
             align-items: center;
             border: none;
-            margin-top: .5rem;
+            margin-top: 0.5rem;
             transform: scale(1);
             transition: all 250ms;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
             }
 
-            i{
+            i {
                 font-size: 1rem;
                 color: white;
             }
-
         }
     }
 }
 
 .heroSec {
     width: 100%;
-    height:760px;
+    height: 760px;
     background-blend-mode: multiply;
     background-image: url("../img/landscape_2.jpg");
     background-size: cover;
@@ -288,7 +284,6 @@ header{
     }
 
     .card_info {
-
         .card_title {
             font-size: 1.3rem;
             font-weight: 700;
@@ -423,7 +418,7 @@ header{
     }
 }
 
-.padding_top{
+.padding_top {
     padding: 10rem 0;
 }
 
@@ -444,142 +439,131 @@ header{
     }
 }
 
-
-
 /* FOOTER */
 
-footer{
+footer {
     background-color: $color_grey_quar;
     color: $color_grey_sec_light;
 
-    .logo img{
+    .logo img {
         width: 120px;
         margin: 29.12px 0 20px;
         filter: grayscale(100%);
-
     }
 
-    address{
+    address {
         font-style: italic;
     }
 
-    .icons{
+    .icons {
         line-height: 35px;
 
-        a{
+        a {
             width: 30px;
             margin-right: 25px;
 
-            
-            img{
+            img {
                 width: 30px;
                 border-radius: 7px;
-                
-                &:hover{
+
+                &:hover {
                     box-shadow: 0 0 2px $color_logo_primary;
                 }
             }
         }
-    
     }
 
     .about,
     .new_host,
-    .suggestions{
-        h4{
+    .suggestions {
+        h4 {
             padding: 0 5px;
         }
 
-
-        ul{
+        ul {
             list-style: none;
             padding-left: 0;
-            
-            li{
+
+            li {
                 line-height: 1.5rem;
-    
-                a{
+
+                a {
                     padding: 0 5px;
                     border-radius: 10px;
                     text-decoration: none;
                     color: $color_grey_sec_light;
-    
-                    &:hover{
+
+                    &:hover {
                         text-decoration: underline;
                         color: $color_logo_primary;
                     }
-    
+
                     /* &:hover{
                         text-decoration: underline;
                         color: whitesmoke;
                         background-image: radial-gradient(closest-corner at 50% 63%, rgba(255, 56, 92, 1) 55%, rgba(255, 56, 92, 0.3));
                     } */
                 }
-    
             }
         }
     }
 
-    .soft{
+    .soft {
         font-size: 0.7rem;
     }
 }
-
-
-
 
 /* APPARTMENTS.VUE */
 
 //form
 
-.search_apartment{
+.search_apartment {
     padding: 4rem 1.5rem;
     padding-bottom: 3rem;
     border-radius: 25px;
     width: 70%;
-    margin:0  auto;
+    margin: 0 auto;
 
-    .search_form{
+    .search_form {
         display: flex;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
         flex-wrap: wrap;
 
-        .search_input_wrapper{
+        .search_input_wrapper {
             display: flex;
             flex-direction: column;
 
             /* regola per eliminare le freccette nell'imput! */
-            input[type=number]::-webkit-inner-spin-button,
-            input[type=number]::-webkit-outer-spin-button{   
-
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
-            }   
+            }
             /* /regola per eliminare le freccette nell'imput! */
 
-            label{
+            label {
                 color: $color_grey_sec;
-                font-size:.8rem;
-                margin-bottom: .5rem;
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
                 letter-spacing: 1px;
-                padding-left: .6rem;
+                padding-left: 0.6rem;
                 color: black;
             }
 
             #beds,
             #rooms,
-            #km_radius{
+            #km_radius {
                 width: 100px;
             }
 
-            #address{
+            #address {
                 width: 350px;
             }
 
             input,
-            select{
-                padding: .4rem .5rem;
+            select {
+                padding: 0.4rem 0.5rem;
                 border-radius: 50px;
                 border: none;
                 background: -webkit-linear-gradient(239deg, #8590ff, #ff385c);
@@ -587,24 +571,23 @@ footer{
                 font-weight: 600;
                 letter-spacing: 1px;
 
-               /*  &:-internal-autofill-selected{
+                /*  &:-internal-autofill-selected{
                     background-color: red;
                 } */
 
-                option{
+                option {
                     color: $color_grey_sec;
                 }
 
-                &:focus-visible{
+                &:focus-visible {
                     /* outline: 0; */
                     outline: 0;
                     box-shadow: 0px 0px 10px #ffffff3d;
                 }
             }
-        
         }
 
-        .submit_search{
+        .submit_search {
             align-self: flex-end;
             width: 50px;
             height: 50px;
@@ -614,34 +597,30 @@ footer{
             justify-content: center;
             align-items: center;
             border: none;
-            margin-top: .5rem;
+            margin-top: 0.5rem;
             transform: scale(1);
             transition: all 250ms;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
             }
 
-            i{
+            i {
                 font-size: 1rem;
                 color: white;
             }
-
         }
     }
-
 }
 
-
-.button_wrapper{
+.button_wrapper {
     margin-top: 1rem;
 }
 
-
-.button_view{
+.button_view {
     padding: 0.5rem 1.7rem !important;
-    color:$color_logo_primary ;
-    background-color:white !important;
+    color: $color_logo_primary;
+    background-color: white !important;
     border-radius: 50px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -650,16 +629,14 @@ footer{
     transition: all 250ms;
     margin-top: 1rem;
     text-decoration: none;
-    &:hover{
+    &:hover {
         color: #8590ff;
     }
 }
 
-
-
 /* appartment show */
 
-.sponsored_apartments_container{
+.sponsored_apartments_container {
     padding-top: 5rem;
     .card {
         border: none;
@@ -762,101 +739,78 @@ footer{
     }
 }
 
-
-
-
 /* APARTMENTS_page */
 
-
-
-
-.apartments_page{
+.apartments_page {
     padding-top: 8rem;
-    .search_form{
+    .search_form {
         display: flex;
         flex-direction: column;
 
         .form_search_top,
-        .form_search_bottom{
+        .form_search_bottom {
             display: flex;
             justify-content: space-between;
             width: 80%;
 
-
-            .align_start{
+            .align_start {
                 align-self: flex-start;
             }
 
-
-            
             #beds,
             #rooms,
-            #km_radius{
+            #km_radius {
                 width: 264px;
             }
 
-            #address{
+            #address {
                 width: 530px;
             }
 
-
-
-            .search_input_wrapper{
-                label{
-                    font-size:0.7rem;
+            .search_input_wrapper {
+                label {
+                    font-size: 0.7rem;
                     margin-bottom: 0.2rem;
-                    
                 }
-               
 
                 input,
-                select{
+                select {
                     color: $color_grey_sec;
                     background: white;
-                    box-shadow:0px 0px 10px rgba(141, 140, 140, 0.322);
+                    box-shadow: 0px 0px 10px rgba(141, 140, 140, 0.322);
                 }
 
-                .select_services{
+                .select_services {
                     border-radius: 10px;
 
-                    &::-webkit-scrollbar{
+                    &::-webkit-scrollbar {
                         width: 8px;
                     }
 
                     &::-webkit-scrollbar-track {
                         background-color: rgba(128, 128, 128, 0.123);
-                         border-radius: 10px;
+                        border-radius: 10px;
                     }
 
                     &::-webkit-scrollbar-thumb {
                         border-radius: 10px;
-                       background-color: #2c2c2c1e;;
-                        height: 10px; 
+                        background-color: #2c2c2c1e;
+                        height: 10px;
                     }
                 }
-
-                
             }
         }
 
-        .form_search_top{
-          padding-bottom: 2rem;
+        .form_search_top {
+            padding-bottom: 2rem;
         }
-
-
     }
-
- 
 }
-
-
-
 
 /* apartment.vue page */
 
-
 .show_sec_apartment {
-    padding-top:10rem;
+    padding-top: 10rem;
     padding-bottom: 5rem;
     width: 70%;
     margin: 0 auto;
@@ -865,9 +819,8 @@ footer{
         border-radius: 2rem;
         color: $color_grey_sec;
         box-shadow: 0px 0px 10px rgba(109, 109, 109, 0.158);
-        .textarea{
+        .textarea {
             border-radius: 10px;
-            
         }
 
         h2 {
@@ -902,12 +855,7 @@ footer{
         // middle
         .mid {
             .map {
-                background-color: $color_grey_quar;
-                padding-left: 1.5rem;
-                padding-top: 1rem;
-                canvas{
-                    padding-left: 2rem;
-                    padding-top: 1rem;
+              
                 }
                 .map_square {
                     max-width: 100%;
@@ -967,4 +915,3 @@ footer{
         }
     }
 }
-
