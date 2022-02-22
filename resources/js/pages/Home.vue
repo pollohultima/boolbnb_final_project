@@ -49,7 +49,7 @@
             <div class="row justify-content-center g-5">
 
                 <div
-                    class="col-4 sponsored_apartment_card"
+                    class="col-8 col-md-4 sponsored_apartment_card"
                     v-for="sponsored_apartment in sponsored_apartments_list"
                     :key="sponsored_apartment.slug"
                 >

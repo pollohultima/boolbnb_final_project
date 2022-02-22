@@ -80,7 +80,7 @@ header{
     padding: 4rem 1.5rem;
     padding-bottom: 3rem;
     border-radius: 25px;
-    width: 65%;
+    width: 70%;
     margin:0  auto;
 
     .search_form{
@@ -967,4 +967,28 @@ footer{
         }
     }
 }
+
+// MEDIA QUERIES
+
+// homepage
+// search section
+
+@media screen and (max-width: 1390px) {
+        .search_sec {
+            .search_form {
+                display: flex;
+                flex-direction: column;
+                
+                .search_input_wrapper {
+                    margin-bottom: .5rem;
+                }
+
+                .submit_search {
+                    align-self: center;
+                    width: 250px;
+                    height: 35px;
+                }
+            }
+        }
+    }
 

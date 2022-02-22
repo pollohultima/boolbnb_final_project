@@ -5240,7 +5240,9 @@ __webpack_require__.r(__webpack_exports__);
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/apartments/" + this.$route.params.slug).then(function (r) {
       _this.apartment = r.data;
+      return _this.apartment;
     });
+    console.log(this.apartment);
   }
 });
 
@@ -42429,7 +42431,7 @@ var render = function () {
             "div",
             {
               key: sponsored_apartment.slug,
-              staticClass: "col-4 sponsored_apartment_card",
+              staticClass: "col-8 col-md-4 sponsored_apartment_card",
             },
             [
               _c("div", { staticClass: "card" }, [
