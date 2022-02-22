@@ -1006,8 +1006,23 @@ footer{
             flex-direction: column;
             & > div {
                 margin-bottom: 1.5rem;
+                }
             }
         }
+        .heroSec {
+            .hero {
+                .search_sec {
+                    padding-top: 2rem;
+                }
+                .welcome_title {
+                    padding-top: 8rem;
+                }
+            }
+        }
+        .sponsored_apartments_container {
+            .page_title {
+                text-align: center;
+            }
         }
     }
 
