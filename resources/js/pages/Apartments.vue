@@ -45,7 +45,7 @@
 
           <div class="search_input_wrapper">
             <label for="services">Scegli un servizio:</label>
-            <select name="services" id="services" multiple>
+            <select name="services" v-model="services" id="services" multiple>
               <option value="1">WiFi</option>
               <option value="2">Posto Macchina</option>
               <option value="3">piscina</option>
@@ -158,6 +158,7 @@ export default {
       apartments: [],
       address: "",
       beds: "",
+      services: [],
       rooms: "",
       km_radius: "",
       encoded_address: "",
@@ -193,7 +194,9 @@ export default {
             this.url_beds +
             this.url_km_radius +
             "&address=" +
-            this.encoded_address
+            this.encoded_address +
+            "&services=" +
+            this.services
         )
         .then((r) => {
           this.apartments = r.data;
