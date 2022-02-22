@@ -49,19 +49,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $address_input = urlencode($request->all()['address']);
-        $get_coordinate = Http::withOptions([
-            'verify' => false,
-        ])
-            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
-        $get_lat_long = $get_coordinate->json()['results'][0]['position'];
 
-        $user = Auth::id();
-        if ($request->has('services')) {
-            $request->validate([
-                'services' => ['nullable', 'exists:services,id']
-            ]);
-        }
 
         $validate_data = $request->validate([
             'title' => ['required', 'unique:apartments', 'max:200'],
@@ -78,7 +66,19 @@ class ApartmentController extends Controller
         ]);
 
 
+        $address_input = urlencode($request->all()['address']);
+        $get_coordinate = Http::withOptions([
+            'verify' => false,
+        ])
+            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
+        $get_lat_long = $get_coordinate->json()['results'][0]['position'];
 
+        $user = Auth::id();
+        if ($request->has('services')) {
+            $request->validate([
+                'services' => ['nullable', 'exists:services,id']
+            ]);
+        }
 
         if ($request->file('image')) {
 

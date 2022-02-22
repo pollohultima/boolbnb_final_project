@@ -1,3 +1,5 @@
+const { values } = require('lodash');
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -38,13 +40,21 @@ const app = new Vue({
             autocompleteOptions: {
                 key: 'L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs',
                 language: 'it-IT'
-            }
+            },
+            labels: {
+                placeholder: 'Inserisci il tuo indirizzo',
+                noResultsMessage: 'No results found.'
+            },
         };
         var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
         var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+        searchBoxHTML.getElementsByClassName('tt-search-box-input')[0].id = 'address';
+        searchBoxHTML.getElementsByClassName('tt-search-box-input')[0].name = 'address';
+        var temp_address = document.getElementById("temp_address").value;
+        searchBoxHTML.getElementsByClassName('tt-search-box-input')[0].setAttribute("value", temp_address);
         document.getElementById('searchbox').append(searchBoxHTML);
-        document.getElementsByClassName('tt-search-box-input')[0].id = 'address';
-        document.getElementsByClassName('tt-search-box-input')[0].name = 'address';
-        document.getElementsByClassName('tt-search-box-input')[0].placeholder = 'Inserisci il tuo indirizzo';
+        /*  document.getElementsByClassName('tt-search-box-input')[0].id = 'address'; 
+       document.getElementsByClassName('tt-search-box-input')[0].name = 'address';
+       document.getElementsByClassName('tt-search-box-input')[0].setAttribute("value", "{{ old('address') }}"); */
     }
 });
