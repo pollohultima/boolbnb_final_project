@@ -970,9 +970,16 @@ footer{
 
 // MEDIA QUERIES
 
-// homepage
-// search section
+// general
+@media screen and(max-width:600px) {
+    body {
+        overflow-x: hidden;
+    }
+}
 
+// homepage
+
+// search section
 @media screen and (max-width: 1390px) {
         .search_sec {
             .search_form {
@@ -989,6 +996,18 @@ footer{
                     height: 35px;
                 }
             }
+        }
+    }
+
+    // footer section
+    @media screen and (max-width: 768px) {
+    .footer {
+        .footer-main {
+            flex-direction: column;
+            & > div {
+                margin-bottom: 1.5rem;
+            }
+        }
         }
     }
 

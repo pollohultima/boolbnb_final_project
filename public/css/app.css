@@ -12057,6 +12057,11 @@ footer .soft {
   margin-right: 0.4rem;
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 @media screen and (max-width: 1390px) {
   .search_sec .search_form {
     display: flex;
@@ -12069,5 +12074,13 @@ footer .soft {
     align-self: center;
     width: 250px;
     height: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-main {
+    flex-direction: column;
+  }
+  .footer .footer-main > div {
+    margin-bottom: 1.5rem;
   }
 }
