@@ -98,11 +98,12 @@
 
             <div class="mb-3">
                 <label for="services" class="form-label">Servizi</label>
-                <select multiple class="form-select" name="services[]" id="services">
+                <select multiple class="form-select" name="services[]" @error('services') is_invalid @enderror
+                    id="services">
                     <option disabled>Seleziona uno o più servizi</option>
 
                     @foreach ($services as $service)
-                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                        <option value="{{ $service->id }}">{{ $service->name }} </option>
                     @endforeach
 
                 </select>

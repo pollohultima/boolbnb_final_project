@@ -102,7 +102,6 @@
         var lati = "<?php echo "$lati"; ?>";
         var long = "<?php echo "$long"; ?>";
 
-
         console.log(lati);
 
         var HomeCoordinates = [long, lati];
