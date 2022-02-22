@@ -11746,8 +11746,8 @@ footer .soft {
   font-weight: 600;
   letter-spacing: 1px;
   /*  &:-internal-autofill-selected{
-       background-color: red;
-   } */
+      background-color: red;
+  } */
 }
 .search_apartment .search_form .search_input_wrapper input option,
 .search_apartment .search_form .search_input_wrapper select option {
@@ -12002,57 +12002,48 @@ footer .soft {
      object-position: top;
   border-top-right-radius: 2rem;
 }
-.show_sec_apartment .card .mid .map {
-  background-color: #d1d1d1;
-  padding-left: 1.5rem;
-  padding-top: 1rem;
-}
-.show_sec_apartment .card .mid .map canvas {
-  padding-left: 2rem;
-  padding-top: 1rem;
-}
-.show_sec_apartment .card .mid .map .map_square {
+.show_sec_apartment .card .mid .map_square {
   max-width: 100%;
   height: 300px;
   background-color: #adadad;
   border-radius: 2rem;
 }
-.show_sec_apartment .card .mid .infos .info_address {
+.show_sec_apartment .card .infos .info_address {
   font-size: 1.1rem;
   font-weight: 500;
 }
-.show_sec_apartment .card .mid .details {
+.show_sec_apartment .card .details {
   padding-left: 0;
 }
-.show_sec_apartment .card .mid .details .col .item_price .value {
+.show_sec_apartment .card .details .col .item_price .value {
   color: #ff385c;
 }
-.show_sec_apartment .card .mid .details .col .item {
+.show_sec_apartment .card .details .col .item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-.show_sec_apartment .card .mid .details .col .item .value {
+.show_sec_apartment .card .details .col .item .value {
   font-size: 1.2rem;
   font-weight: 700;
 }
-.show_sec_apartment .card .bottom {
+.show_sec_apartment .bottom {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.show_sec_apartment .card .bottom h2, .show_sec_apartment .card .bottom .h2 {
+.show_sec_apartment .bottom h2, .show_sec_apartment .bottom .h2 {
   margin-bottom: 0.5rem;
 }
-.show_sec_apartment .card .bottom .services .row {
+.show_sec_apartment .bottom .services .row {
   padding: 0;
 }
-.show_sec_apartment .card .bottom .services ul {
+.show_sec_apartment .bottom .services ul {
   list-style: none;
 }
-.show_sec_apartment .card .bottom .services ul li {
+.show_sec_apartment .bottom .services ul li {
   margin: 0;
 }
-.show_sec_apartment .card .bottom .services ul li i {
+.show_sec_apartment .bottom .services ul li i {
   color: #d1d1d1;
   margin-right: 0.4rem;
 }

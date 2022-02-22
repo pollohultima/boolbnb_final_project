@@ -854,58 +854,57 @@ footer {
         }
         // middle
         .mid {
-                .map_square {
-                    max-width: 100%;
-                    height: 300px;
-                    background-color: $color_grey_ter;
-                    border-radius: 2rem;
-                }
+            .map_square {
+                max-width: 100%;
+                height: 300px;
+                background-color: $color_grey_ter;
+                border-radius: 2rem;
             }
-            .infos {
-                .info_address {
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                }
+        }
+        .infos {
+            .info_address {
+                font-size: 1.1rem;
+                font-weight: 500;
             }
-            .details {
-                padding-left: 0;
-                .col {
-                    .item_price {
-                        .value {
-                            color: $color_logo_primary;
-                        }
+        }
+        .details {
+            padding-left: 0;
+            .col {
+                .item_price {
+                    .value {
+                        color: $color_logo_primary;
                     }
-                    .item {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: baseline;
-                        .value {
-                            font-size: 1.2rem;
-                            font-weight: 700;
-                        }
+                }
+                .item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    .value {
+                        font-size: 1.2rem;
+                        font-weight: 700;
                     }
                 }
             }
         }
-        // bottom
-        .bottom {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            h2 {
-                margin-bottom: 0.5rem;
+    }
+    // bottom
+    .bottom {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+        .services {
+            .row {
+                padding: 0;
             }
-            .services {
-                .row {
-                    padding: 0;
-                }
-                ul {
-                    list-style: none;
-                    li {
-                        margin: 0;
-                        i {
-                            color: $color_grey_quar;
-                            margin-right: 0.4rem;
-                        }
+            ul {
+                list-style: none;
+                li {
+                    margin: 0;
+                    i {
+                        color: $color_grey_quar;
+                        margin-right: 0.4rem;
                     }
                 }
             }

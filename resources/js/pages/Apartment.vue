@@ -143,17 +143,17 @@ export default {
                 });
         },
 
-        getServices(){
+    /*     getServices(){
           axios
           .get("../api/services/").then((resp) => {
             this.services = resp.data;
 
           });
-        }
+        } */
     },
 
     async mounted() {
-        this.getServices();
+        /* this.getServices(); */
         await this.getApt();
 
         var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
