@@ -103,25 +103,27 @@
 
                 </div>
             </div>
+
         </div>
-    </div>
+       
+   </div>
 </template>
 
 <script>
 import axios from "axios";
 
 export default {
-    data() {
-        return {
-            apartment: []
-        };
-    },
+  data() {
+    return {
+      apartment: [],
+    };
+  },
 
-    mounted() {
-        axios.get("/api/apartments/" + this.$route.params.slug).then((r) => {
-            this.apartment = r.data 
-        ;
-        });
-    },
+  mounted() {
+    axios.get("/api/apartments/" + this.$route.params.slug).then((r) => {
+      this.apartment = r.data;
+    });
+  },
 };
 </script>
+
