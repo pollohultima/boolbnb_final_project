@@ -84,8 +84,8 @@
                         <h2>Servizi</h2>
 
                         <ul class="row">
-                            <li class="col-4">
-                                <i class="fa-solid fa-circle-check"></i> piscina
+                            <li v-for="service in services" :key="service.slug" class="col-4">
+                                <i class="fa-solid fa-circle-check"></i> {{service.name}}
                             </li>
                         </ul>
                     </div>
@@ -130,20 +130,30 @@ export default {
     data() {
         return {
             apartment: [],
+            services: []
         };
     },
 
     methods: {
         async getApt() {
             await axios
-                .get("/api/apartments/" + this.$route.params.slug)
+                .get("../api/apartments/" + this.$route.params.slug)
                 .then((r) => {
                     this.apartment = r.data;
                 });
         },
+
+        getServices(){
+          axios
+          .get("../api/services/").then((resp) => {
+            this.services = resp.data;
+
+          });
+        }
     },
 
     async mounted() {
+        this.getServices();
         await this.getApt();
 
         var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
