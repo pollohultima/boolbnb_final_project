@@ -11611,6 +11611,11 @@ body {
   cursor: pointer;
   transform: scale(1.05);
 }
+.edit_sec .img_thumb_wrapper,
+.create_sec .img_thumb_wrapper {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .edit_sec .img_thumbnail,
 .create_sec .img_thumbnail {
   border-radius: 15px;

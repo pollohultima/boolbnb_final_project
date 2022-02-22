@@ -22,3 +22,4 @@ Route::get('apartments/sponsored', 'API\ApartmentController@sponsored');
 Route::get('apartments', 'API\ApartmentController@index');
 Route::get('apartments/{apartment}', 'API\ApartmentController@show');
 Route::get('advanced_search', 'API\ApartmentController@advanced_search');
+Route::get('services', 'API\ServiceController@index');
