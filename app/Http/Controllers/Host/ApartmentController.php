@@ -97,12 +97,12 @@ class ApartmentController extends Controller
 
         /*   $apartment->user_id = Auth::id(); */
 
-        if ($request->has('services')) {
-            $request->validate([
-                'services' => ['nullable', 'exists:services,id']
-            ]);
-            $apartment->services()->attach($request->services);
-        }
+
+        $request->validate([
+            'services' => ['required', 'exists:services,id']
+        ]);
+        $apartment->services()->attach($request->services);
+
 
         return redirect()->route('host.apartments.index');
     }
@@ -185,12 +185,12 @@ class ApartmentController extends Controller
             }
 
 
-            if ($request->has('services')) {
-                $request->validate([
-                    'services' => ['nullable', 'exists:services,id']
-                ]);
-                $apartment->services()->sync($request->services);
-            }
+
+            $request->validate([
+                'services' => ['required', 'exists:services,id']
+            ]);
+            $apartment->services()->sync($request->services);
+
 
             $validate_data['slug'] = Str::slug($validate_data['title']);
             $validate_data['latitude'] = $get_lat_long['lat'];
