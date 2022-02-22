@@ -27,7 +27,7 @@
                             <!-- titolo -->
                             <h2 class="pt-3">{{ $apartment->title }}</h2>
                             <h3 class="pb-4 col-9 info_address"> <i class="fa-solid fa-location-dot"></i>
-                                {{ $apartment->address }}</i></h3>
+                                {{ $apartment->address }}</h3>
 
                             <div class="details container">
                                 <div class="row">
@@ -96,7 +96,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
     <script>
