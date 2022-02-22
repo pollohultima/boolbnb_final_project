@@ -783,6 +783,11 @@ footer{
             width: 80%;
 
 
+            .align_start{
+                align-self: flex-start;
+            }
+
+
             
             #beds,
             #rooms,
@@ -802,6 +807,7 @@ footer{
                     margin-bottom: 0.2rem;
                     
                 }
+               
 
                 input,
                 select{
@@ -809,6 +815,27 @@ footer{
                     background: white;
                     box-shadow:0px 0px 10px rgba(141, 140, 140, 0.322);
                 }
+
+                .select_services{
+                    border-radius: 10px;
+
+                    &::-webkit-scrollbar{
+                        width: 8px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: rgba(128, 128, 128, 0.123);
+                         border-radius: 10px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                       background-color: #2c2c2c1e;;
+                        height: 10px; 
+                    }
+                }
+
+                
             }
         }
 

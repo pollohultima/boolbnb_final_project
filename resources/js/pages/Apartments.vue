@@ -45,7 +45,8 @@
 
           <div class="search_input_wrapper">
             <label for="services">Scegli un servizio:</label>
-            <select name="services" v-model="services" id="services" multiple>
+            <!-- trovare soluzione alternativa al "multiple" -->
+            <select name="services" v-model="services" id="services" class="select_services" multiple>
               <option value="1">WiFi</option>
               <option value="2">Posto Macchina</option>
               <option value="3">piscina</option>
@@ -55,7 +56,7 @@
             </select>
           </div>
 
-          <button @click="get_apartments" class="submit_search">
+          <button @click="get_apartments" class="submit_search align_start">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>

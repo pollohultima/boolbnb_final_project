@@ -11906,6 +11906,10 @@ footer .soft {
   justify-content: space-between;
   width: 80%;
 }
+.apartments_page .search_form .form_search_top .align_start,
+.apartments_page .search_form .form_search_bottom .align_start {
+  align-self: flex-start;
+}
 .apartments_page .search_form .form_search_top #beds,
 .apartments_page .search_form .form_search_top #rooms,
 .apartments_page .search_form .form_search_top #km_radius,
@@ -11930,6 +11934,25 @@ footer .soft {
   color: #5b5b5b;
   background: white;
   box-shadow: 0px 0px 10px rgba(141, 140, 140, 0.322);
+}
+.apartments_page .search_form .form_search_top .search_input_wrapper .select_services,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper .select_services {
+  border-radius: 10px;
+}
+.apartments_page .search_form .form_search_top .search_input_wrapper .select_services::-webkit-scrollbar,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper .select_services::-webkit-scrollbar {
+  width: 8px;
+}
+.apartments_page .search_form .form_search_top .search_input_wrapper .select_services::-webkit-scrollbar-track,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper .select_services::-webkit-scrollbar-track {
+  background-color: rgba(128, 128, 128, 0.123);
+  border-radius: 10px;
+}
+.apartments_page .search_form .form_search_top .search_input_wrapper .select_services::-webkit-scrollbar-thumb,
+.apartments_page .search_form .form_search_bottom .search_input_wrapper .select_services::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #2c2c2c1e;
+  height: 10px;
 }
 .apartments_page .search_form .form_search_top {
   padding-bottom: 2rem;

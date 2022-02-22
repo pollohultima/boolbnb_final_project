@@ -5226,6 +5226,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5407,36 +5409,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       apartments: [],
       address: "",
       beds: "",
+      services: [],
       rooms: "",
       km_radius: "",
-      encoded_address: ""
+      encoded_address: "",
+      url_rooms: "&rooms=0",
+      url_beds: "&beds=0",
+      url_km_radius: "&km_radius=0"
     };
   },
   methods: {
+    onlyNumber: function onlyNumber($event) {
+      //console.log($event.keyCode); //keyCodes value
+      var keyCode = $event.keyCode ? $event.keyCode : $event.which;
+
+      if (keyCode < 48 || keyCode > 57) {
+        // 46 is dot
+        $event.preventDefault();
+      }
+    },
     get_apartments: function get_apartments() {
       var _this = this;
 
+      if (this.rooms > 0) {
+        this.url_rooms = "&rooms=" + this.rooms;
+      }
+
+      if (this.beds > 0) {
+        this.url_beds = "&beds=" + this.beds;
+      }
+
+      if (this.km_radius > 0) {
+        this.url_km_radius = "&km_radius=" + this.km_radius;
+      }
+
       this.encoded_address = encodeURIComponent(this.address);
-      axios.get("../api/advanced_search?rooms=" + this.rooms + "&beds=" + this.beds + "&km_radius=" + this.km_radius + "&address=" + this.encoded_address).then(function (r) {
+      axios.get("../api/advanced_search?" + this.url_rooms + this.url_beds + this.url_km_radius + "&address=" + this.encoded_address + "&services=" + this.services).then(function (r) {
         _this.apartments = r.data;
         console.log(r);
       });
@@ -42103,19 +42117,24 @@ var render = function () {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model",
+                  rawName: "v-model.number",
                   value: _vm.km_radius,
                   expression: "km_radius",
+                  modifiers: { number: true },
                 },
               ],
               attrs: { type: "number", id: "km_radius", name: "km_radius" },
               domProps: { value: _vm.km_radius },
               on: {
+                keypress: _vm.onlyNumber,
                 input: function ($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.km_radius = $event.target.value
+                  _vm.km_radius = _vm._n($event.target.value)
+                },
+                blur: function ($event) {
+                  return _vm.$forceUpdate()
                 },
               },
             }),
@@ -42130,19 +42149,24 @@ var render = function () {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model",
+                  rawName: "v-model.number",
                   value: _vm.beds,
                   expression: "beds",
+                  modifiers: { number: true },
                 },
               ],
               attrs: { type: "number", id: "beds", name: "beds" },
               domProps: { value: _vm.beds },
               on: {
+                keypress: _vm.onlyNumber,
                 input: function ($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.beds = $event.target.value
+                  _vm.beds = _vm._n($event.target.value)
+                },
+                blur: function ($event) {
+                  return _vm.$forceUpdate()
                 },
               },
             }),
@@ -42155,29 +42179,87 @@ var render = function () {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model",
+                  rawName: "v-model.number",
                   value: _vm.rooms,
                   expression: "rooms",
+                  modifiers: { number: true },
                 },
               ],
               attrs: { type: "number", id: "rooms", name: "rooms" },
               domProps: { value: _vm.rooms },
               on: {
+                keypress: _vm.onlyNumber,
                 input: function ($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.rooms = $event.target.value
+                  _vm.rooms = _vm._n($event.target.value)
+                },
+                blur: function ($event) {
+                  return _vm.$forceUpdate()
                 },
               },
             }),
           ]),
           _vm._v(" "),
-          _vm._m(0),
+          _c("div", { staticClass: "search_input_wrapper" }, [
+            _c("label", { attrs: { for: "services" } }, [
+              _vm._v("Scegli un servizio:"),
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.services,
+                    expression: "services",
+                  },
+                ],
+                staticClass: "select_services",
+                attrs: { name: "services", id: "services", multiple: "" },
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.services = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "2" } }, [
+                  _vm._v("Posto Macchina"),
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
+              ]
+            ),
+          ]),
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "submit_search", on: { click: _vm.get_apartments } },
+            {
+              staticClass: "submit_search align_start",
+              on: { click: _vm.get_apartments },
+            },
             [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
           ),
         ]),
@@ -42210,7 +42292,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(1, true),
+                    _vm._m(0, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
@@ -42296,30 +42378,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "search_input_wrapper" }, [
-      _c("label", { attrs: { for: "services" } }, [
-        _vm._v("Scegli un servizio:"),
-      ]),
-      _vm._v(" "),
-      _c("select", { attrs: { name: "services", id: "services" } }, [
-        _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "2" } }, [_vm._v("Posto Macchina")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
-      ]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
