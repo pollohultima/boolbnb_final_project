@@ -11786,3 +11786,22 @@ footer .suggestions ul li a:hover {
 footer .soft {
   font-size: 0.7rem;
 }
+
+@media screen and (max-width: 768px) {
+  .app_cont {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 2rem;
+  }
+
+  .sidebar_custom {
+    width: 50px;
+  }
+  .sidebar_custom ul li a h4, .sidebar_custom ul li a .h4 {
+    display: none;
+  }
+
+  .log_container .card .card-header {
+    font-size: 1rem;
+  }
+}

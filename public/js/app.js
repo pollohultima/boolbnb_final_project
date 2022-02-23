@@ -5609,6 +5609,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -42281,7 +42284,7 @@ var render = function () {
             "div",
             {
               key: apartment.slug,
-              staticClass: "col-4 sponsored_apartment_card",
+              staticClass: "col-8 col-md-6 col-lg-4 sponsored_apartment_card",
             },
             [
               _c("div", { staticClass: "card" }, [
@@ -42416,7 +42419,44 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "heroSec" }, [
+      _c("div", { staticClass: "hero" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "search_sec" }, [
+          _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
+            _c("div", { staticClass: "search_input_wrapper" }, [
+              _c("label", { attrs: { for: "address" } }, [
+                _vm._v("Indirizzo / Città"),
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.address,
+                    expression: "address",
+                  },
+                ],
+                attrs: { type: "text", id: "address", name: "address" },
+                domProps: { value: _vm.address },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.address = $event.target.value
+                  },
+                },
+              }),
+            ]),
+            _vm._v(" "),
+            _vm._m(1),
+          ]),
+        ]),
+      ]),
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "sponsored_apartments_container container" }, [
       _c("h1", { staticClass: "pb-5 page_title" }, [
@@ -42431,7 +42471,7 @@ var render = function () {
             "div",
             {
               key: sponsored_apartment.slug,
-              staticClass: "col-8 col-md-4 sponsored_apartment_card",
+              staticClass: "col-8 col-md-6 col-lg-4 sponsored_apartment_card",
             },
             [
               _c("div", { staticClass: "card" }, [
@@ -42447,14 +42487,14 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(1, true),
+                    _vm._m(2, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
                         _vm._v(
-                          "\n                                    " +
+                          "\n                                        " +
                             _vm._s(sponsored_apartment.title) +
-                            "\n                                "
+                            "\n                                    "
                         ),
                       ]),
                       _vm._v(" "),
@@ -42467,9 +42507,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                                            " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                                    "
+                                "\n                                        "
                             ),
                           ]),
                         ]
@@ -42479,13 +42519,13 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                                            " +
+                              "\n                                                " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                                        "
+                                "\n                                            "
                             ),
                           ]),
                           _vm._v(
-                            "\n\n                                        m"
+                            "\n\n                                            m"
                           ),
                           _c("sup", [_vm._v("2")]),
                         ]),
@@ -42493,9 +42533,9 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                                            " +
+                              "\n                                                " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                                        "
+                                "\n                                            "
                             ),
                           ]),
                           _vm._v(" "),
@@ -42517,7 +42557,7 @@ var render = function () {
                             },
                             [
                               _vm._v(
-                                "\n                                        visita\n                                    "
+                                "\n                                            visita\n                                        "
                               ),
                             ]
                           ),
@@ -42541,66 +42581,26 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "heroSec" }, [
-      _c("div", { staticClass: "hero" }, [
-        _c("h2", { staticClass: "welcome_title" }, [
-          _vm._v("\n                Non sai dove andare? "),
-          _c("br"),
-          _vm._v("\n                Nessun problema!\n            "),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "search_sec" }, [
-          _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
-            _c("div", { staticClass: "search_input_wrapper" }, [
-              _c("label", { attrs: { for: "beds" } }, [_vm._v("letti")]),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { type: "number", id: "beds", name: "beds" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "search_input_wrapper" }, [
-              _c("label", { attrs: { for: "rooms" } }, [_vm._v("stanze")]),
-              _vm._v(" "),
-              _c("input", {
-                attrs: { type: "number", id: "rooms", name: "rooms" },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "search_input_wrapper" }, [
-              _c("label", { attrs: { for: "services" } }, [
-                _vm._v("scegli un servizio:"),
-              ]),
-              _vm._v(" "),
-              _c("select", { attrs: { name: "services", id: "services" } }, [
-                _c("option", { attrs: { value: "1" } }, [_vm._v("WiFi")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "2" } }, [
-                  _vm._v("Posto Macchina"),
-                ]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "3" } }, [_vm._v("piscina")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "4" } }, [_vm._v("Portineria")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "5" } }, [_vm._v("Sauna")]),
-                _vm._v(" "),
-                _c("option", { attrs: { value: "6" } }, [_vm._v("Vista Mare")]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "submit_search",
-                attrs: { type: "submit", value: "Submit" },
-              },
-              [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
-            ),
-          ]),
-        ]),
-      ]),
+    return _c("h2", { staticClass: "welcome_title" }, [
+      _vm._v("\n                    Parti adesso!\n                    "),
+      _c("br"),
+      _vm._v(
+        "\n                    Cosa stai aspettando? \n                    \n                "
+      ),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "submit_search",
+        attrs: { type: "submit", value: "Submit" },
+      },
+      [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+    )
   },
   function () {
     var _vm = this
@@ -58005,7 +58005,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/BOOLBNB_white.svg?93b0105b802cf300a4e98a2500c115c9";
+module.exports = "/images/BOOLBNB_white.svg?3a8cee93f60b71169cbb4ba2e91c1274";
 
 /***/ }),
 
@@ -58444,9 +58444,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/sass/host.scss */"./resources/sass/host.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })

@@ -79,7 +79,7 @@
       <h1 class="page_title py-5">Scopri la soluzione più adatta a te</h1>
       <div class="row justify-content-center g-5">
         <div
-          class="col-4 sponsored_apartment_card"
+          class="col-8 col-md-6 col-lg-4 sponsored_apartment_card"
           v-for="apartment in apartments"
           :key="apartment.slug"
         >
