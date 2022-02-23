@@ -53509,7 +53509,8 @@ var app = new Vue({
       },
       autocompleteOptions: {
         key: 'L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs',
-        language: 'it-IT'
+        language: 'it-IT',
+        resultSet: 'street'
       },
       labels: {
         placeholder: 'Inserisci il tuo indirizzo',
