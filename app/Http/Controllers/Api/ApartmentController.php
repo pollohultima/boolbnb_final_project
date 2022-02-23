@@ -95,8 +95,9 @@ class ApartmentController extends Controller
         }
 
         foreach ($apartment_list as $key => $p) {
+            $get_radius_from_parameters = haversineGreatCircleDistance($p->latitude, $p->longitude, $lat_from, $lon_from) / 1000;
             if ($km_radius > 0) {
-                if (haversineGreatCircleDistance($p->latitude, $p->longitude, $lat_from, $lon_from) / 1000 > $km_radius) {
+                if ($get_radius_from_parameters > $km_radius) {
                     unset($apartment_list[$key]);
                 };
             }
