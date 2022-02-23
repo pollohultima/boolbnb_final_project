@@ -4,22 +4,25 @@
         <div class="heroSec">
             <div class="hero">
                 <h2 class="welcome_title">
-                    Non sai dove andare? <br />
-                    Nessun problema!
+                    Parti adesso!
+                    <br />
+                    Cosa stai aspettando? 
+                    
                 </h2>
                
                 <div class="search_sec">
                     <form action="" class="search_form">
-                        <div class="search_input_wrapper">
-                            <label for="beds">letti</label>
-                            <input type="number" id="beds" name="beds" />
-                        </div>
 
-                        <div class="search_input_wrapper">
+                       <div class="search_input_wrapper">
+                       <label for="address">Indirizzo / Città *</label>
+                        <input v-model="address" type="text" id="address" name="address" />
+                       </div>
+
+                        <!-- <div class="search_input_wrapper">
                             <label for="rooms">stanze</label>
                             <input type="number" id="rooms" name="rooms" />
-                        </div>
-
+                        </div> -->
+<!-- 
                         <div class="search_input_wrapper">
                             <label for="services">scegli un servizio:</label>
                             <select name="services" id="services">
@@ -31,7 +34,7 @@
                                 <option value="6">Vista Mare</option>
                             </select>
                         </div>
-
+ -->
                         <button
                             type="submit"
                             value="Submit"
@@ -49,7 +52,7 @@
             <div class="row justify-content-center g-5">
 
                 <div
-                    class="col-4 sponsored_apartment_card"
+                    class="col-8 col-md-6 col-lg-4 sponsored_apartment_card"
                     v-for="sponsored_apartment in sponsored_apartments_list"
                     :key="sponsored_apartment.slug"
                 >

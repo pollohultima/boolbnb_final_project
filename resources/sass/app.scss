@@ -69,7 +69,7 @@ header {
 /* PAGE home.vue */
 
 .sponsored_apartments_container {
-    padding: 55px 0;
+    padding: 10rem 0;
 }
 
 /* HERO SEC*/
@@ -79,12 +79,12 @@ header {
     padding: 4rem 1.5rem;
     padding-bottom: 3rem;
     border-radius: 25px;
-    width: 65%;
+    width: 70%;
     margin: 0 auto;
 
     .search_form {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
         .search_input_wrapper {
@@ -142,6 +142,7 @@ header {
             align-items: center;
             border: none;
             margin-top: 0.5rem;
+            margin-left: 3rem;
             transform: scale(1);
             transition: all 250ms;
 
@@ -225,7 +226,6 @@ header {
     .card {
         border: none;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px #9797974d;
         height: 480px;
         .card_body {
             height: 100%;
@@ -243,11 +243,8 @@ header {
             height: 100%;
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                180deg,
-                rgba(34, 44, 56, 0) 40%,
-                rgba(22, 22, 31, 0.452) 90%
-            );
+            background: linear-gradient(180deg, rgba(34, 44, 56, 0) 40%, rgba(22, 22, 31, 0.452) 90%);
+
             mix-blend-mode: multiply;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
@@ -270,20 +267,21 @@ header {
         padding: 1rem;
         padding-bottom: 2rem;
         padding-top: 1rem;
-        height: 50%;
+        height: 60%;
         position: relative;
-        background: linear-gradient(
-            0deg,
-            #ff3895 -30%,
-            $color_logo_primary 85%,
-            #ff384d 100%
-        );
+        background: linear-gradient(0deg, #ff3895 -30%, $color_logo_primary 85%, #ff384d 100%);
+
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         color: white;
     }
 
     .card_info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+
         .card_title {
             font-size: 1.3rem;
             font-weight: 700;
@@ -658,11 +656,7 @@ footer {
             height: 100%;
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                180deg,
-                rgba(34, 44, 56, 0) 40%,
-                rgba(22, 22, 31, 0.452) 90%
-            );
+            background: linear-gradient(180deg, rgba(34, 44, 56, 0) 40%, rgba(22, 22, 31, 0.452) 90%);
             mix-blend-mode: multiply;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
@@ -684,20 +678,25 @@ footer {
         padding: 1rem;
         padding-bottom: 2rem;
         padding-top: 1rem;
-        height: 50%;
+        height: 60%;
         position: relative;
-        background: linear-gradient(
+        background: linear-gradient(0deg, #ff3895 -30%, $color_logo_primary 85%, #ff384d 100%);
+        /*  background: linear-gradient(
             0deg,
-            #ff3895 -30%,
+            #ffaf38 -30%,
             $color_logo_primary 85%,
             #ff384d 100%
-        );
+        ); */
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         color: white;
     }
 
     .card_info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
         .card_title {
             font-size: 1.3rem;
             font-weight: 700;
@@ -908,6 +907,161 @@ footer {
                     }
                 }
             }
+        }
+    }
+}
+
+// MEDIA QUERIES
+
+// general
+@media screen and(max-width:600px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+// homepage
+
+// search section
+@media screen and (max-width: 1390px) {
+    .search_sec {
+        .search_form {
+            display: flex;
+            flex-direction: column;
+
+            .search_input_wrapper {
+                margin-bottom: 0.5rem;
+            }
+
+            .submit_search {
+                align-self: center;
+                width: 250px;
+                height: 35px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .apartments_page {
+        .search_form {
+            display: flex;
+            flex-direction: column;
+
+            .form_search_bottom,
+            .form_search_top {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+
+                .search_input_wrapper {
+                    margin-top: 1rem;
+                    #beds,
+                    #rooms,
+                    #km_radius,
+                    #address {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .form_search_bottom {
+                .submit_search {
+                    width: 100%;
+                    height: 34px;
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+// footer section
+@media screen and (max-width: 768px) {
+    .footer {
+        .footer-main {
+            flex-direction: column;
+            & > div {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    .sponsored_apartments_container {
+        .page_title {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and(max-width:600px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and(max-width:400px) {
+    .hero {
+        .welcome_title {
+            font-size: 2rem;
+            max-width: 320px;
+        }
+    }
+    .page_title {
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+
+@media screen and(max-width:768px) {
+    .navbar_links {
+        margin-top: 1.5rem;
+    }
+
+    .navbar_log_reg {
+        .login_button {
+            margin: 0;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .register_button {
+            text-align: center;
+        }
+    }
+}
+
+/* media query show appartment */
+
+@media screen and(max-width:768px) {
+    .map {
+        height: 200px;
+
+        canvas {
+            padding-left: 0rem !important;
+            padding-top: 1rem;
+        }
+    }
+
+    .infos {
+        .info_address {
+            font-size: 0.75rem !important;
+            font-weight: 500;
+        }
+    }
+
+    .show_sec_apartment .card .bottom .services ul li {
+        margin: 0;
+        font-size: 0.7rem;
+        display: flex;
+        align-items: center;
+    }
+    .show_sec_apartment .card .bottom .services .row {
+        padding: 0;
+        flex-direction: column;
+    }
+    .show_sec_apartment {
+        .item {
+            margin-bottom: 1rem;
         }
     }
 }

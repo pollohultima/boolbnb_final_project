@@ -8,14 +8,20 @@
 
 
             <a name="" id="" class="button" style="margin-right: 150px;"
-                href="{{ route('host.apartments.create') }}" role="button">Aggiungi un appartamento
+                href="{{ route('host.apartments.create') }}" role="button">
+
+               <span class="add_appear">Aggiungi un appartamento</span>
+               <span class="add_plus_appear">
+               <!-- <i class="fa-solid fa-plus plus_icon"></i> -->
+               <i class="fa-solid fa-house"></i>
+               </span>
             </a>
         </div>
 
 
 
         @foreach ($apartments as $apartment)
-            <div class="card mb-3 apartment_card">
+            <div class="card mb-5 apartment_card">
                 <div class="row g-0">
 
                     <div class="col-md-3 apartment_card_img">
@@ -29,7 +35,7 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="card_desc">
+                                    <div class="card_desc card_desc_address">
                                         <p>
 
 
