@@ -12070,6 +12070,11 @@ footer .soft {
   margin-right: 0.4rem;
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 @media screen and (max-width: 1390px) {
   .search_sec .search_form {
     display: flex;
