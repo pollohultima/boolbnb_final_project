@@ -11800,6 +11800,7 @@ footer .soft {
   font-size: 0.7rem;
 }
 
+/* media query dashboard medium screen size */
 @media screen and (max-width: 768px) {
   .app_cont {
     width: 100%;
@@ -11876,6 +11877,7 @@ footer .soft {
     margin: 0;
   }
 }
+/* media query dashboard medium/small screen size */
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .app_cont {
     width: 80%;
@@ -11883,6 +11885,7 @@ footer .soft {
     padding-left: 8rem;
   }
 }
+/* media query dashboard small screen size */
 @media screen and (max-width: 628px) {
   .apartments_sec .add_apartment {
     flex-direction: row !important;

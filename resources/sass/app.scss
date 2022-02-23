@@ -1130,3 +1130,46 @@ footer{
 
 
  }
+
+
+
+ /* media query show appartment */
+
+
+@media screen and(max-width:768px) {
+    .map {
+        height: 200px;
+        
+        canvas{
+            padding-left: 0rem !important;
+            padding-top: 1rem;
+        }     
+    
+      }
+
+      .infos {
+        .info_address {
+            font-size: .75rem !important;
+            font-weight: 500;
+        }
+    }
+
+    .show_sec_apartment .card .bottom .services ul li {
+        margin: 0;
+        font-size: .7rem;
+        display: flex;
+        align-items: center;
+    }
+    .show_sec_apartment .card .bottom .services .row {
+        padding: 0;
+        flex-direction: column;
+    }
+    .show_sec_apartment{
+        .item{
+            margin-bottom: 1rem;
+        }
+    }
+    
+}
+
+

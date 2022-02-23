@@ -594,6 +594,10 @@ footer{
     }
 }
 
+
+/* media query dashboard medium screen size */
+
+
 @media screen and(max-width:768px) {
 
     .app_cont {
@@ -700,6 +704,7 @@ footer{
 }
 
 
+/* media query dashboard medium/small screen size */
 
 
 @media screen and(min-width:768px) and(max-width:1200px)  {
@@ -718,6 +723,7 @@ footer{
 
 
 
+/* media query dashboard small screen size */
 
 
 
@@ -897,3 +903,5 @@ footer{
     }
     
 }
+
+

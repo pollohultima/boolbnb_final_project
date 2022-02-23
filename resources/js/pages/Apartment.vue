@@ -20,16 +20,16 @@
                     <div class="row">
 
                         <!-- map -->
-                        <div id="map" class="map col-5">
+                        <div id="map" class="map col-12 col-md-5 order-2 order-md-0">
 
                         </div>
 
                         <!-- details -->
-                        <div class="infos col-7 px-4">
+                        <div class="infos col-12 col-md-7 px-4 order-1">
 
                             <!-- titolo -->
                             <h2 class="pt-3">{{ apartment.title }}</h2>
-                            <h3 class="pb-4 col-9 info_address"> <i class="fa-solid fa-location-dot"></i>
+                            <h3 class="pb-4 col-12 info_address"> <i class="fa-solid fa-location-dot"></i>
                                 {{ apartment.address }}</h3>
 
                             <div class="details container">

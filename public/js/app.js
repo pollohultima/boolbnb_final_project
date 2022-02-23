@@ -41912,14 +41912,17 @@ var render = function () {
       _c("div", { staticClass: "mid py-3" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "map col-5", attrs: { id: "map" } }),
+            _c("div", {
+              staticClass: "map col-12 col-md-5 order-2 order-md-0",
+              attrs: { id: "map" },
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "infos col-7 px-4" }, [
+            _c("div", { staticClass: "infos col-12 col-md-7 px-4 order-1" }, [
               _c("h2", { staticClass: "pt-3" }, [
                 _vm._v(_vm._s(_vm.apartment.title)),
               ]),
               _vm._v(" "),
-              _c("h3", { staticClass: "pb-4 col-9 info_address" }, [
+              _c("h3", { staticClass: "pb-4 col-12 info_address" }, [
                 _c("i", { staticClass: "fa-solid fa-location-dot" }),
                 _vm._v(
                   "\n                             " +
