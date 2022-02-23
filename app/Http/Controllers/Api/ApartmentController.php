@@ -91,8 +91,8 @@ class ApartmentController extends Controller
           ->get(); */
 
 
-            ApartmentResource::collection(Apartment::with(['services', 'sponsors'])->get());
 
+            Apartment::with(['services', 'sponsors'])->orderbyDesc('id')->get();
 
         if ($rooms > 0) {
             $apartment_list = $apartment_list->where('rooms', '>=', $rooms);
@@ -121,9 +121,8 @@ class ApartmentController extends Controller
                 }
             })->get(); */
 
-        $apartment_list =
-            ApartmentResource::collection($apartment_list);
-        /*  function haversineGreatCircleDistance(
+
+        function haversineGreatCircleDistance(
             $latitudeFrom,
             $longitudeFrom,
             $latitudeTo,
@@ -151,13 +150,12 @@ class ApartmentController extends Controller
             if ($km_radius > 0) {
                 if ($current_km_by_coordinates > $km_radius) {
                     unset($apartment_list[$key]);
-                }
-                else{
-                  $apartment_list[$key]['distance']= $current_km_by_coordinates;
+                } else {
+                    $apartment_list[$key]['distance'] = $current_km_by_coordinates;
                 }
             }
-        }  */
-
+        }
+        /*  $apartment_list  = ApartmentResource::collection($apartment_list->paginate(5)); */
         return $apartment_list;
     }
 

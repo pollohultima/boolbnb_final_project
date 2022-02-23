@@ -51,6 +51,7 @@ class ApartmentController extends Controller
     {
 
 
+
         $validate_data = $request->validate([
             'title' => ['required', 'unique:apartments', 'max:200'],
             'rooms' => ['required', 'numeric'],
