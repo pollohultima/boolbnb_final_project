@@ -99,6 +99,8 @@ class ApartmentController extends Controller
             if ($km_radius > 0) {
                 if ($get_radius_from_parameters > $km_radius) {
                     unset($apartment_list[$key]);
+                } else {
+                    $apartment_list[$key]['distance'] = $get_radius_from_parameters;
                 };
             }
         }
