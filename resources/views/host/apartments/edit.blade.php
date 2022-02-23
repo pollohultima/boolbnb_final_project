@@ -56,11 +56,11 @@
                 placeholder="Type your address" aria-describedby="helpId" value="{{ $apartment->address }}">
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 change_img_wrapper">
 
-            <div class="row py-5">
-                <div class="col-4 img_thumb_wrapper">
-                    <img style="max-height: 300px;"
+            <div class="row py-4">
+                <div class="col img_thumb_wrapper">
+                    <img style="max-height: 300px; max-width:300px"
                         src="{{ asset('storage/' . $apartment->image) }}" alt="" class="img_thumbnail">
                 </div>
                 <div class="col">

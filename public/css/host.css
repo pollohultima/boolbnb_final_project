@@ -11332,6 +11332,18 @@ body {
 /*
  * Navbar - header
  */
+@media screen and (max-width: 768px) {
+  .user_box {
+    margin-top: 2rem;
+  }
+  .user_box .navbar-nav .dropdown-menu {
+    position: absolute !important;
+  }
+  .user_box .fa-user {
+    margin-right: 0.3rem;
+    color: #5b5b5b;
+  }
+}
 .logo_wrapper {
   width: 120px;
 }
@@ -11345,6 +11357,11 @@ body {
   border: 1px solid #5b5b5b;
   padding: 0.2rem 1rem;
   border-radius: 25px;
+  justify-content: space-between;
+}
+.user_box .dropdown-menu {
+  position: absolute;
+  width: 100%;
 }
 .user_box .fa-user {
   margin-right: 0.3rem;
@@ -11571,7 +11588,6 @@ body {
 }
 .edit_sec label,
 .create_sec label {
-  text-align: end;
   color: #686868;
   font-weight: 500;
   letter-spacing: 1px;
@@ -11625,6 +11641,11 @@ body {
 .create_sec .img_thumb_wrapper {
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 1rem;
+}
+.edit_sec .change_img_wrapper .row,
+.create_sec .change_img_wrapper .row {
+  flex-direction: column !important;
 }
 .edit_sec .img_thumbnail,
 .create_sec .img_thumbnail {

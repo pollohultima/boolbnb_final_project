@@ -95,6 +95,23 @@ body {
  * Navbar - header
  */
 
+
+
+ @media screen and(max-width:768px){
+    .user_box {
+        
+        margin-top: 2rem;
+        .navbar-nav .dropdown-menu {
+            position:absolute !important;
+        }
+        .fa-user {
+            margin-right: 0.3rem;
+            color: $color_grey_sec;
+        }
+    }
+ }
+
+
 .logo_wrapper {
     width: 120px;
     .logo_image {
@@ -108,6 +125,11 @@ body {
     border: 1px solid $color_grey_sec;
     padding: 0.2rem 1rem;
     border-radius: 25px;
+    justify-content: space-between;
+    .dropdown-menu {
+        position:absolute;
+       width: 100%;
+    }
     .fa-user {
         margin-right: 0.3rem;
         color: $color_grey_sec;
@@ -344,7 +366,6 @@ body {
     }
 
     label {
-        text-align: end;
         color: $color_grey_sec_light;
         font-weight: 500;
         letter-spacing: 1px;
@@ -392,6 +413,15 @@ body {
 
     .img_thumb_wrapper{
         object-fit: cover;
+        margin-bottom: 1rem;
+    }
+
+    .change_img_wrapper{
+        .row{
+            flex-direction: column !important;
+
+        }
+
     }
 
     .img_thumbnail {
