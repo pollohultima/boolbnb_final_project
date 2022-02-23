@@ -104,7 +104,9 @@ class ApartmentController extends Controller
                 };
             }
         }
-        return $apartment_list;
+        $sorted = $apartment_list->sortBy('distance');
+
+        return $sorted->values()->all();
     }
 
     /**
