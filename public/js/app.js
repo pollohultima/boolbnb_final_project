@@ -5494,6 +5494,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42946,6 +42951,7 @@ var render = function () {
       _c("div", { staticClass: "search_form" }, [
         _c("div", { staticClass: "form_search_top" }, [
           _c("div", { staticClass: "search_input_wrapper" }, [
+            _vm._v("\n<<<<<<< HEAD\n            "),
             _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo *")]),
             _vm._v(" "),
             _c("input", {
@@ -42968,6 +42974,14 @@ var render = function () {
                 },
               },
             }),
+            _vm._v("\n=======\n            "),
+            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+            _vm._v(" "),
+            _c("div", {
+              staticStyle: { "border-radius": "50px" },
+              attrs: { id: "searchbox" },
+            }),
+            _vm._v("\n>>>>>>> adding_searchbox\n          "),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "search_input_wrapper" }, [
@@ -43159,9 +43173,9 @@ var render = function () {
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
                         _vm._v(
-                          "\n                  " +
+                          "\n                    " +
                             _vm._s(apartment.title) +
-                            "\n                "
+                            "\n                  "
                         ),
                       ]),
                       _vm._v(" "),
@@ -43174,9 +43188,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                    " +
+                              "\n                      " +
                                 _vm._s(apartment.address) +
-                                "\n                  "
+                                "\n                    "
                             ),
                           ]),
                         ]
@@ -43186,21 +43200,21 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                        " +
                                 _vm._s(apartment.squared_meters) +
-                                "\n                    "
+                                "\n                      "
                             ),
                           ]),
-                          _vm._v("\n\n                    m"),
+                          _vm._v("\n\n                      m"),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                        " +
                                 _vm._s(apartment.price) +
-                                "\n                    "
+                                "\n                      "
                             ),
                           ]),
                           _vm._v(" "),
@@ -43220,7 +43234,7 @@ var render = function () {
                             },
                             [
                               _vm._v(
-                                "\n                    visita\n                  "
+                                "\n                      visita\n                    "
                               ),
                             ]
                           ),
@@ -58997,7 +59011,29 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: router,
-  el: '#app'
+  el: '#app',
+  mounted: function mounted() {
+    var options = {
+      searchOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        limit: 5,
+        countrySet: "IT"
+      },
+      autocompleteOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        resultSet: "street"
+      },
+      labels: {
+        placeholder: "Inserisci il tuo indirizzo",
+        noResultsMessage: "Nessun riferimento trovato."
+      }
+    };
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    document.getElementById("searchbox").append(searchBoxHTML);
+  }
 });
 /*funzione data massima input date  */
 
