@@ -11451,7 +11451,6 @@ header {
 .sponsored_apartment_card .card {
   border: none;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px #9797974d;
   height: 480px;
 }
 .sponsored_apartment_card .card .card_body {
@@ -11857,6 +11856,12 @@ footer .soft {
   height: 60%;
   position: relative;
   background: linear-gradient(0deg, #ff3895 -30%, #ff385c 85%, #ff384d 100%);
+  /*  background: linear-gradient(
+      0deg,
+      #ffaf38 -30%,
+      $color_logo_primary 85%,
+      #ff384d 100%
+  ); */
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   color: white;
