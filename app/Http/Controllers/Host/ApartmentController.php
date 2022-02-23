@@ -56,11 +56,11 @@ class ApartmentController extends Controller
         ])
             ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
 
-        if ($request['address'] != null) {
-            if ($get_coordinate->json()['results'] == null) {
-                $request['address'] = null;
-            }
+
+        if ($request['address'] != null && $get_coordinate->json()['results'] == null) {
+            $request['address'] = null;
         }
+
         $validate_data = $request->validate([
             'title' => ['required', 'unique:apartments', 'max:200'],
             'rooms' => ['required', 'numeric'],
