@@ -14,7 +14,7 @@
                     <form action="" class="search_form">
 
                        <div class="search_input_wrapper">
-                       <label for="address">Indirizzo / Città</label>
+                       <label for="address">Indirizzo / Città *</label>
                         <input v-model="address" type="text" id="address" name="address" />
                        </div>
 

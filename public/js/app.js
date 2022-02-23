@@ -42092,7 +42092,7 @@ var render = function () {
       _c("div", { staticClass: "search_form" }, [
         _c("div", { staticClass: "form_search_top" }, [
           _c("div", { staticClass: "search_input_wrapper" }, [
-            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo *")]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -42430,7 +42430,7 @@ var render = function () {
           _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
             _c("div", { staticClass: "search_input_wrapper" }, [
               _c("label", { attrs: { for: "address" } }, [
-                _vm._v("Indirizzo / Città"),
+                _vm._v("Indirizzo / Città *"),
               ]),
               _vm._v(" "),
               _c("input", {
