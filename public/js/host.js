@@ -53514,7 +53514,7 @@ var app = new Vue({
       },
       labels: {
         placeholder: 'Inserisci il tuo indirizzo',
-        noResultsMessage: 'No results found.'
+        noResultsMessage: 'Nessun riferimento trovato.'
       }
     };
     var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);

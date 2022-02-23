@@ -25,7 +25,7 @@ const Home = Vue.component('Home', require('./pages/Home.vue').default);
 const Apartments = Vue.component('Apartments', require('./pages/Apartments.vue').default);
 const Apartment = Vue.component('Apartment', require('./pages/Apartment.vue').default);
 
-Vue.component('App', require('./App.vue').default);                         
+Vue.component('App', require('./App.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -58,7 +58,28 @@ const router = new VueRouter({
 const app = new Vue({
     router,
     el: '#app',
-
+    mounted() {
+        var options = {
+            searchOptions: {
+                key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+                language: "it-IT",
+                limit: 5,
+                countrySet: "IT",
+            },
+            autocompleteOptions: {
+                key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+                language: "it-IT",
+                resultSet: "street",
+            },
+            labels: {
+                placeholder: "Inserisci il tuo indirizzo",
+                noResultsMessage: "Nessun riferimento trovato.",
+            },
+        };
+        var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+        var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+        document.getElementById("searchbox").append(searchBoxHTML);
+    },
 });
 
 
@@ -72,12 +93,12 @@ var mm = today.getMonth() + 1; //January is 0!
 var yyyy = today.getFullYear() - 18;
 
 if (dd < 10) {
-   dd = '0' + dd;
+    dd = '0' + dd;
 }
 
 if (mm < 10) {
-   mm = '0' + mm;
-} 
-    
+    mm = '0' + mm;
+}
+
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById("date_of_birth").setAttribute("max", today);

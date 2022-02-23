@@ -42964,30 +42964,7 @@ var render = function () {
     _c("div", { staticClass: "search_apartment mt-5 apartments_page" }, [
       _c("div", { staticClass: "search_form" }, [
         _c("div", { staticClass: "form_search_top" }, [
-          _c("div", { staticClass: "search_input_wrapper" }, [
-            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.address,
-                  expression: "address",
-                },
-              ],
-              attrs: { type: "text", id: "address", name: "address" },
-              domProps: { value: _vm.address },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.address = $event.target.value
-                },
-              },
-            }),
-          ]),
+          _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "search_input_wrapper" }, [
             _c("label", { attrs: { for: "km_radius" } }, [
@@ -43173,7 +43150,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(0, true),
+                    _vm._m(1, true),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
@@ -43259,6 +43236,19 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "search_input_wrapper" }, [
+      _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+      _vm._v(" "),
+      _c("div", {
+        staticStyle: { "border-radius": "50px" },
+        attrs: { id: "searchbox" },
+      }),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -59019,7 +59009,29 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: router,
-  el: '#app'
+  el: '#app',
+  mounted: function mounted() {
+    var options = {
+      searchOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        limit: 5,
+        countrySet: "IT"
+      },
+      autocompleteOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        resultSet: "street"
+      },
+      labels: {
+        placeholder: "Inserisci il tuo indirizzo",
+        noResultsMessage: "Nessun riferimento trovato."
+      }
+    };
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    document.getElementById("searchbox").append(searchBoxHTML);
+  }
 });
 /*funzione data massima input date  */
 

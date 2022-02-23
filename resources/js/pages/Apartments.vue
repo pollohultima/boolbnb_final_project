@@ -5,7 +5,7 @@
         <div class="form_search_top">
           <div class="search_input_wrapper">
             <label for="address">Indirizzo</label>
-            <input v-model="address" type="text" id="address" name="address" />
+            <div id="searchbox" style="border-radius: 50px"></div>
           </div>
 
           <div class="search_input_wrapper">
