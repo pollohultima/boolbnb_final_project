@@ -60,20 +60,70 @@ class ApartmentController extends Controller
             $km_radius = 0;
         }
 
-        $apartment_list =
-            ApartmentResource::collection(Apartment::with(['services'])->get());
+        $apartment_list = /* Apartment::select('*')
+            ->join('apartment_service', function($join)
+            {
+                $join->on('apartment_service.apartment_id', '=', 'apartments.id');
+            })
+            
+            ->selectRaw('( 6371 * acos( cos( radians(?) ) *
+                               cos( radians( latitude ) )
+                               * cos( radians( longitude ) - radians(?)
+                               ) + sin( radians(?) ) *
+                               sin( radians( latitude ) ) )
+                             ) AS distance', [$lat_from, $lon_from, $lat_from])
+                             ->orderByRaw('distance')
+            ->havingRaw("distance < ?", [$km_radius])
+            ->get(); */
+
+
+            /* Apartment::with(['services','sponsors']) ->selectRaw('( 6371 * acos( cos( radians(?) ) *
+                               cos( radians( latitude ) )
+                               * cos( radians( longitude ) - radians(?)
+                               ) + sin( radians(?) ) *
+                               sin( radians( latitude ) ) )
+                             ) AS distance', [$lat_from, $lon_from, $lat_from])
+                             ->orderByRaw('distance')
+            ->havingRaw("distance < ?", [$km_radius])
+            
+          
+        
+          ->get(); */
+
+
+            ApartmentResource::collection(Apartment::with(['services', 'sponsors'])->get());
+
+
         if ($rooms > 0) {
             $apartment_list = $apartment_list->where('rooms', '>=', $rooms);
         }
         if ($beds > 0) {
             $apartment_list = $apartment_list->where('beds', '>=', $beds);
         }
-        if ($services > 0) {
+        /* if ($services > 0) {
             $apartment_list = $apartment_list->where('services.id', '=', $services);
-        }
+        } */
+
+        /*    $apartment_list->filter(function ($apartament) use ($services) {
+            if (isset($apartament) && $apartament->services[0]->id = $services) {
+
+                return $apartament;
+            }
+        });
 
 
-        function haversineGreatCircleDistance(
+        $test = [1, 3];
+
+        $apartment_list =
+            Apartment::with(['services', 'sponsors'])->whereHas('services', function ($q) use ($test) {
+                foreach ($test as $value) {
+                    $q->where('id', '=', $value);
+                }
+            })->get(); */
+
+        $apartment_list =
+            ApartmentResource::collection($apartment_list);
+        /*  function haversineGreatCircleDistance(
             $latitudeFrom,
             $longitudeFrom,
             $latitudeTo,
@@ -95,12 +145,19 @@ class ApartmentController extends Controller
         }
 
         foreach ($apartment_list as $key => $p) {
+
+            $current_km_by_coordinates = haversineGreatCircleDistance($p->latitude, $p->longitude, $lat_from, $lon_from) / 1000;
+
             if ($km_radius > 0) {
-                if (haversineGreatCircleDistance($p->latitude, $p->longitude, $lat_from, $lon_from) / 1000 > $km_radius) {
+                if ($current_km_by_coordinates > $km_radius) {
                     unset($apartment_list[$key]);
-                };
+                }
+                else{
+                  $apartment_list[$key]['distance']= $current_km_by_coordinates;
+                }
             }
-        }
+        }  */
+
         return $apartment_list;
     }
 

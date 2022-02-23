@@ -53523,9 +53523,6 @@ var app = new Vue({
     var temp_address = document.getElementById("temp_address").value;
     searchBoxHTML.getElementsByClassName('tt-search-box-input')[0].setAttribute("value", temp_address);
     document.getElementById('searchbox').append(searchBoxHTML);
-    /*  document.getElementsByClassName('tt-search-box-input')[0].id = 'address'; 
-    document.getElementsByClassName('tt-search-box-input')[0].name = 'address';
-    document.getElementsByClassName('tt-search-box-input')[0].setAttribute("value", "{{ old('address') }}"); */
   }
 });
 
@@ -53538,7 +53535,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/js/host.js */"./resources/js/host.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\host.js */"./resources/js/host.js");
 
 
 /***/ })
