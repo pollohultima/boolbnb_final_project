@@ -50,14 +50,24 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
 
+        $address_input = urlencode($request->all()['address']);
+        $get_coordinate = Http::withOptions([
+            'verify' => false,
+        ])
+            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
 
+        if ($request['address'] != null) {
+            if ($get_coordinate->json()['results'] == null) {
+                $request['address'] = null;
+            }
+        }
         $validate_data = $request->validate([
             'title' => ['required', 'unique:apartments', 'max:200'],
             'rooms' => ['required', 'numeric'],
             'bathrooms' => ['required', 'numeric'],
             'beds' => ['required', 'numeric'],
             'squared_meters' => ['required', 'numeric'],
-            'address' => ['required'],
+            'address' => ['required', 'min:5'],
             'image' => ['required', 'image', 'max:500'],
             'is_visible' => ['required'],
             'floor' => ['nullable', 'numeric'],
@@ -66,11 +76,8 @@ class ApartmentController extends Controller
         ]);
 
 
-        $address_input = urlencode($request->all()['address']);
-        $get_coordinate = Http::withOptions([
-            'verify' => false,
-        ])
-            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
+
+
         $get_lat_long = $get_coordinate->json()['results'][0]['position'];
 
         $user = Auth::id();
@@ -167,7 +174,7 @@ class ApartmentController extends Controller
                 'bathrooms' => ['required', 'numeric'],
                 'beds' => ['required', 'numeric'],
                 'squared_meters' => ['required', 'numeric'],
-                'address' => ['required'],
+                'address' => ['required', ' min:5'],
                 'image' => ['nullable', 'image', 'max:500'],
                 'is_visible' => ['required'],
                 'floor' => ['nullable', 'numeric'],
