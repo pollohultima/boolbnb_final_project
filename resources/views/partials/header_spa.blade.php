@@ -17,15 +17,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto navbar_links">
-                    <li>
-                        <router-link to="/" class="mx-3">Home</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/apartments" class="mx-3">Ricerca Appartamenti</router-link>
-                    </li>
-                </ul>
-
+                
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto navbar_log_reg">
                     <!-- Authentication Links -->

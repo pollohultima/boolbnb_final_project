@@ -173,7 +173,6 @@ export default {
   },
   methods: {
     shareAddress() {
-      var passed_from_homepage = "true";
       if (this.autocompleted_address != "") {
         this.$router.push({
           name: "apartments",

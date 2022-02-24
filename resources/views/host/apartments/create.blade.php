@@ -55,6 +55,7 @@
             <div class="mb-3">
                 <label for="address" class="form-label">Indirizzo *</label>
                 <div id="searchbox" value="{{ old('address') }}" style="border-radius: 50px;"></div>
+                <input id="temp_address" style="display:none;" value="{{old('address')}}">
                 {{-- <input type="text" name="address" id="address" class="form-control  @error('address') is_invalid @enderror"
                 placeholder="Esempio: Via Roma 1 Padova Italy" aria-describedby="helpId" value="{{ old('address') }}"> --}}
             </div>

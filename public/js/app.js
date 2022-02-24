@@ -5779,8 +5779,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     shareAddress: function shareAddress() {
-      var passed_from_homepage = "true";
-
       if (this.autocompleted_address != "") {
         this.$router.push({
           name: "apartments",
