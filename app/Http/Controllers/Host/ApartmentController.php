@@ -164,7 +164,12 @@ class ApartmentController extends Controller
             'verify' => false,
         ])
             ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
-        $get_lat_long = $get_coordinate->json()['results'][0]['position'];
+
+
+        if ($request['address'] != null && $get_coordinate->json()['results'] == null) {
+            $request['address'] = null;
+        }
+
 
         if (Auth::id() === $apartment->user_id) {
 
@@ -181,6 +186,9 @@ class ApartmentController extends Controller
                 'price' => ['nullable', 'numeric'],
                 'description' => ['nullable'],
             ]);
+
+            $get_lat_long = $get_coordinate->json()['results'][0]['position'];
+
 
             if ($request->file('image')) {
 
