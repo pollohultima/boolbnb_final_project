@@ -120,6 +120,16 @@ class ApartmentController extends Controller
 
 
     }
+    /* 
+    public function get_real_address(Request $request)
+    {
+        ddd($request->all());
+        $get_coordinate = Http::withOptions([
+            'verify' => false,
+        ])
+            ->get("https://api.tomtom.com/search/2/geocode/" . $address_input . ".json?key=L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs");
+    }
+ */
 
     /**
      * Display the specified resource.

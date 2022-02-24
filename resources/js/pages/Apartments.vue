@@ -6,8 +6,8 @@
           <div class="search_input_wrapper">
             <label for="address">Indirizzo</label>
             <div id="searchbox" style="border-radius: 50px"></div>
+            <input id="temp_address" v-model="address" style="display: none" />
           </div>
-
           <div class="search_input_wrapper">
             <label for="km_radius">Raggio(km)</label>
             <input
@@ -163,7 +163,7 @@ export default {
   data() {
     return {
       apartments: [],
-      address: "",
+      address: "dwa",
       beds: "",
       services: [],
       rooms: "",
@@ -171,8 +171,49 @@ export default {
       encoded_address: "",
       url_rooms: "&rooms=0",
       url_beds: "&beds=0",
-      url_km_radius: "&km_radius=0",
+      url_km_radius: "&km_radius=20",
+      autocompleted_address: "",
+      passed_from_homepage: "false",
     };
+  },
+  mounted() {
+    var options = {
+      searchOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        limit: 5,
+        countrySet: "IT",
+      },
+      autocompleteOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+      },
+      labels: {
+        placeholder: "Inserisci il tuo indirizzo",
+        noResultsMessage: "Nessun riferimento trovato.",
+      },
+    };
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var self = this;
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].id =
+      "address";
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].name =
+      "address";
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0];
+    var temp_address = document.getElementById("temp_address").value;
+    searchBoxHTML
+      .getElementsByClassName("tt-search-box-input")[0]
+      .setAttribute("value", temp_address);
+    document.getElementById("searchbox").append(searchBoxHTML);
+    ttSearchBox.on("tomtom.searchbox.resultsfound", function (data) {
+      if (data.data.results.fuzzySearch.results == "") {
+        self.address = "";
+      } else {
+        self.address =
+          data.data.results.fuzzySearch.results[0].address.freeformAddress;
+      }
+    });
   },
   methods: {
     onlyNumber($event) {
@@ -208,6 +249,29 @@ export default {
           console.log(r);
         });
     },
+  },
+  created() {
+    this.address = this.$route.params.data;
+    if (this.$route.params.flag == null) {
+      this.passed_from_homepage = "";
+    } else {
+      this.passed_from_homepage = this.$route.params.flag;
+
+      this.encoded_address = encodeURIComponent(this.address);
+      axios
+        .get(
+          "../api/advanced_search?" +
+            this.url_rooms +
+            this.url_beds +
+            this.url_km_radius +
+            "&address=" +
+            this.encoded_address
+        )
+        .then((r) => {
+          this.apartments = r.data;
+          console.log(r);
+        });
+    }
   },
 };
 </script>

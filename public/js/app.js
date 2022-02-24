@@ -5494,16 +5494,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       apartments: [],
-      address: "",
+      address: "dwa",
       beds: "",
       services: [],
       rooms: "",
@@ -5511,8 +5506,44 @@ __webpack_require__.r(__webpack_exports__);
       encoded_address: "",
       url_rooms: "&rooms=0",
       url_beds: "&beds=0",
-      url_km_radius: "&km_radius=0"
+      url_km_radius: "&km_radius=20",
+      autocompleted_address: "",
+      passed_from_homepage: "false"
     };
+  },
+  mounted: function mounted() {
+    var options = {
+      searchOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        limit: 5,
+        countrySet: "IT"
+      },
+      autocompleteOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT"
+      },
+      labels: {
+        placeholder: "Inserisci il tuo indirizzo",
+        noResultsMessage: "Nessun riferimento trovato."
+      }
+    };
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var self = this;
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].id = "address";
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].name = "address";
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0];
+    var temp_address = document.getElementById("temp_address").value;
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].setAttribute("value", temp_address);
+    document.getElementById("searchbox").append(searchBoxHTML);
+    ttSearchBox.on("tomtom.searchbox.resultsfound", function (data) {
+      if (data.data.results.fuzzySearch.results == "") {
+        self.address = "";
+      } else {
+        self.address = data.data.results.fuzzySearch.results[0].address.freeformAddress;
+      }
+    });
   },
   methods: {
     onlyNumber: function onlyNumber($event) {
@@ -5542,6 +5573,22 @@ __webpack_require__.r(__webpack_exports__);
       this.encoded_address = encodeURIComponent(this.address);
       axios.get("../api/advanced_search?" + this.url_rooms + this.url_beds + this.url_km_radius + "&address=" + this.encoded_address).then(function (r) {
         _this.apartments = r.data;
+        console.log(r);
+      });
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    this.address = this.$route.params.data;
+
+    if (this.$route.params.flag == null) {
+      this.passed_from_homepage = "";
+    } else {
+      this.passed_from_homepage = this.$route.params.flag;
+      this.encoded_address = encodeURIComponent(this.address);
+      axios.get("../api/advanced_search?" + this.url_rooms + this.url_beds + this.url_km_radius + "&address=" + this.encoded_address).then(function (r) {
+        _this2.apartments = r.data;
         console.log(r);
       });
     }
@@ -5684,27 +5731,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      sponsored_apartments_list: null
+      sponsored_apartments_list: null,
+      tomtom_result: "1",
+      encoded_address: "",
+      autocompleted_address: ""
     };
   },
   mounted: function mounted() {
@@ -5713,6 +5747,50 @@ __webpack_require__.r(__webpack_exports__);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("../api/apartments").then(function (r) {
       _this.sponsored_apartments_list = r.data.data;
     });
+    var options = {
+      searchOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT",
+        limit: 5,
+        countrySet: "IT"
+      },
+      autocompleteOptions: {
+        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
+        language: "it-IT"
+      },
+      labels: {
+        placeholder: "Inserisci il tuo indirizzo",
+        noResultsMessage: "Nessun riferimento trovato."
+      }
+    };
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var self = this;
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].id = "address";
+    searchBoxHTML.getElementsByClassName("tt-search-box-input")[0].name = "address";
+    document.getElementById("searchbox").append(searchBoxHTML);
+    ttSearchBox.on("tomtom.searchbox.resultsfound", function (data) {
+      if (data.data.results.fuzzySearch.results == "") {
+        self.autocompleted_address = "";
+      } else {
+        self.autocompleted_address = data.data.results.fuzzySearch.results[0].address.freeformAddress;
+      }
+    });
+  },
+  methods: {
+    shareAddress: function shareAddress() {
+      var passed_from_homepage = "true";
+
+      if (this.autocompleted_address != "") {
+        this.$router.push({
+          name: "apartments",
+          params: {
+            data: this.autocompleted_address,
+            flag: "true"
+          }
+        });
+      }
+    }
   }
 });
 
@@ -42951,8 +43029,12 @@ var render = function () {
       _c("div", { staticClass: "search_form" }, [
         _c("div", { staticClass: "form_search_top" }, [
           _c("div", { staticClass: "search_input_wrapper" }, [
-            _vm._v("\n<<<<<<< HEAD\n            "),
-            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo *")]),
+            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+            _vm._v(" "),
+            _c("div", {
+              staticStyle: { "border-radius": "50px" },
+              attrs: { id: "searchbox" },
+            }),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -42963,7 +43045,8 @@ var render = function () {
                   expression: "address",
                 },
               ],
-              attrs: { type: "text", id: "address", name: "address" },
+              staticStyle: { display: "none" },
+              attrs: { id: "temp_address" },
               domProps: { value: _vm.address },
               on: {
                 input: function ($event) {
@@ -42974,14 +43057,6 @@ var render = function () {
                 },
               },
             }),
-            _vm._v("\n=======\n            "),
-            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
-            _vm._v(" "),
-            _c("div", {
-              staticStyle: { "border-radius": "50px" },
-              attrs: { id: "searchbox" },
-            }),
-            _vm._v("\n>>>>>>> adding_searchbox\n          "),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "search_input_wrapper" }, [
@@ -43173,9 +43248,9 @@ var render = function () {
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
                         _vm._v(
-                          "\n                    " +
+                          "\n                  " +
                             _vm._s(apartment.title) +
-                            "\n                  "
+                            "\n                "
                         ),
                       ]),
                       _vm._v(" "),
@@ -43188,9 +43263,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                      " +
+                              "\n                    " +
                                 _vm._s(apartment.address) +
-                                "\n                    "
+                                "\n                  "
                             ),
                           ]),
                         ]
@@ -43200,21 +43275,21 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                        " +
+                              "\n                      " +
                                 _vm._s(apartment.squared_meters) +
-                                "\n                      "
+                                "\n                    "
                             ),
                           ]),
-                          _vm._v("\n\n                      m"),
+                          _vm._v("\n\n                    m"),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                        " +
+                              "\n                      " +
                                 _vm._s(apartment.price) +
-                                "\n                      "
+                                "\n                    "
                             ),
                           ]),
                           _vm._v(" "),
@@ -43234,7 +43309,7 @@ var render = function () {
                             },
                             [
                               _vm._v(
-                                "\n                      visita\n                    "
+                                "\n                    visita\n                  "
                               ),
                             ]
                           ),
@@ -43296,34 +43371,13 @@ var render = function () {
         _vm._v(" "),
         _c("div", { staticClass: "search_sec" }, [
           _c("form", { staticClass: "search_form", attrs: { action: "" } }, [
-            _c("div", { staticClass: "search_input_wrapper" }, [
-              _c("label", { attrs: { for: "address" } }, [
-                _vm._v("Indirizzo / Città *"),
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.address,
-                    expression: "address",
-                  },
-                ],
-                attrs: { type: "text", id: "address", name: "address" },
-                domProps: { value: _vm.address },
-                on: {
-                  input: function ($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.address = $event.target.value
-                  },
-                },
-              }),
-            ]),
-            _vm._v(" "),
             _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "submit_search", on: { click: _vm.shareAddress } },
+              [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
+            ),
           ]),
         ]),
       ]),
@@ -43363,9 +43417,9 @@ var render = function () {
                     _c("div", { staticClass: "card_info" }, [
                       _c("h5", { staticClass: "card_title" }, [
                         _vm._v(
-                          "\n                                        " +
+                          "\n                   " +
                             _vm._s(sponsored_apartment.title) +
-                            "\n                                    "
+                            "\n                 "
                         ),
                       ]),
                       _vm._v(" "),
@@ -43378,9 +43432,9 @@ var render = function () {
                         [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                                            " +
+                              "\n                     " +
                                 _vm._s(sponsored_apartment.address) +
-                                "\n                                        "
+                                "\n                   "
                             ),
                           ]),
                         ]
@@ -43390,23 +43444,21 @@ var render = function () {
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text" }, [
                             _vm._v(
-                              "\n                                                " +
+                              "\n                       " +
                                 _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                                            "
+                                "\n                     "
                             ),
                           ]),
-                          _vm._v(
-                            "\n\n                                            m"
-                          ),
+                          _vm._v("\n\n                     m"),
                           _c("sup", [_vm._v("2")]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "info_type_wrapper" }, [
                           _c("p", { staticClass: "card_text_cost" }, [
                             _vm._v(
-                              "\n                                                " +
+                              "\n                       " +
                                 _vm._s(sponsored_apartment.price) +
-                                "\n                                            "
+                                "\n                     "
                             ),
                           ]),
                           _vm._v(" "),
@@ -43428,7 +43480,7 @@ var render = function () {
                             },
                             [
                               _vm._v(
-                                "\n                                            visita\n                                        "
+                                "\n                     visita\n                   "
                               ),
                             ]
                           ),
@@ -43453,25 +43505,25 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h2", { staticClass: "welcome_title" }, [
-      _vm._v("\n                    Parti adesso!\n                    "),
+      _vm._v("\n         Parti adesso!\n         "),
       _c("br"),
-      _vm._v(
-        "\n                    Cosa stai aspettando? \n                    \n                "
-      ),
+      _vm._v("\n         Cosa stai aspettando?\n       "),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "submit_search",
-        attrs: { type: "submit", value: "Submit" },
-      },
-      [_c("i", { staticClass: "fa-solid fa-magnifying-glass" })]
-    )
+    return _c("div", { staticClass: "search_input_wrapper" }, [
+      _c("label", { attrs: { for: "address" } }, [
+        _vm._v("Indirizzo / Città *"),
+      ]),
+      _vm._v(" "),
+      _c("div", {
+        staticStyle: { "border-radius": "50px" },
+        attrs: { id: "searchbox" },
+      }),
+    ])
   },
   function () {
     var _vm = this
@@ -58997,9 +59049,10 @@ var routes = [{
   name: 'home',
   component: Home
 }, {
-  path: '/apartments',
+  path: '/apartments/',
   name: 'apartments',
-  component: Apartments
+  component: Apartments,
+  props: true
 }, {
   path: '/apartments/:slug',
   name: 'apartment',
@@ -59011,29 +59064,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: router,
-  el: '#app',
-  mounted: function mounted() {
-    var options = {
-      searchOptions: {
-        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
-        language: "it-IT",
-        limit: 5,
-        countrySet: "IT"
-      },
-      autocompleteOptions: {
-        key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
-        language: "it-IT",
-        resultSet: "street"
-      },
-      labels: {
-        placeholder: "Inserisci il tuo indirizzo",
-        noResultsMessage: "Nessun riferimento trovato."
-      }
-    };
-    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
-    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-    document.getElementById("searchbox").append(searchBoxHTML);
-  }
+  el: '#app'
 });
 /*funzione data massima input date  */
 

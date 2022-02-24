@@ -39,9 +39,10 @@ const routes = [
         component: Home
     },
     {
-        path: '/apartments',
+        path: '/apartments/',
         name: 'apartments',
-        component: Apartments
+        component: Apartments,
+        props: true
     },
     {
         path: '/apartments/:slug',
@@ -58,28 +59,6 @@ const router = new VueRouter({
 const app = new Vue({
     router,
     el: '#app',
-    mounted() {
-        var options = {
-            searchOptions: {
-                key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
-                language: "it-IT",
-                limit: 5,
-                countrySet: "IT",
-            },
-            autocompleteOptions: {
-                key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
-                language: "it-IT",
-                resultSet: "street",
-            },
-            labels: {
-                placeholder: "Inserisci il tuo indirizzo",
-                noResultsMessage: "Nessun riferimento trovato.",
-            },
-        };
-        var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
-        var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
-        document.getElementById("searchbox").append(searchBoxHTML);
-    },
 });
 
 
