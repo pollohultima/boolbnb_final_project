@@ -72,7 +72,16 @@ class ApartmentController extends Controller
             $apartment_list = $apartment_list->where('services.id', '=', $services);
         }
 
-
+        /*  $test_services = [1, 3];
+        $test_service = 1; */
+        /* $apartment_list->filter(function ($value, $key) use ($test_services) {
+            ddd($value->);
+           
+        }); */
+        /*   $apartment_list = $apartment_listwhereHas('services', function ($query) {
+            ddd($query);
+        });
+ */
         function haversineGreatCircleDistance(
             $latitudeFrom,
             $longitudeFrom,
