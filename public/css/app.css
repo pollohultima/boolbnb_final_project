@@ -11309,6 +11309,10 @@ header {
   padding: 10rem 0;
 }
 
+.sponsored_apartments_container_home {
+  padding-top: 5rem !important;
+}
+
 /* HERO SEC*/
 /* SEARCH HERO */
 .search_sec {
@@ -11328,6 +11332,20 @@ header {
   flex-direction: column;
   /* regola per eliminare le freccette nell'imput! */
   /* /regola per eliminare le freccette nell'imput! */
+}
+.search_sec .search_form .search_input_wrapper .tt-search-box {
+  margin-top: 0;
+  background: none;
+  font-size: 14px;
+  position: relative;
+}
+.search_sec .search_form .search_input_wrapper .tt-search-box .tt-search-box-input-container {
+  border: none;
+  padding: 0;
+  display: flex;
+}
+.search_sec .search_form .search_input_wrapper .tt-search-box .tt-search-box-input-container svg {
+  display: none;
 }
 .search_sec .search_form .search_input_wrapper input[type=number]::-webkit-inner-spin-button,
 .search_sec .search_form .search_input_wrapper input[type=number]::-webkit-outer-spin-button {
@@ -11704,7 +11722,7 @@ footer .soft {
 /* APPARTMENTS.VUE */
 .search_apartment {
   padding: 4rem 1.5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 0rem;
   border-radius: 25px;
   width: 70%;
   margin: 0 auto;
@@ -11720,6 +11738,24 @@ footer .soft {
   flex-direction: column;
   /* regola per eliminare le freccette nell'imput! */
   /* /regola per eliminare le freccette nell'imput! */
+}
+.search_apartment .search_form .search_input_wrapper .tt-search-box {
+  margin-top: 0;
+  background: none;
+  font-size: 14px;
+  position: relative;
+}
+.search_apartment .search_form .search_input_wrapper .tt-search-box .tt-search-box-input-container {
+  border: none;
+  padding: 0;
+  display: flex;
+  box-shadow: none !important;
+}
+.search_apartment .search_form .search_input_wrapper .tt-search-box .tt-search-box-input-container .-focused {
+  box-shadow: none;
+}
+.search_apartment .search_form .search_input_wrapper .tt-search-box .tt-search-box-input-container svg {
+  display: none;
 }
 .search_apartment .search_form .search_input_wrapper input[type=number]::-webkit-inner-spin-button,
 .search_apartment .search_form .search_input_wrapper input[type=number]::-webkit-outer-spin-button {
@@ -11810,7 +11846,7 @@ footer .soft {
 
 /* appartment show */
 .sponsored_apartments_container {
-  padding-top: 5rem;
+  padding-top: 0rem;
 }
 .sponsored_apartments_container .card {
   border: none;

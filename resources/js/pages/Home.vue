@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="sponsored_apartments_container container">
+    <div class="sponsored_apartments_container container sponsored_apartments_container_home">
       <h1 class="pb-5 page_title">Appartamenti sponsorizzati</h1>
       <div class="row justify-content-center g-5">
         <div

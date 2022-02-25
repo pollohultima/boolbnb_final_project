@@ -72,6 +72,10 @@ header {
     padding: 10rem 0;
 }
 
+.sponsored_apartments_container_home{
+    padding-top: 5rem !important;
+}
+
 /* HERO SEC*/
 /* SEARCH HERO */
 
@@ -90,6 +94,25 @@ header {
         .search_input_wrapper {
             display: flex;
             flex-direction: column;
+
+            .tt-search-box {
+                margin-top:0;
+                background: none;
+                font-size: 14px;
+                position: relative;
+
+                .tt-search-box-input-container {
+                    border:none;
+                     padding: 0; 
+                    display: flex;
+                    svg{
+                        display: none;
+                    }
+
+                }
+
+
+            }
 
             /* regola per eliminare le freccette nell'imput! */
             input[type="number"]::-webkit-inner-spin-button,
@@ -517,7 +540,7 @@ footer {
 
 .search_apartment {
     padding: 4rem 1.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 0rem;
     border-radius: 25px;
     width: 70%;
     margin: 0 auto;
@@ -531,6 +554,32 @@ footer {
         .search_input_wrapper {
             display: flex;
             flex-direction: column;
+
+
+            .tt-search-box {
+                margin-top:0;
+                background: none;
+                font-size: 14px;
+                position: relative;
+
+                .tt-search-box-input-container {
+                    border:none;
+                     padding: 0; 
+                    display: flex;
+                    box-shadow: none !important;
+
+                    & .-focused{
+                        box-shadow: none;
+                    }
+
+
+                    svg{
+                        display: none;
+                    }
+
+                }
+            }
+
 
             /* regola per eliminare le freccette nell'imput! */
             input[type="number"]::-webkit-inner-spin-button,
@@ -634,8 +683,9 @@ footer {
 
 /* appartment show */
 
+
 .sponsored_apartments_container {
-    padding-top: 5rem;
+    padding-top: 0rem;
     .card {
         border: none;
         border-radius: 20px;
