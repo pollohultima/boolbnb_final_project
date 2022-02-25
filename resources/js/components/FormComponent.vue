@@ -39,18 +39,8 @@
                     />
                 </div>
 
-                <div class="form-group d-none">
-                    <label for="apartment_id">21</label>
-                    <input
-                        type="text"
-                        name="apartment_id"
-                        v-model="apartment_id"
-                        id="apartment_id"
-                        class="form-control"
-                    
                 
-                    />
-                </div>
+             
 
                 <!--  <label for="message" class="mt-3"
                                     >il tuo messaggio</label
@@ -80,7 +70,6 @@ export default {
             name: '',
             email: '',
             content: '',
-            apartment_id : this.apartment_id
         }
         
     },
@@ -90,7 +79,9 @@ export default {
             Axios.post('../api/messages', {name:this.name, email:this.email, content:this.content, apartment_id:this.apartment_id });
             alert('messaggio inviato')
 
-            console.log(this.apartment_id);
+            this.name = '',
+            this.email = '',
+            this.content = ''
         },
     },
 };
