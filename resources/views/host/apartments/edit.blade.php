@@ -17,26 +17,25 @@
             </ul>
         </div>
         @endif
-
-
+      
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
-            <input type="text" name="title" id="title" class="form-control @error('title') is_invalid @enderror" placeholder="Type your title" aria-describedby="helpId" value="{{ old('title') ? old('title') : $apartment->title  }}">
+            <input type="text" name="title" id="title" class="form-control @error('title') is_invalid @enderror" placeholder="Type your title" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->title : old('title')  }}">
         </div>
 
         <div class="mb-3">
             <label for="rooms" class="form-label">Stanze</label>
-            <input type="text" name="rooms" id="rooms" class="form-control  @error('rooms') is_invalid @enderror" placeholder="Type your rooms" aria-describedby="helpId" value="{{ old('rooms') ? old('rooms') : $apartment->rooms  }}">
+            <input type="text" name="rooms" id="rooms" class="form-control  @error('rooms') is_invalid @enderror" placeholder="Type your rooms" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->rooms : old('rooms')  }}">
         </div>
 
         <div class="mb-3">
             <label for="bathrooms" class="form-label">Bagni</label>
-            <input type="text" name="bathrooms" id="bathrooms" class="form-control  @error('bathrooms') is_invalid @enderror" placeholder="Type your bathrooms" aria-describedby="helpId" value="{{ old('bathrooms') ? old('bathrooms') : $apartment->bathrooms  }}">
+            <input type="text" name="bathrooms" id="bathrooms" class="form-control  @error('bathrooms') is_invalid @enderror" placeholder="Type your bathrooms" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->bathrooms : old('bathrooms')  }}">
         </div>
 
         <div class="mb-3">
             <label for="beds" class="form-label">Posti letto</label>
-            <input type="text" name="beds" id="beds" class="form-control  @error('beds') is_invalid @enderror" placeholder="Type your beds" aria-describedby="helpId" value="{{ old('beds') ? old('beds') : $apartment->beds  }}">
+            <input type="text" name="beds" id="beds" class="form-control  @error('beds') is_invalid @enderror" placeholder="Type your beds" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->beds : old('beds')  }}">
         </div>
 
         <div class="mb-3">
@@ -47,7 +46,7 @@
         <div class="mb-3">
             <label for="address" class="form-label">Indirizzo</label>
             <div id="searchbox" style="border-radius: 50px;"></div>
-            <input type="text" style="display:none;" id="temp_address" value="{{ old('address') ? old('address') : $apartment->address  }}">
+            <input type="text" style="display:none;" id="temp_address" value=" {{ old('_token') === null ? $apartment->address : old('address')  }}">
            
             
         </div>
@@ -71,17 +70,17 @@
 
         <div class="mb-3">
             <label for="floor" class="form-label">Piano</label>
-            <input type="text" name="floor" id="floor" class="form-control  @error('floor') is_invalid @enderror" placeholder="Type your floor" aria-describedby="helpId" value="{{ old('floor') ? old('floor') : $apartment->floor  }}">
+            <input type="text" name="floor" id="floor" class="form-control  @error('floor') is_invalid @enderror" placeholder="Type your floor" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->floor : old('floor')  }}">
         </div>
 
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="text" name="price" id="price" class="form-control  @error('price') is_invalid @enderror" placeholder="Type your price" aria-describedby="helpId" value="{{ old('price') ? old('price') : $apartment->price  }}">
+            <input type="text" name="price" id="price" class="form-control  @error('price') is_invalid @enderror" placeholder="Type your price" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->price : old('price')  }}">
         </div>
 
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" name="description" id="description" rows="5" @error('description') is_invalid @enderror placeholder="Inserisci una breve descrizione" aria-describedby="helpId">{{ old('description') ? old('description') : $apartment->description  }}</textarea>
+            <textarea class="form-control" name="description" id="description" rows="5" @error('description') is_invalid @enderror placeholder="Inserisci una breve descrizione" aria-describedby="helpId">{{ old('_token') === null ? $apartment->description : old('description')  }}</textarea>
         </div>
 
 
