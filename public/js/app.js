@@ -5583,22 +5583,22 @@ __webpack_require__.r(__webpack_exports__);
           console.log(r);
         });
       }
-    },
-    created: function created() {
-      var _this2 = this;
+    }
+  },
+  created: function created() {
+    var _this2 = this;
 
-      this.address = this.$route.params.data;
+    this.address = this.$route.params.data;
 
-      if (this.$route.params.flag == null) {
-        this.passed_from_homepage = "";
-      } else {
-        this.passed_from_homepage = this.$route.params.flag;
-        this.encoded_address = encodeURIComponent(this.address);
-        axios.get("../api/advanced_search?" + this.url_rooms + this.url_beds + this.url_km_radius + "&address=" + this.encoded_address).then(function (r) {
-          _this2.apartments = r.data;
-          console.log(r);
-        });
-      }
+    if (this.$route.params.flag == null) {
+      this.passed_from_homepage = "";
+    } else {
+      this.passed_from_homepage = this.$route.params.flag;
+      this.encoded_address = encodeURIComponent(this.address);
+      axios.get("../api/advanced_search?" + this.url_rooms + this.url_beds + this.url_km_radius + "&address=" + this.encoded_address).then(function (r) {
+        _this2.apartments = r.data;
+        console.log(r);
+      });
     }
   }
 });
