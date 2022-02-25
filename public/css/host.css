@@ -12042,3 +12042,6 @@ footer .soft {
     flex-direction: column;
   }
 }
+.error_shadow {
+  box-shadow: 0 0 0 0.25rem #ff385d3f;
+}

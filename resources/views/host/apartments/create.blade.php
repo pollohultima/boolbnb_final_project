@@ -20,33 +20,33 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo *</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is_invalid @enderror"
+                <input type="text" name="title" id="title" class="form-control (@error('title')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci il titolo" aria-describedby="helpId" value="{{ old('title') }}">
             </div>
 
             <div class="mb-3">
                 <label for="rooms" class="form-label">Stanze *</label>
-                <input type="text" name="rooms" id="rooms" class="form-control  @error('rooms') is_invalid @enderror"
+                <input type="text" name="rooms" id="rooms" class="form-control  (@error('rooms')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci il numero di stanze" aria-describedby="helpId" value="{{ old('rooms') }}">
             </div>
 
             <div class="mb-3">
                 <label for="bathrooms" class="form-label">Bagni *</label>
                 <input type="text" name="bathrooms" id="bathrooms"
-                    class="form-control  @error('bathrooms') is_invalid @enderror"
+                    class="form-control  (@error('bathrooms')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci il numero di bagni" aria-describedby="helpId" value="{{ old('bathrooms') }}">
             </div>
 
             <div class="mb-3">
                 <label for="beds" class="form-label">Posti letto *</label>
-                <input type="text" name="beds" id="beds" class="form-control  @error('beds') is_invalid @enderror"
+                <input type="text" name="beds" id="beds" class="form-control  (@error('beds')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci il numero di posti letto" aria-describedby="helpId" value="{{ old('beds') }}">
             </div>
 
             <div class="mb-3">
                 <label for="squared_meters" class="form-label">Metri quadrati *</label>
                 <input type="text" name="squared_meters" id="squared_meters"
-                    class="form-control  @error('squared_meters') is_invalid @enderror"
+                    class="form-control  (@error('squared_meters')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci i metri quadrati" aria-describedby="helpId"
                     value="{{ old('squared_meters') }}">
             </div>
@@ -56,26 +56,26 @@
                 <label for="address" class="form-label">Indirizzo *</label>
                 <div id="searchbox" value="{{ old('address') }}" style="border-radius: 50px;"></div>
                 <input id="temp_address" style="display:none;" value="{{old('address')}}">
-                {{-- <input type="text" name="address" id="address" class="form-control  @error('address') is_invalid @enderror"
+                {{-- <input type="text" name="address" id="address" class="form-control  (@error('address')? error_shadow : '') is_invalid @enderror"
                 placeholder="Esempio: Via Roma 1 Padova Italy" aria-describedby="helpId" value="{{ old('address') }}"> --}}
             </div>
 
             <div class="mb-3">
                 <label for="image" class="form-label">Immagine dell'appartamento *</label>
                 <input type="file" accept="images/*" name="image" id="image"
-                    class="form-control  @error('image') is_invalid @enderror"
+                    class="form-control  (@error('image')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci l'immagine dell'appartamento" aria-describedby="helpId">
             </div>
 
             <div class="mb-3">
                 <label for="floor" class="form-label">Piano *</label>
-                <input type="text" name="floor" id="floor" class="form-control  @error('floor') is_invalid @enderror"
+                <input type="text" name="floor" id="floor" class="form-control  (@error('floor')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci il piano" aria-describedby="helpId" value="{{ old('floor') }}">
             </div>
 
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo *</label>
-                <input type="text" name="price" id="price" class="form-control  @error('price') is_invalid @enderror"
+                <input type="text" name="price" id="price" class="form-control  (@error('price')? error_shadow : '') is_invalid @enderror"
                     placeholder="Inserisci il prezzo" aria-describedby="helpId" value="{{ old('price') }}">
             </div>
 

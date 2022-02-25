@@ -25,9 +25,20 @@ class Apartment extends Model
         return $this->belongsToMany(Service::class);
     }
 
-    public function messages(): HasMany
+    public function messages() //: HasMany
     {
-        return $this->hasMany(Messages::class);
+        //return $this->hasMany(Messages::class);
+        return [
+            'title.required' => 'Il nome è richiesto',
+            'rooms.required' => 'Il nome è richiesto',
+            'bathrooms.required' => 'Il nome è richiesto',
+            'beds.required' => 'Il nome è richiesto',
+            'squared_meters.required' => 'Il nome è richiesto',
+            'address.required' => 'Il nome è richiesto',
+            'image.required' => 'Il nome è richiesto',
+            'is_visible.required' => 'Il nome è richiesto',
+
+        ];
     }
 
     public function views(): HasMany
