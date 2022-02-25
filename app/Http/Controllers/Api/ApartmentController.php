@@ -25,6 +25,7 @@ class ApartmentController extends Controller
 
     public function advanced_search(Request $request)
     {
+
         if ($request->has('address')) {
             $address_input = $request->all()['address'];
             $get_coordinate = Http::withOptions([
@@ -61,27 +62,27 @@ class ApartmentController extends Controller
         }
 
         $apartment_list =
-            ApartmentResource::collection(Apartment::with(['services'])->get());
+            /* ApartmentResource::collection(Apartment::with(['services'])->get()); */
+            Apartment::with('services');
         if ($rooms > 0) {
             $apartment_list = $apartment_list->where('rooms', '>=', $rooms);
         }
         if ($beds > 0) {
             $apartment_list = $apartment_list->where('beds', '>=', $beds);
         }
-        if ($services > 0) {
-            $apartment_list = $apartment_list->where('services.id', '=', $services);
-        }
 
-        /*  $test_services = [1, 3];
-        $test_service = 1; */
-        /* $apartment_list->filter(function ($value, $key) use ($test_services) {
-            ddd($value->);
-           
-        }); */
-        /*   $apartment_list = $apartment_listwhereHas('services', function ($query) {
-            ddd($query);
-        });
- */
+        if ($services != '') {
+            $services = explode(",", $services);
+        }
+        if ($services != 0) {
+            foreach ($services as $key => $value) {
+                $apartment_list =  $apartment_list->whereHas('services', function ($q) use ($value, $key) {
+
+                    $q->where('id', '=', $value);
+                });
+            }
+        }
+        $apartment_list = ApartmentResource::collection($apartment_list->get());
         function haversineGreatCircleDistance(
             $latitudeFrom,
             $longitudeFrom,
@@ -113,6 +114,7 @@ class ApartmentController extends Controller
                 };
             }
         }
+
         $sorted = $apartment_list->sortBy('distance');
 
         return $sorted->values()->all();

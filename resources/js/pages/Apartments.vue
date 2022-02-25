@@ -163,7 +163,7 @@ export default {
   data() {
     return {
       apartments: [],
-      address: "dwa",
+      address: "",
       beds: "",
       services: [],
       rooms: "",
@@ -174,6 +174,7 @@ export default {
       url_km_radius: "&km_radius=20",
       autocompleted_address: "",
       passed_from_homepage: "false",
+      services_for_api: "",
     };
   },
   mounted() {
@@ -225,53 +226,61 @@ export default {
       }
     },
     get_apartments() {
-      if (this.rooms > 0) {
-        this.url_rooms = "&rooms=" + this.rooms;
+      if (this.address != "") {
+        if (this.rooms > 0) {
+          this.url_rooms = "&rooms=" + this.rooms;
+        }
+        if (this.beds > 0) {
+          this.url_beds = "&beds=" + this.beds;
+        }
+        if (this.km_radius > 0) {
+          this.url_km_radius = "&km_radius=" + this.km_radius;
+        }
+        if (this.services.length) {
+          this.services_for_api = "&services=";
+          console.log(this.services);
+        }
+        this.encoded_address = encodeURIComponent(this.address);
+        axios
+          .get(
+            "../api/advanced_search?" +
+              this.url_rooms +
+              this.url_beds +
+              this.url_km_radius +
+              "&address=" +
+              this.encoded_address +
+              this.services_for_api +
+              this.services
+          )
+          .then((r) => {
+            this.apartments = r.data;
+            console.log(r);
+          });
       }
-      if (this.beds > 0) {
-        this.url_beds = "&beds=" + this.beds;
-      }
-      if (this.km_radius > 0) {
-        this.url_km_radius = "&km_radius=" + this.km_radius;
-      }
-      this.encoded_address = encodeURIComponent(this.address);
-      axios
-        .get(
-          "../api/advanced_search?" +
-            this.url_rooms +
-            this.url_beds +
-            this.url_km_radius +
-            "&address=" +
-            this.encoded_address
-        )
-        .then((r) => {
-          this.apartments = r.data;
-          console.log(r);
-        });
     },
-  },
-  created() {
-    this.address = this.$route.params.data;
-    if (this.$route.params.flag == null) {
-      this.passed_from_homepage = "";
-    } else {
-      this.passed_from_homepage = this.$route.params.flag;
+    created() {
+      this.address = this.$route.params.data;
+      if (this.$route.params.flag == null) {
+        this.passed_from_homepage = "";
+      } else {
+        this.passed_from_homepage = this.$route.params.flag;
 
-      this.encoded_address = encodeURIComponent(this.address);
-      axios
-        .get(
-          "../api/advanced_search?" +
-            this.url_rooms +
-            this.url_beds +
-            this.url_km_radius +
-            "&address=" +
-            this.encoded_address
-        )
-        .then((r) => {
-          this.apartments = r.data;
-          console.log(r);
-        });
-    }
+        this.encoded_address = encodeURIComponent(this.address);
+        axios
+          .get(
+            "../api/advanced_search?" +
+              this.url_rooms +
+              this.url_beds +
+              this.url_km_radius +
+              "&address=" +
+              this.encoded_address
+          )
+          .then((r) => {
+            this.apartments = r.data;
+            console.log(r);
+          });
+      }
+    },
   },
 };
 </script>
