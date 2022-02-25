@@ -96,27 +96,7 @@
                         <p class="py-1">{{ apartment.description }}</p>
                     </div>
                     <hr />
-                    <div class="message_sec">
-                        <h2>Invia un messaggio</h2>
-                        <form action="#">
-                            <div class="d-flex flex-column">
-                                <label for="message" class="mt-3"
-                                    >il tuo messaggio</label
-                                >
-                                <textarea
-                                    name="message"
-                                    id="message"
-                                    cols="30"
-                                    rows="10"
-                                    class="textarea p-2"
-                                ></textarea>
-                            </div>
-
-                            <button type="submit" class="button mt-4">
-                                invia
-                            </button>
-                        </form>
-                    </div>
+                    <form-component></form-component>
                 </div>
             </div>
         </div>
@@ -126,7 +106,10 @@
 <script>
 import axios from "axios";
 
+import FormComponent from '../components/FormComponent.vue';
+
 export default {
+  components: { FormComponent },
     data() {
         return {
             apartment: [],
