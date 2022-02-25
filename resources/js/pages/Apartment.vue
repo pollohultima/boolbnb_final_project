@@ -96,7 +96,9 @@
                         <p class="py-1">{{ apartment.description }}</p>
                     </div>
                     <hr />
-                    <form-component></form-component>
+                    <FormComponent
+                    :apartment_id="apartment.id"
+                    />
                 </div>
             </div>
         </div>
@@ -113,7 +115,7 @@ export default {
     data() {
         return {
             apartment: [],
-            services: []
+            services: [],
         };
     },
 
