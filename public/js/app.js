@@ -5764,6 +5764,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43425,8 +43432,6 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
     _c(
       "div",
       {
@@ -43462,7 +43467,7 @@ var render = function () {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_bottom" }, [
-                      _vm._m(3, true),
+                      _vm._m(2, true),
                       _vm._v(" "),
                       _c("div", { staticClass: "card_info" }, [
                         _c("h5", { staticClass: "card_title" }, [
@@ -43548,6 +43553,8 @@ var render = function () {
         ),
       ]
     ),
+    _vm._v(" "),
+    _vm._m(3),
   ])
 }
 var staticRenderFns = [
@@ -43574,6 +43581,19 @@ var staticRenderFns = [
         staticStyle: { "border-radius": "50px" },
         attrs: { id: "searchbox" },
       }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "sponsored" }, [
+      _c("div", { staticClass: "img_wrapper_sponsor" }, [
+        _c("img", {
+          staticClass: "logo_image",
+          attrs: { src: __webpack_require__(/*! ../../img/BOOLBNB_white.svg */ "./resources/img/BOOLBNB_white.svg"), alt: "" },
+        }),
+      ]),
     ])
   },
   function () {
@@ -43609,19 +43629,6 @@ var staticRenderFns = [
         _c("a", { staticClass: "button", attrs: { href: "#" } }, [
           _vm._v("parti adesso"),
         ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sponsored" }, [
-      _c("div", { staticClass: "img_wrapper_sponsor" }, [
-        _c("img", {
-          staticClass: "logo_image",
-          attrs: { src: __webpack_require__(/*! ../../img/BOOLBNB_white.svg */ "./resources/img/BOOLBNB_white.svg"), alt: "" },
-        }),
       ]),
     ])
   },
