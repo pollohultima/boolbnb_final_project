@@ -8,7 +8,7 @@
                     <input
                         type="text"
                         name="name"
-                        v-model="name"
+                         v-model="name"
                         id="name"
                         class="form-control"
                         placeholder="Inserisci il tuo nome"
@@ -31,7 +31,7 @@
                     <label for="content">Messaggio</label>
                  
                      <textarea
-                         name="content"
+                        name="content"
                         v-model="content"
                         id="content"
                         class="form-control textarea p-2"
@@ -66,7 +66,8 @@
 <script>
 import Axios from 'axios';
 export default {
-    props: ['apartment_id'],
+    props: ['apartment_id', 'user_id', 'user_email'],
+
 
     data() {
         return{
@@ -78,14 +79,23 @@ export default {
     },
 
     methods: {
+
         sendMessage() {
-            Axios.post('../api/messages', {name:this.name, email:this.email, content:this.content, apartment_id:this.apartment_id });
+
+
+            if(this.name != '' && this.email != '' && this.content !=''){
+                Axios.post('../api/messages', {name:this.name, email:this.email, content:this.content, apartment_id:this.apartment_id });
             alert('messaggio inviato')
 
             this.name = '',
             this.email = '',
             this.content = ''
+            }else{alert('Completa tutti i campi correttamente')
+
+            }
+            
         },
+
     },
 };
 </script>

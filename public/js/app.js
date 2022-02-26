@@ -5196,7 +5196,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['apartment_id'],
+  props: ['apartment_id', 'user_id', 'user_email'],
   data: function data() {
     return {
       name: '',
@@ -5206,14 +5206,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendMessage: function sendMessage() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('../api/messages', {
-        name: this.name,
-        email: this.email,
-        content: this.content,
-        apartment_id: this.apartment_id
-      });
-      alert('messaggio inviato');
-      this.name = '', this.email = '', this.content = '';
+      if (this.name != '' && this.email != '' && this.content != '') {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('../api/messages', {
+          name: this.name,
+          email: this.email,
+          content: this.content,
+          apartment_id: this.apartment_id
+        });
+        alert('messaggio inviato');
+        this.name = '', this.email = '', this.content = '';
+      } else {
+        alert('Completa tutti i campi correttamente');
+      }
     }
   }
 });
