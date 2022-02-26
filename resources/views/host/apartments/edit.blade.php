@@ -25,22 +25,22 @@
 
         <div class="mb-3">
             <label for="rooms" class="form-label">Stanze</label>
-            <input type="text" name="rooms" id="rooms" class="form-control  @error('rooms') is_invalid @enderror" placeholder="inserisci numero di camere" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->rooms : old('rooms')  }}">
+            <input type="number" min="1" name="rooms" id="rooms" class="form-control  @error('rooms') is_invalid @enderror" placeholder="inserisci numero di camere" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->rooms : old('rooms')  }}">
         </div>
 
         <div class="mb-3">
             <label for="bathrooms" class="form-label">Bagni</label>
-            <input type="text" name="bathrooms" id="bathrooms" class="form-control  @error('bathrooms') is_invalid @enderror" placeholder="inserisci numero di bagni" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->bathrooms : old('bathrooms')  }}">
+            <input type="number" min="1" name="bathrooms" id="bathrooms" class="form-control  @error('bathrooms') is_invalid @enderror" placeholder="inserisci numero di bagni" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->bathrooms : old('bathrooms')  }}">
         </div>
 
         <div class="mb-3">
             <label for="beds" class="form-label">Posti letto</label>
-            <input type="text" name="beds" id="beds" class="form-control  @error('beds') is_invalid @enderror" placeholder="inserisci numero di posti letto" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->beds : old('beds')  }}">
+            <input type="number" min="1" name="beds" id="beds" class="form-control  @error('beds') is_invalid @enderror" placeholder="inserisci numero di posti letto" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->beds : old('beds')  }}">
         </div>
 
         <div class="mb-3">
             <label for="squared_meters" class="form-label">Metri quadrati</label>
-            <input type="text" name="squared_meters" id="squared_meters" class="form-control  @error('squared_meters') is_invalid @enderror" placeholder="inserisci metri quadrati" aria-describedby="helpId" value="{{ old('squared_meters') ? old('squared_meters') : $apartment->squared_meters  }}">
+            <input type="number" min="20" name="squared_meters" id="squared_meters" class="form-control  @error('squared_meters') is_invalid @enderror" placeholder="inserisci metri quadrati" aria-describedby="helpId" value="{{ old('squared_meters') ? old('squared_meters') : $apartment->squared_meters  }}">
         </div>
 
         <div class="mb-3">
@@ -70,12 +70,12 @@
 
         <div class="mb-3">
             <label for="floor" class="form-label">Piano</label>
-            <input type="text" name="floor" id="floor" class="form-control  @error('floor') is_invalid @enderror" placeholder="inserisci il piano" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->floor : old('floor')  }}">
+            <input type="number" min="0" name="floor" id="floor" class="form-control  @error('floor') is_invalid @enderror" placeholder="inserisci il piano" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->floor : old('floor')  }}">
         </div>
 
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="text" name="price" id="price" class="form-control  @error('price') is_invalid @enderror" placeholder="inserisci il prezzo" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->price : old('price')  }}">
+            <input type="number" min="1" name="price" id="price" class="form-control  @error('price') is_invalid @enderror" placeholder="inserisci il prezzo" aria-describedby="helpId" value="{{ old('_token') === null ? $apartment->price : old('price')  }}">
         </div>
 
         <div class="mb-3">
