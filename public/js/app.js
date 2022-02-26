@@ -5741,6 +5741,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43402,6 +43425,8 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
     _c(
       "div",
       {
@@ -43437,7 +43462,7 @@ var render = function () {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "card_bottom" }, [
-                      _vm._m(2, true),
+                      _vm._m(3, true),
                       _vm._v(" "),
                       _c("div", { staticClass: "card_info" }, [
                         _c("h5", { staticClass: "card_title" }, [
@@ -43549,6 +43574,42 @@ var staticRenderFns = [
         staticStyle: { "border-radius": "50px" },
         attrs: { id: "searchbox" },
       }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "description_sec" }, [
+      _c("div", { staticClass: "description_sec_left" }, [
+        _c("div", { staticClass: "card_1 card_generic" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../img/napoli.jpg */ "./resources/img/napoli.jpg"), alt: "" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_2 card_generic" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../img/milano.jpg */ "./resources/img/milano.jpg"), alt: "" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_3 card_generic" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../img/firenze.jpg */ "./resources/img/firenze.jpg"), alt: "" },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "description_sec_right" }, [
+        _c("h2", { staticClass: "sec_desc_title" }, [
+          _vm._v("C'è tutto un mondo intorno!"),
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "button", attrs: { href: "#" } }, [
+          _vm._v("parti adesso"),
+        ]),
+      ]),
     ])
   },
   function () {
@@ -58955,6 +59016,39 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/BOOLBNB_white.svg?3a8cee93f60b71169cbb4ba2e91c1274";
+
+/***/ }),
+
+/***/ "./resources/img/firenze.jpg":
+/*!***********************************!*\
+  !*** ./resources/img/firenze.jpg ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/firenze.jpg?669e1e8915b747a71046e99e7e1ed511";
+
+/***/ }),
+
+/***/ "./resources/img/milano.jpg":
+/*!**********************************!*\
+  !*** ./resources/img/milano.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/milano.jpg?8ccc896d4fca9ca93a1b413cdcfeb97c";
+
+/***/ }),
+
+/***/ "./resources/img/napoli.jpg":
+/*!**********************************!*\
+  !*** ./resources/img/napoli.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/napoli.jpg?0f43765abef62132be4780fb0dd4f666";
 
 /***/ }),
 

@@ -233,6 +233,104 @@ header {
     margin-left: 0.3rem;
 }
 
+
+
+/* HERO SEC*/
+/* description SEC */
+
+.description_sec{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 6rem 0;
+    padding-top: 8rem;
+    
+
+
+   
+    .description_sec_left{
+        width: 65%;
+        display: flex;
+        position: relative;
+        height: 250px;
+        
+
+        .card_generic{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: center;
+            transition: all 250ms;
+            
+            width: 320px;
+            height: 213px;
+            
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.295);              
+
+              
+                border-radius: 15px;
+            }           
+
+        }
+        .card_1{
+
+            transform: rotate(-20deg);
+            &:hover{
+                top:-20px;
+                transform: rotate(-10deg);
+               
+             }
+        }
+
+        .card_2{
+            left: 15rem;
+            transform: rotate(5deg);
+            &:hover{
+                top:-60px;
+                transform: rotate(-5deg);
+                
+             }
+        }
+        .card_3{
+            left: 25rem;
+            transform: rotate(-25deg);
+            &:hover{
+               top:-20px;
+               transform: rotate(-10deg);
+              
+            }
+        }
+
+
+    }
+
+    .description_sec_right{
+        width: 35%;
+        h2{
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            
+            margin-bottom: 3rem;
+        }
+        .button{
+            text-decoration: none;
+            &:hover{
+                background-color: rgb(10, 10, 10);
+            }
+        }
+
+        
+    }
+}
+
+
+
 /* SPONSORED APARTMENTS */
 
 .page_title {
@@ -1083,6 +1181,101 @@ footer {
 /* media query show appartment */
 
 @media screen and(max-width:768px) {
+
+
+    .description_sec{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 6rem 0;
+    padding-top: 8rem;
+    
+
+
+   
+    .description_sec_left{
+        width: 65%;
+        display: flex;
+        position: relative;
+        height: 250px;
+        
+
+        .card_generic{
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: center;
+            transition: all 250ms;
+            
+            width: 320px;
+            height: 213px;
+            
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.295);              
+
+              
+                border-radius: 15px;
+            }           
+
+        }
+        .card_1{
+
+            transform: rotate(-20deg);
+            &:hover{
+                top:-20px;
+                transform: rotate(-10deg);
+               
+             }
+        }
+
+        .card_2{
+            left: 15rem;
+            transform: rotate(5deg);
+            &:hover{
+                top:-60px;
+                transform: rotate(-5deg);
+                
+             }
+        }
+        .card_3{
+            left: 25rem;
+            transform: rotate(-25deg);
+            &:hover{
+               top:-20px;
+               transform: rotate(-10deg);
+              
+            }
+        }
+
+
+    }
+
+    .description_sec_right{
+        width: 35%;
+        h2{
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            
+            margin-bottom: 3rem;
+        }
+        .button{
+            text-decoration: none;
+            &:hover{
+                background-color: rgb(10, 10, 10);
+            }
+        }
+
+        
+    }
+}
+
+
+
     .map {
         height: 200px;
 
@@ -1115,3 +1308,202 @@ footer {
         }
     }
 }
+
+
+
+
+@media screen and(max-width:1500px) {
+
+    .description_sec{
+        width: 80%;
+        display: flex;
+        
+        align-items: center;
+        margin: 0 auto;
+        padding: 6rem 0;
+        padding-top: 8rem;
+        
+    
+    
+       
+        .description_sec_left{
+            width: 65%;
+            display: flex;
+            
+            position: relative;
+            height: 250px;
+            
+    
+            .card_generic{
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform-origin: center;
+                transition: all 250ms;
+                
+                width: 320px;
+                height: 213px;
+                
+                img{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.295);              
+    
+                  
+                    border-radius: 15px;
+                }           
+    
+            }
+            .card_1{
+    
+                transform: rotate(0);
+                &:hover{
+                    top:-80px;
+                    transform: rotate(0);
+                   
+                 }
+            }
+    
+            .card_2{
+                top: 40px;
+               
+                transform: rotate(0);
+                &:hover{
+                    top:-60px;
+                    transform: rotate(0);
+                    
+                 }
+            }
+            .card_3{
+                top:110px;
+                transform: rotate(0);
+                &:hover{
+                   top:110px;
+                   transform: rotate(0);
+                  
+                }
+            }
+    
+    
+        }
+    
+        .description_sec_right{
+            width: 35%;
+            h2{
+                font-size: 3rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                
+                margin-bottom: 3rem;
+            }
+            .button{
+                text-decoration: none;
+                &:hover{
+                    background-color: rgb(10, 10, 10);
+                }
+            }
+    
+            
+        }
+    }
+    
+    
+
+}
+
+@media screen and(max-width:800px) {
+
+.description_sec_right{
+    
+    h2.sec_desc_title{
+        font-size: 2.5rem !important;
+    }
+}
+
+
+}
+
+
+@media screen and(max-width:768px) {
+
+
+    .description_sec{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        margin: 0 auto;
+        padding: 6rem 0;
+        padding-top: 8rem;
+      
+        .description_sec_right{
+            width: 50%;
+            padding-top:6.5rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            h2{
+                font-size: 2rem !important;
+                margin-bottom: 1.5rem;
+            }
+
+        }
+        .description_sec_left{
+            height: auto;
+            position: initial !important;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .card_generic{
+                position: initial !important;
+                margin-bottom: -5rem;
+            }
+
+
+        }
+        
+        
+        
+    }
+    
+   
+    
+    
+    }
+
+
+
+    @media screen and(max-width:400px) {
+
+
+    
+            .description_sec_left{
+                height: auto;
+                position: initial !important;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+    
+                .card_generic{
+                    position: initial !important;
+                    margin-bottom: -5rem;
+                    width: 240px !important;
+                }
+    
+    
+            }
+            
+            
+            
+        }
+        
+       
+        
+      
+  

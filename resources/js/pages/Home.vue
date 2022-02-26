@@ -41,6 +41,29 @@
       </div>
     </div>
 
+
+    <div class="description_sec">
+      <div class="description_sec_left">
+
+        <div class="card_1 card_generic">
+          <img src="../../img/napoli.jpg" alt="">
+        </div>
+        <div class="card_2 card_generic">
+          <img src="../../img/milano.jpg" alt="">
+        </div>
+        <div class="card_3 card_generic">
+           <img src="../../img/firenze.jpg" alt="">
+        </div>
+        
+      </div>
+        <div class="description_sec_right">
+          <h2 class="sec_desc_title">C'è tutto un mondo intorno!</h2>
+          <a href="#"  class="button">parti adesso</a>
+
+        </div>
+      
+    </div>
+
     <div class="sponsored_apartments_container container sponsored_apartments_container_home">
       <h1 class="pb-5 page_title">Appartamenti sponsorizzati</h1>
       <div class="row justify-content-center g-5">
