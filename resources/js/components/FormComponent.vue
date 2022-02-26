@@ -8,7 +8,7 @@
                     <input
                         type="text"
                         name="name"
-                         v-model="name"
+                        v-model="name"
                         id="name"
                         class="form-control"
                         placeholder="Inserisci il tuo nome"
@@ -66,7 +66,7 @@
 <script>
 import Axios from 'axios';
 export default {
-    props: ['apartment_id', 'user_id', 'user_email'],
+    props: ['apartment_id'],
 
 
     data() {
