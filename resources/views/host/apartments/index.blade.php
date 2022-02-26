@@ -96,16 +96,37 @@
                     </div>
 
                     <div class="col-md-1 actions">
-                        <a href="{{ route('host.apartments.show', $apartment->slug) }}"><i
-                                class="fas fa-eye fa-lg fa-fw "></i></a>
-                        <a href="{{ route('host.apartments.edit', $apartment->slug) }}"> <i
-                                class="fas fa-pencil-alt fa-lg fa-fw"></i></a>
+
+
+
+                        <a href="{{ route('host.apartments.show', $apartment->slug) }}">
+                            <i class="fas fa-eye fa-lg fa-fw " title="visita appartamento"></i>
+                        </a>
+
+
+                        <a href="{{ route('host.apartments.edit', $apartment->slug) }}">
+                             <i class="fas fa-pencil-alt fa-lg fa-fw" title="modifica appartamento"></i>
+                        </a>
+
+                        <!-- BOTTONE GRAFICO -->
+                        <a href="#">
+                           <i class="fa-solid fa-chart-line" title="statistiche"></i>
+                        </a>
+
+                        
+                         <!-- BOTTONE MESSAGGI -->
+                        <a href="#">
+                           <i class="fa-solid fa-message" title="messaggi"></i>
+                        </a>
+
+                            
 
                         <!-- Button trigger modal -->
-
                         <a data-bs-toggle="modal" data-bs-target="#delete{{ $apartment->slug }}">
-                            <i class="fas fa-trash fa-lg fa-fw"></i>
+                            <i class="fas fa-trash fa-lg fa-fw" title="cancella appartamenti"></i>
                         </a>
+
+                        
 
                         <!-- Modal -->
                         <div class="modal fade" id="delete{{ $apartment->slug }}" tabindex="-1" role="dialog"
