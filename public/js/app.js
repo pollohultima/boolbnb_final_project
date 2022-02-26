@@ -5510,6 +5510,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5632,6 +5634,36 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -43051,7 +43083,9 @@ var render = function () {
       _c("div", { staticClass: "search_form" }, [
         _c("div", { staticClass: "form_search_top" }, [
           _c("div", { staticClass: "search_input_wrapper" }, [
-            _c("label", { attrs: { for: "address" } }, [_vm._v("Indirizzo")]),
+            _c("label", { attrs: { for: "address" } }, [
+              _vm._v("Indirizzo / città"),
+            ]),
             _vm._v(" "),
             _c("div", {
               staticStyle: { "border-radius": "50px" },
@@ -43247,105 +43281,114 @@ var render = function () {
       _c(
         "div",
         { staticClass: "row justify-content-center g-5" },
-        _vm._l(_vm.apartments, function (apartment) {
-          return _c(
-            "div",
-            {
-              key: apartment.slug,
-              staticClass: "col-8 col-md-6 col-lg-4 sponsored_apartment_card",
-            },
-            [
-              _c("div", { staticClass: "card" }, [
-                _c("div", { staticClass: "card_body" }, [
-                  _c("div", { staticClass: "card_img_wrapper" }, [
-                    _c("img", {
-                      staticClass: "card-img-top",
-                      attrs: { src: "/storage/" + apartment.image, alt: "..." },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(0, true),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card_info" }, [
-                      _c("h5", { staticClass: "card_title" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(apartment.title) +
-                            "\n                "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "info_type_wrapper info_type_wrapper_address",
+        [
+          !_vm.apartments.length
+            ? _c("h3", [_vm._v("😥 non ci sono appartamenti")])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._l(_vm.apartments, function (apartment) {
+            return _c(
+              "div",
+              {
+                key: apartment.slug,
+                staticClass: "col-8 col-md-6 col-lg-4 sponsored_apartment_card",
+              },
+              [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card_body" }, [
+                    _c("div", { staticClass: "card_img_wrapper" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "/storage/" + apartment.image,
+                          alt: "...",
                         },
-                        [
-                          _c("p", { staticClass: "card_text" }, [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(apartment.address) +
-                                "\n                  "
-                            ),
-                          ]),
-                        ]
-                      ),
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card_bottom" }, [
+                      _vm._m(0, true),
                       _vm._v(" "),
-                      _c("div", { staticClass: "metres_cost" }, [
-                        _c("div", { staticClass: "info_type_wrapper" }, [
-                          _c("p", { staticClass: "card_text" }, [
-                            _vm._v(
-                              "\n                      " +
-                                _vm._s(apartment.squared_meters) +
-                                "\n                    "
-                            ),
-                          ]),
-                          _vm._v("\n\n                    m"),
-                          _c("sup", [_vm._v("2")]),
+                      _c("div", { staticClass: "card_info" }, [
+                        _c("h5", { staticClass: "card_title" }, [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(apartment.title) +
+                              "\n                "
+                          ),
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "info_type_wrapper" }, [
-                          _c("p", { staticClass: "card_text_cost" }, [
-                            _vm._v(
-                              "\n                      " +
-                                _vm._s(apartment.price) +
-                                "\n                    "
-                            ),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "info_type_wrapper info_type_wrapper_address",
+                          },
+                          [
+                            _c("p", { staticClass: "card_text" }, [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(apartment.address) +
+                                  "\n                  "
+                              ),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "metres_cost" }, [
+                          _c("div", { staticClass: "info_type_wrapper" }, [
+                            _c("p", { staticClass: "card_text" }, [
+                              _vm._v(
+                                "\n                      " +
+                                  _vm._s(apartment.squared_meters) +
+                                  "\n                    "
+                              ),
+                            ]),
+                            _vm._v("\n\n                    m"),
+                            _c("sup", [_vm._v("2")]),
                           ]),
                           _vm._v(" "),
-                          _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "button_wrapper" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "button_view",
-                              attrs: { to: "/apartments/" + apartment.slug },
-                            },
-                            [
+                          _c("div", { staticClass: "info_type_wrapper" }, [
+                            _c("p", { staticClass: "card_text_cost" }, [
                               _vm._v(
-                                "\n                    visita\n                  "
+                                "\n                      " +
+                                  _vm._s(apartment.price) +
+                                  "\n                    "
                               ),
-                            ]
-                          ),
-                        ],
-                        1
-                      ),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "button_wrapper" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "button_view",
+                                attrs: { to: "/apartments/" + apartment.slug },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                    visita\n                  "
+                                ),
+                              ]
+                            ),
+                          ],
+                          1
+                        ),
+                      ]),
                     ]),
                   ]),
                 ]),
-              ]),
-            ]
-          )
-        }),
-        0
+              ]
+            )
+          }),
+        ],
+        2
       ),
     ]),
   ])
@@ -43405,120 +43448,129 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "sponsored_apartments_container container" }, [
-      _c("h1", { staticClass: "pb-5 page_title" }, [
-        _vm._v("Appartamenti sponsorizzati"),
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "row justify-content-center g-5" },
-        _vm._l(_vm.sponsored_apartments_list, function (sponsored_apartment) {
-          return _c(
-            "div",
-            {
-              key: sponsored_apartment.slug,
-              staticClass: "col-8 col-md-6 col-lg-4 sponsored_apartment_card",
-            },
-            [
-              _c("div", { staticClass: "card" }, [
-                _c("div", { staticClass: "card_body" }, [
-                  _c("div", { staticClass: "card_img_wrapper" }, [
-                    _c("img", {
-                      staticClass: "card-img-top",
-                      attrs: {
-                        src: "/storage/" + sponsored_apartment.image,
-                        alt: "...",
-                      },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card_bottom" }, [
-                    _vm._m(2, true),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card_info" }, [
-                      _c("h5", { staticClass: "card_title" }, [
-                        _vm._v(
-                          "\n                   " +
-                            _vm._s(sponsored_apartment.title) +
-                            "\n                 "
-                        ),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "info_type_wrapper info_type_wrapper_address",
+    _c(
+      "div",
+      {
+        staticClass:
+          "sponsored_apartments_container container sponsored_apartments_container_home",
+      },
+      [
+        _c("h1", { staticClass: "pb-5 page_title" }, [
+          _vm._v("Appartamenti sponsorizzati"),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row justify-content-center g-5" },
+          _vm._l(_vm.sponsored_apartments_list, function (sponsored_apartment) {
+            return _c(
+              "div",
+              {
+                key: sponsored_apartment.slug,
+                staticClass: "col-8 col-md-6 col-lg-4 sponsored_apartment_card",
+              },
+              [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card_body" }, [
+                    _c("div", { staticClass: "card_img_wrapper" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "/storage/" + sponsored_apartment.image,
+                          alt: "...",
                         },
-                        [
-                          _c("p", { staticClass: "card_text" }, [
-                            _vm._v(
-                              "\n                     " +
-                                _vm._s(sponsored_apartment.address) +
-                                "\n                   "
-                            ),
-                          ]),
-                        ]
-                      ),
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card_bottom" }, [
+                      _vm._m(2, true),
                       _vm._v(" "),
-                      _c("div", { staticClass: "metres_cost" }, [
-                        _c("div", { staticClass: "info_type_wrapper" }, [
-                          _c("p", { staticClass: "card_text" }, [
-                            _vm._v(
-                              "\n                       " +
-                                _vm._s(sponsored_apartment.squared_meters) +
-                                "\n                     "
-                            ),
-                          ]),
-                          _vm._v("\n\n                     m"),
-                          _c("sup", [_vm._v("2")]),
+                      _c("div", { staticClass: "card_info" }, [
+                        _c("h5", { staticClass: "card_title" }, [
+                          _vm._v(
+                            "\n                   " +
+                              _vm._s(sponsored_apartment.title) +
+                              "\n                 "
+                          ),
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "info_type_wrapper" }, [
-                          _c("p", { staticClass: "card_text_cost" }, [
-                            _vm._v(
-                              "\n                       " +
-                                _vm._s(sponsored_apartment.price) +
-                                "\n                     "
-                            ),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "info_type_wrapper info_type_wrapper_address",
+                          },
+                          [
+                            _c("p", { staticClass: "card_text" }, [
+                              _vm._v(
+                                "\n                     " +
+                                  _vm._s(sponsored_apartment.address) +
+                                  "\n                   "
+                              ),
+                            ]),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "metres_cost" }, [
+                          _c("div", { staticClass: "info_type_wrapper" }, [
+                            _c("p", { staticClass: "card_text" }, [
+                              _vm._v(
+                                "\n                       " +
+                                  _vm._s(sponsored_apartment.squared_meters) +
+                                  "\n                     "
+                              ),
+                            ]),
+                            _vm._v("\n\n                     m"),
+                            _c("sup", [_vm._v("2")]),
                           ]),
                           _vm._v(" "),
-                          _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "button_wrapper" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "button_view",
-                              attrs: {
-                                to: "/apartments/" + sponsored_apartment.slug,
-                              },
-                            },
-                            [
+                          _c("div", { staticClass: "info_type_wrapper" }, [
+                            _c("p", { staticClass: "card_text_cost" }, [
                               _vm._v(
-                                "\n                     visita\n                   "
+                                "\n                       " +
+                                  _vm._s(sponsored_apartment.price) +
+                                  "\n                     "
                               ),
-                            ]
-                          ),
-                        ],
-                        1
-                      ),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "dollar" }, [_vm._v("$")]),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "button_wrapper" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "button_view",
+                                attrs: {
+                                  to: "/apartments/" + sponsored_apartment.slug,
+                                },
+                              },
+                              [
+                                _vm._v(
+                                  "\n                     visita\n                   "
+                                ),
+                              ]
+                            ),
+                          ],
+                          1
+                        ),
+                      ]),
                     ]),
                   ]),
                 ]),
-              ]),
-            ]
-          )
-        }),
-        0
-      ),
-    ]),
+              ]
+            )
+          }),
+          0
+        ),
+      ]
+    ),
+    _vm._v(" "),
+    _vm._m(3),
   ])
 }
 var staticRenderFns = [
@@ -43557,6 +43609,42 @@ var staticRenderFns = [
           staticClass: "logo_image",
           attrs: { src: __webpack_require__(/*! ../../img/BOOLBNB_white.svg */ "./resources/img/BOOLBNB_white.svg"), alt: "" },
         }),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "description_sec" }, [
+      _c("div", { staticClass: "description_sec_left" }, [
+        _c("div", { staticClass: "card_1 card_generic" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../img/napoli.jpg */ "./resources/img/napoli.jpg"), alt: "" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_2 card_generic" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../img/milano.jpg */ "./resources/img/milano.jpg"), alt: "" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card_3 card_generic" }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(/*! ../../img/firenze.jpg */ "./resources/img/firenze.jpg"), alt: "" },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "description_sec_right" }, [
+        _c("h2", { staticClass: "sec_desc_title" }, [
+          _vm._v("C'è tutto un mondo intorno!"),
+        ]),
+        _vm._v(" "),
+        _c("a", { staticClass: "button", attrs: { href: "#" } }, [
+          _vm._v("parti adesso"),
+        ]),
       ]),
     ])
   },
@@ -58951,6 +59039,39 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/BOOLBNB_white.svg?3a8cee93f60b71169cbb4ba2e91c1274";
+
+/***/ }),
+
+/***/ "./resources/img/firenze.jpg":
+/*!***********************************!*\
+  !*** ./resources/img/firenze.jpg ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/firenze.jpg?669e1e8915b747a71046e99e7e1ed511";
+
+/***/ }),
+
+/***/ "./resources/img/milano.jpg":
+/*!**********************************!*\
+  !*** ./resources/img/milano.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/milano.jpg?8ccc896d4fca9ca93a1b413cdcfeb97c";
+
+/***/ }),
+
+/***/ "./resources/img/napoli.jpg":
+/*!**********************************!*\
+  !*** ./resources/img/napoli.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/napoli.jpg?0f43765abef62132be4780fb0dd4f666";
 
 /***/ }),
 

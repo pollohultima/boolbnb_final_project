@@ -18,9 +18,19 @@
             </a>
         </div>
 
+        @if (count($apartments)== 0)
+                <h3>&#128549; non ci sono appartamenti da mostrare</h3>
+
+                @endif
+
+        
+
 
 
         @foreach ($apartments as $apartment)
+              
+
+
             <div class="card mb-5 apartment_card">
                 <div class="row g-0">
 
@@ -130,6 +140,11 @@
 
             </div>
         @endforeach
+
+
+        
+     
+
 
 
     </div>

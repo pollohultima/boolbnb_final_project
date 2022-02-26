@@ -4,7 +4,7 @@
       <div class="search_form">
         <div class="form_search_top">
           <div class="search_input_wrapper">
-            <label for="address">Indirizzo</label>
+            <label for="address">Indirizzo / città</label>
             <div id="searchbox" style="border-radius: 50px"></div>
             <input id="temp_address" v-model="address" style="display: none" />
           </div>
@@ -63,7 +63,7 @@
           </div>
 
           <button @click="get_apartments" class="submit_search align_start">
-            <i class="fa-solid fa-magnifying-glass"></i>
+           <a href="#apartment_sec_scroll"> <i class="fa-solid fa-magnifying-glass"></i></a>
           </button>
         </div>
 
@@ -82,8 +82,10 @@
     </div>
 
     <div class="sponsored_apartments_container container">
-      <h1 class="page_title py-5">Scopri la soluzione più adatta a te</h1>
+      <h1 class="page_title py-5" id="apartment_sec_scroll">Scopri la soluzione più adatta a te</h1>
       <div class="row justify-content-center g-5">
+
+        <h3 v-if="!apartments.length">&#128549; non ci sono appartamenti</h3>
         <div
           class="col-8 col-md-6 col-lg-4 sponsored_apartment_card"
           v-for="apartment in apartments"
