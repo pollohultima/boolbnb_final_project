@@ -20,8 +20,8 @@ class CreateApartmentSponsorTable extends Migration
             $table->unsignedBigInteger('sponsor_id');
             $table->foreign('sponsor_id')->references('id')->on('sponsors');
             $table->primary(['apartment_id', 'sponsor_id']);
-            $table->dateTime('start_date')->default(DB::raw('CURRENT_TIMESTAMP'));;
-            $table->dateTime('end_date')->default(DB::raw('CURRENT_TIMESTAMP'));;
+            $table->dateTime('start_date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('end_date')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

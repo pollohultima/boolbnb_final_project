@@ -122,6 +122,7 @@ export default {
     return {
       apartment: [],
       services: [],
+      client_ip: "",
     };
   },
 
@@ -134,18 +135,32 @@ export default {
         });
     },
 
-    /*     getServices(){
-          axios
-          .get("../api/services/").then((resp) => {
-            this.services = resp.data;
-
-          });
-        } */
+    getServices() {
+      axios.get("../api/services/").then((resp) => {
+        this.services = resp.data;
+      });
+    },
   },
-
   async mounted() {
+    axios.get("../api/views?" + "ciao" + "sono qui");
     /* this.getServices(); */
     await this.getApt();
+    await fetch("https://api.ipify.org?format=json")
+      .then((x) => x.json())
+      .then(({ ip }) => {
+        this.client_ip = ip;
+      });
+    axios
+      .post(
+        "../api/views?" +
+          "&apartment_id=" +
+          this.apartment.id +
+          "&client_ip=" +
+          this.client_ip
+      )
+      .then((data) => {
+        console.log(data);
+      });
 
     var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
 

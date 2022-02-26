@@ -5258,7 +5258,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       apartment: [],
-      services: []
+      services: [],
+      client_ip: ""
     };
   },
   methods: {
@@ -5282,17 +5283,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
-    }
-    /*     getServices(){
-          axios
-          .get("../api/services/").then((resp) => {
-            this.services = resp.data;
-            });
-        } */
+    },
+    getServices: function getServices() {
+      var _this2 = this;
 
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("../api/services/").then(function (resp) {
+        _this2.services = resp.data;
+      });
+    }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
       var HomeCoordinates, map, marker;
@@ -5300,11 +5301,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _context2.next = 2;
-              return _this2.getApt();
+              axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("../api/views?" + "ciao" + "sono qui");
+              /* this.getServices(); */
 
-            case 2:
-              HomeCoordinates = [_this2.apartment.longitude, _this2.apartment.latitude];
+              _context2.next = 3;
+              return _this3.getApt();
+
+            case 3:
+              _context2.next = 5;
+              return fetch("https://api.ipify.org?format=json").then(function (x) {
+                return x.json();
+              }).then(function (_ref) {
+                var ip = _ref.ip;
+                _this3.client_ip = ip;
+              });
+
+            case 5:
+              axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("../api/views?" + "&apartment_id=" + _this3.apartment.id + "&client_ip=" + _this3.client_ip).then(function (data) {
+                console.log(data);
+              });
+              HomeCoordinates = [_this3.apartment.longitude, _this3.apartment.latitude];
               map = tt.map({
                 key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
                 container: "map",
@@ -5313,7 +5329,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               });
               marker = new tt.Marker().setLngLat(HomeCoordinates).addTo(map);
 
-            case 5:
+            case 9:
             case "end":
               return _context2.stop();
           }
