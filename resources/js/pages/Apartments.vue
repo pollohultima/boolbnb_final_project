@@ -190,6 +190,7 @@ export default {
       autocompleteOptions: {
         key: "L5vJ5vBEzTCuKlxTimT8J5hFnGD9TRXs",
         language: "it-IT",
+        resultSet: "Str"
       },
       labels: {
         placeholder: "Inserisci il tuo indirizzo",
