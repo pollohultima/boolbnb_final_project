@@ -150,20 +150,6 @@ export default {
   },
 
   async mounted() {
-    /* this.getServices(); */
-    await this.getApt();
-
-    var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
-
-    var map = tt.map({
-      key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
-      container: "map",
-      center: HomeCoordinates,
-      zoom: 15,
-    });
-  },
-
-  async mounted() {
     axios.get("../api/views?" + "ciao" + "sono qui");
     /* this.getServices(); */
     await this.getApt();

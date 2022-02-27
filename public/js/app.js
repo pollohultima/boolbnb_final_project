@@ -5238,8 +5238,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/FormComponent.vue */ "./resources/js/components/FormComponent.vue");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -5367,7 +5365,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
+/* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     FormComponent: _components_FormComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
@@ -5411,15 +5409,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this2 = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var HomeCoordinates, map;
+      var HomeCoordinates, map, marker;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _context2.next = 2;
+              axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("../api/views?" + "ciao" + "sono qui");
+              /* this.getServices(); */
+
+              _context2.next = 3;
               return _this2.getApt();
 
-            case 2:
+            case 3:
+              _context2.next = 5;
+              return fetch("https://api.ipify.org?format=json").then(function (x) {
+                return x.json();
+              }).then(function (_ref) {
+                var ip = _ref.ip;
+                _this2.client_ip = ip;
+              });
+
+            case 5:
+              axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("../api/views?" + "&apartment_id=" + _this2.apartment.id + "&client_ip=" + _this2.client_ip).then(function (data) {
+                console.log(data);
+              });
+              /* axios
+                .get("../api/services?&apartment_id=" + this.apartment.id)
+                .then((resp) => {
+                  this.services = resp.data;
+                });
+              */
+
               HomeCoordinates = [_this2.apartment.longitude, _this2.apartment.latitude];
               map = tt.map({
                 key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
@@ -5427,8 +5447,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 center: HomeCoordinates,
                 zoom: 15
               });
+              marker = new tt.Marker().setLngLat(HomeCoordinates).addTo(map);
 
-            case 4:
+            case 9:
             case "end":
               return _context2.stop();
           }
@@ -5436,58 +5457,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, _callee2);
     }))();
   }
-}, "mounted", function mounted() {
-  var _this3 = this;
-
-  return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-    var HomeCoordinates, map, marker;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-      while (1) {
-        switch (_context3.prev = _context3.next) {
-          case 0:
-            axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("../api/views?" + "ciao" + "sono qui");
-            /* this.getServices(); */
-
-            _context3.next = 3;
-            return _this3.getApt();
-
-          case 3:
-            _context3.next = 5;
-            return fetch("https://api.ipify.org?format=json").then(function (x) {
-              return x.json();
-            }).then(function (_ref) {
-              var ip = _ref.ip;
-              _this3.client_ip = ip;
-            });
-
-          case 5:
-            axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("../api/views?" + "&apartment_id=" + _this3.apartment.id + "&client_ip=" + _this3.client_ip).then(function (data) {
-              console.log(data);
-            });
-            /* axios
-              .get("../api/services?&apartment_id=" + this.apartment.id)
-              .then((resp) => {
-                this.services = resp.data;
-              });
-            */
-
-            HomeCoordinates = [_this3.apartment.longitude, _this3.apartment.latitude];
-            map = tt.map({
-              key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
-              container: "map",
-              center: HomeCoordinates,
-              zoom: 15
-            });
-            marker = new tt.Marker().setLngLat(HomeCoordinates).addTo(map);
-
-          case 9:
-          case "end":
-            return _context3.stop();
-        }
-      }
-    }, _callee3);
-  }))();
-}));
+});
 
 /***/ }),
 
