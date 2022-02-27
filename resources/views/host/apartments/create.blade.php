@@ -100,7 +100,7 @@
 
             <div class="mb-3">
                 <label for="services" class="form-label">Servizi *</label>
-                <select multiple class="form-select  (@error('services')? error_shadow : '') is_invalid @enderror" name="services[]"
+                <select multiple class="form-select (@error('services')? error_shadow : '') is_invalid @enderror"" name="services[]"
                     id="services">
                     <option disabled>Seleziona uno o più servizi</option>
 

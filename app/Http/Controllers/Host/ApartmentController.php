@@ -70,6 +70,7 @@ class ApartmentController extends Controller
             'address' => ['required', 'min:5'],
             'image' => ['required', 'image', 'max:500'],
             'is_visible' => ['required'],
+            'services' => ['required'],
             'floor' => ['nullable', 'numeric'],
             'price' => ['nullable', 'numeric'],
             'description' => ['nullable'],
