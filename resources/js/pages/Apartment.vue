@@ -66,7 +66,6 @@
                       <h3 class="py-1 value">{{ apartment.price }}€</h3>
                     </div>
                   </div>
-                    
                 </div>
               </div>
             </div>
@@ -94,12 +93,8 @@
           <hr />
 
           <hr />
-                    <FormComponent
-                    :apartment_id="apartment.id"
-                   
-                    
-                    />
-   <!--        <div class="message_sec">
+          <FormComponent :apartment_id="apartment.id" />
+          <!--        <div class="message_sec">
             <h2>Invia un messaggio</h2>
             <form action="#">
               <div class="d-flex flex-column">
@@ -116,7 +111,6 @@
               <button type="submit" class="button mt-4">invia</button>
             </form>
           </div> -->
-
         </div>
       </div>
     </div>
@@ -126,26 +120,25 @@
 <script>
 import axios from "axios";
 
-import FormComponent from '../components/FormComponent.vue';
+import FormComponent from "../components/FormComponent.vue";
 
 export default {
   components: { FormComponent },
-    data() {
-        return {
-            apartment: [],
-            services: [],
-           
-        };
-    },
+  data() {
+    return {
+      apartment: [],
+      services: [],
+    };
+  },
 
-    methods: {
-        async getApt() {
-            await axios
-                .get("../api/apartments/" + this.$route.params.slug)
-                .then((r) => {
-                    this.apartment = r.data;
-                });
-        },
+  methods: {
+    async getApt() {
+      await axios
+        .get("../api/apartments/" + this.$route.params.slug)
+        .then((r) => {
+          this.apartment = r.data;
+        });
+    },
 
     /*     getServices(){
           axios
@@ -154,28 +147,22 @@ export default {
 
           });
         } */
-    },
+  },
 
-    async mounted() {
-        /* this.getServices(); */
-        await this.getApt();
+  async mounted() {
+    /* this.getServices(); */
+    await this.getApt();
 
-        var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
+    var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
 
-        var map = tt.map({
-            key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
-            container: "map",
-            center: HomeCoordinates,
-            zoom: 15,
-        });
-    },
+    var map = tt.map({
+      key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
+      container: "map",
+      center: HomeCoordinates,
+      zoom: 15,
+    });
+  },
 
-    getServices() {
-      axios.get("../api/services/").then((resp) => {
-        this.services = resp.data;
-      });
-    },
-  
   async mounted() {
     axios.get("../api/views?" + "ciao" + "sono qui");
     /* this.getServices(); */
@@ -197,6 +184,12 @@ export default {
         console.log(data);
       });
 
+    /* axios
+      .get("../api/services?&apartment_id=" + this.apartment.id)
+      .then((resp) => {
+        this.services = resp.data;
+      });
+ */
     var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
 
     var map = tt.map({

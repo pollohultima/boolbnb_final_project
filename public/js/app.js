@@ -5196,27 +5196,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['apartment_id'],
+  props: ["apartment_id"],
   data: function data() {
     return {
-      name: '',
-      email: '',
-      content: ''
+      name: "",
+      email: "",
+      content: ""
     };
   },
   methods: {
     sendMessage: function sendMessage() {
-      if (this.name != '' && this.email != '' && this.content != '') {
-        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('../api/messages', {
+      if (this.name != "" && this.email != "" && this.content != "") {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("../api/messages", {
           name: this.name,
           email: this.email,
           content: this.content,
           apartment_id: this.apartment_id
         });
-        alert('messaggio inviato');
-        this.name = '', this.email = '', this.content = '';
+        alert("messaggio inviato");
+        this.name = "", this.email = "", this.content = "";
       } else {
-        alert('Completa tutti i campi correttamente');
+        alert("Completa tutti i campi correttamente");
       }
     }
   }
@@ -5246,12 +5246,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5441,16 +5435,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }, _callee2);
     }))();
-  },
-  getServices: function getServices() {
-    var _this3 = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("../api/services/").then(function (resp) {
-      _this3.services = resp.data;
-    });
   }
 }, "mounted", function mounted() {
-  var _this4 = this;
+  var _this3 = this;
 
   return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
     var HomeCoordinates, map, marker;
@@ -5462,7 +5449,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             /* this.getServices(); */
 
             _context3.next = 3;
-            return _this4.getApt();
+            return _this3.getApt();
 
           case 3:
             _context3.next = 5;
@@ -5470,14 +5457,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return x.json();
             }).then(function (_ref) {
               var ip = _ref.ip;
-              _this4.client_ip = ip;
+              _this3.client_ip = ip;
             });
 
           case 5:
-            axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("../api/views?" + "&apartment_id=" + _this4.apartment.id + "&client_ip=" + _this4.client_ip).then(function (data) {
+            axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("../api/views?" + "&apartment_id=" + _this3.apartment.id + "&client_ip=" + _this3.client_ip).then(function (data) {
               console.log(data);
             });
-            HomeCoordinates = [_this4.apartment.longitude, _this4.apartment.latitude];
+            /* axios
+              .get("../api/services?&apartment_id=" + this.apartment.id)
+              .then((resp) => {
+                this.services = resp.data;
+              });
+            */
+
+            HomeCoordinates = [_this3.apartment.longitude, _this3.apartment.latitude];
             map = tt.map({
               key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
               container: "map",
@@ -59646,15 +59640,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./resources/js/pages/Apartment.vue ***!
   \******************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Apartment_vue_vue_type_template_id_37b4720e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Apartment.vue?vue&type=template&id=37b4720e& */ "./resources/js/pages/Apartment.vue?vue&type=template&id=37b4720e&");
 /* harmony import */ var _Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Apartment.vue?vue&type=script&lang=js& */ "./resources/js/pages/Apartment.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -59684,7 +59677,7 @@ component.options.__file = "resources/js/pages/Apartment.vue"
 /*!*******************************************************************!*\
   !*** ./resources/js/pages/Apartment.vue?vue&type=script&lang=js& ***!
   \*******************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
