@@ -19,7 +19,7 @@ class ApartmentController extends Controller
     public function index()
     {
         // return Apartment::all();
-        return ApartmentResource::collection(Apartment::has('sponsors')->with(['sponsors'])->paginate(5));
+        return ApartmentResource::collection(Apartment::has('sponsors')->with(['sponsors'])->get());
         /* return ApartmentResource::collection(Apartment::all()->keyBy->slug); */
     }
 
