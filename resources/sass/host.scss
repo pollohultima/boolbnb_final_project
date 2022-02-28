@@ -538,6 +538,33 @@ body {
     }
 }
 
+// MESSAGES SEC
+.messages_section {
+    margin-top: 5rem;
+    .message {
+        width: 51%;
+        padding: 15px;
+        border-radius: 1rem;
+        // background-color: rgb(191, 240, 219);
+        background-color: rgb(211, 236, 225);
+        .box {
+            display: flex;
+            justify-content: space-between;
+        }
+        .message_content {
+            .content {
+                // background-color: rgb(211, 236, 225);
+                background-color: rgb(225, 247, 238);
+                border-radius: 2rem;
+                padding: 10px;
+            }
+            .date {
+                width: 55%;
+            }
+        }
+    }
+}
+
 
 
 /* footer */

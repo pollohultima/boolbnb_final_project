@@ -1,24 +1,45 @@
 @extends('layouts.host')
 @section('content')
-<div class="container">
-    <div class="row">
-@foreach($messages_list as $message)
-<div class="content_message">
-    <p>Nome: {{$message->name}}</p>
-    <p>Email: {{$message->email}}</p>
-    <p>Contenuto del messaggio: {{$message->content}}</p>
-    <p>Inviato alle: {{$message->created_at}}</p>
-</div>
-@endforeach
+
+<div class="messages_section">
+    <div class="container">
+        <div class="row">
+            @foreach($messages_list as $message)
+                <div class="message my-3">
+                    <!-- customer details -->
+                    <div class="customer">
+                        <div class="box">
+                            <!-- customer name -->
+                            <p class="block"><i class="fa-solid fa-user"></i> {{$message->name}}</p>
+                            
+                            <!-- customer email -->
+                            <p class="block"><i class="fa-solid fa-envelope"></i> {{$message->email}}</p>
+                        </div>
+                    </div>
+
+                    <!-- message details -->
+                    <div class="message_content">
+                            <!-- message content -->
+                            <p class="content">{{$message->content}}</p>
+
+                            <!-- submit date -->
+                            <div class="box">
+                                <p></p>
+                                <p class="date">Inviato: {{$message->created_at}}</p>
+                            </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 offset-md-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Statistiche Visualizzazioni 2022</div>
-                <div class="panel-body">
-                    <canvas id="canvas" height="280" width="600"></canvas>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Messaggi ricevuti nel 2022 per questo appartamento</div>
+                    <div class="panel-body">
+                        <canvas id="canvas" height="280" width="600"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

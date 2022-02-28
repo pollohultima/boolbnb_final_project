@@ -11747,6 +11747,28 @@ body {
   margin-right: 0.4rem;
 }
 
+.messages_section {
+  margin-top: 5rem;
+}
+.messages_section .message {
+  width: 51%;
+  padding: 15px;
+  border-radius: 1rem;
+  background-color: #d3ece1;
+}
+.messages_section .message .box {
+  display: flex;
+  justify-content: space-between;
+}
+.messages_section .message .message_content .content {
+  background-color: #e1f7ee;
+  border-radius: 2rem;
+  padding: 10px;
+}
+.messages_section .message .message_content .date {
+  width: 55%;
+}
+
 /* footer */
 footer {
   width: calc(100% - 200px);
