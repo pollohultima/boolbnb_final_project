@@ -11693,8 +11693,6 @@ body {
   width: 100%;
   height: 100%;
   border-top-left-radius: 2rem;
-  -o-object-position: top;
-     object-position: top;
   border-top-right-radius: 2rem;
 }
 .show_sec .card .mid .map {
@@ -11749,6 +11747,34 @@ body {
 .show_sec .card .bottom .services ul li i {
   color: #d1d1d1;
   margin-right: 0.4rem;
+}
+
+.messages_section {
+  margin-top: 5rem;
+}
+.messages_section .message {
+  color: #5b5b5b;
+  width: 100%;
+  padding: 15px;
+  border-radius: 1rem;
+  background-color: #d3ece1;
+}
+.messages_section .message .box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.messages_section .message .box .block {
+  margin-left: 1rem;
+}
+.messages_section .message .message_content .content {
+  background-color: #e1f7ee;
+  border-radius: 2rem;
+  padding: 10px;
+}
+.messages_section .message .message_content .date {
+  text-align: right;
+  width: 55%;
 }
 
 /* footer */
@@ -12045,4 +12071,17 @@ footer .soft {
     padding: 0;
     flex-direction: column;
   }
+}
+.graphic_wrapper {
+  position: relative;
+  margin: auto;
+  height: 60vh !important;
+  width: 60vw;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
 }

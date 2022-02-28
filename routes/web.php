@@ -28,6 +28,8 @@ Route::middleware('auth')->prefix('host')->namespace('Host')->name('host.')->gro
     Route::resource('services', ServiceController::class);
     Route::resource('sponsors', SponsorController::class);
     Route::resource('views', ViewController::class);
+    Route::get('/apartments/statistics/{id}', 'ApartmentController@statistics')->name('apartments.statistic');
+    Route::get('/apartments/messages/{slug}', 'ApartmentController@messages')->name('apartments.message');
 });
 
 Route::get('/{any}', function () {

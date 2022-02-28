@@ -12128,8 +12128,6 @@ footer .soft {
   width: 100%;
   height: 100%;
   border-top-left-radius: 2rem;
-  -o-object-position: top;
-     object-position: top;
   border-top-right-radius: 2rem;
 }
 .show_sec_apartment .card .mid .map_square {

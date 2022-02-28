@@ -30,4 +30,11 @@ class ServiceController extends Controller
     {
         return $service;
     }
+
+    public function get_current_services(Request $request)
+    {
+
+        $apartment =  Apartment::find($request->all()['apartment_id']);
+        return $apartment->services;
+    }
 }
