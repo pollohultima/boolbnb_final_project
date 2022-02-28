@@ -5402,7 +5402,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           axios
           .get("../api/services/").then((resp) => {
             this.services = resp.data;
-           });
+            });
         } */
 
   },
@@ -43300,8 +43300,6 @@ var render = function () {
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
             _c("FormComponent", { attrs: { apartment_id: _vm.apartment.id } }),
           ],
           1
@@ -59305,7 +59303,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/BOOLBNB_white.svg?93b0105b802cf300a4e98a2500c115c9";
+module.exports = "/images/BOOLBNB_white.svg?3a8cee93f60b71169cbb4ba2e91c1274";
 
 /***/ }),
 
@@ -59847,9 +59845,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /Users/snake/Desktop/Boolean/FINAL_PROJECT/BoolBnb/boolbnb_final_project/resources/sass/host.scss */"./resources/sass/host.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\final_project\boolbnb_final_project\resources\sass\host.scss */"./resources/sass/host.scss");
 
 
 /***/ })

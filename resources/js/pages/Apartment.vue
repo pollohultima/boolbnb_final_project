@@ -93,7 +93,7 @@
           </div>
           <hr />
 
-          <hr />
+         
           <FormComponent :apartment_id="apartment.id" />
           <!--        <div class="message_sec">
             <h2>Invia un messaggio</h2>

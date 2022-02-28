@@ -184,7 +184,7 @@ class ApartmentController extends Controller
             }
         }
 
-        ddd($report_value_list);
+        
         /*        return view('host.apartments.statistic', compact('report_value_list')); */
 
         return view('host.apartments.statistic')->with('report_value_list', json_encode($report_value_list, JSON_NUMERIC_CHECK));

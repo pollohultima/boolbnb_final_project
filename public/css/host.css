@@ -11751,14 +11751,19 @@ body {
   margin-top: 5rem;
 }
 .messages_section .message {
-  width: 51%;
+  color: #5b5b5b;
+  width: 100%;
   padding: 15px;
   border-radius: 1rem;
   background-color: #d3ece1;
 }
 .messages_section .message .box {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.messages_section .message .box .block {
+  margin-left: 1rem;
 }
 .messages_section .message .message_content .content {
   background-color: #e1f7ee;
@@ -11766,6 +11771,7 @@ body {
   padding: 10px;
 }
 .messages_section .message .message_content .date {
+  text-align: right;
   width: 55%;
 }
 
@@ -12063,4 +12069,17 @@ footer .soft {
     padding: 0;
     flex-direction: column;
   }
+}
+.graphic_wrapper {
+  position: relative;
+  margin: auto;
+  height: 60vh !important;
+  width: 60vw;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200px;
 }

@@ -136,7 +136,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                <!--     <li class="nav-item">
                         <a class="nav_link_aside" href="">
                             <i class="fas fa-tags"></i>
                             <h4 class="dash_title">
@@ -144,7 +144,7 @@
                             </h4>
 
                         </a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>

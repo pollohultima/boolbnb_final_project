@@ -542,14 +542,19 @@ body {
 .messages_section {
     margin-top: 5rem;
     .message {
-        width: 51%;
+        color: $color_grey_sec;
+        width: 100%;
         padding: 15px;
         border-radius: 1rem;
         // background-color: rgb(191, 240, 219);
         background-color: rgb(211, 236, 225);
         .box {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            .block{
+               margin-left: 1rem;
+            }
         }
         .message_content {
             .content {
@@ -559,6 +564,7 @@ body {
                 padding: 10px;
             }
             .date {
+                text-align: right;
                 width: 55%;
             }
         }
@@ -962,3 +968,20 @@ footer{
 }
 
 
+
+
+
+  
+  .graphic_wrapper {
+    position: relative;
+    margin: auto;
+    height: 60vh !important;
+    width: 60vw;
+  }
+
+  .text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px;
+}

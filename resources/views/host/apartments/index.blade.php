@@ -41,7 +41,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h4 class="card_title">{{ $apartment->title }}</h4>
-                            <p class="card_desc card_desc_subtitle">{{ $apartment->description }}</p>
+                            <p class="card_desc card_desc_subtitle text-truncate">{{ $apartment->description }}</p>
 
                             <div class="row">
                                 <div class="col-12">

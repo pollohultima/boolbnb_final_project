@@ -6,9 +6,12 @@
         <div class="col-md-10 offset-md-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Statistiche Visualizzazioni 2022</div>
-                <div class="panel-body">
-                    <canvas id="canvas" height="280" width="600"></canvas>
-                </div>
+                
+                    <div class="graphic_wrapper">
+                       <canvas id="canvas" class="graphic_canvas"></canvas>
+                    </div>
+                    
+               
             </div>
         </div>
     </div>
@@ -22,10 +25,14 @@
  var barChartData = {
         labels: month,
         datasets: [{
-            label: 'report',
-            backgroundColor: "pink",
-            data: report
-        }]
+            label: "messaggi",
+            backgroundColor: "#ff385c",
+            borderColor: "#ff385c",
+            borderWidth: 0,
+            hoverBackgroundColor: "rgba(255,99,132,0.4)",
+            hoverBorderColor: "rgba(255,99,132,1)",
+            data: report,
+  }]
     };
 
     window.onload = function() {
@@ -34,9 +41,26 @@
             type: 'bar',
             data: barChartData,
             options: {
+                maintainAspectRatio: false,
+                scales: {
+                        y: {
+                        stacked: true,
+                        grid: {
+                            display: true,
+                            color: "rgba(255,99,132,0.2)"
+                        }
+                        },
+                        x: {
+                            
+                        grid: {
+                            display: false,
+                            
+                        }
+                        }
+                    },
                 elements: {
                     rectangle: {
-                        borderWidth: 2,
+                        borderWidth: 0,
                         borderColor: '#c1c1c1',
                         borderSkipped: 'bottom'
                     }
@@ -44,7 +68,7 @@
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'Yearly User Joined'
+                    
                 }
             }
         });
