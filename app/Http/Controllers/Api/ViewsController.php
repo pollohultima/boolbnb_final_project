@@ -36,17 +36,26 @@ class ViewsController extends Controller
      */
     public function store(Request $request)
     {
-
-        $last_input = DB::table('views')
+        $prev_view_exist =
+            DB::table('views')
             ->where('apartment_id', '=', $request->all()['apartment_id'])
-            ->orderByDesc('created_at')->first();
-        date_default_timezone_set('Europe/Rome');
-        $date =
-            date("Y-m-d H:i:s", (strtotime(date($last_input->created_at)) + 30));
-        $date = explode(' ', $date);
-        $time = date("Y-m-d H:i:s", time());
-        $time = explode(' ', $time);
-        if ($date[1] < $time[1]) {
+            ->first();
+        if ($prev_view_exist != null) {
+            $last_input = DB::table('views')
+                ->where('apartment_id', '=', $request->all()['apartment_id'])
+                ->orderByDesc('created_at')->first();
+            date_default_timezone_set('Europe/Rome');
+            $date =
+                date("Y-m-d H:i:s", (strtotime(date($last_input->created_at)) + 30));
+            $date = explode(' ', $date);
+            $time = date("Y-m-d H:i:s", time());
+            $time = explode(' ', $time);
+
+            if ($date[1] < $time[1]) {
+                $data = array('apartment_id' => $request->all()['apartment_id'], 'user_ip' => $request->all()['client_ip']);
+                DB::table('views')->insert($data);
+            }
+        } else {
             $data = array('apartment_id' => $request->all()['apartment_id'], 'user_ip' => $request->all()['client_ip']);
             DB::table('views')->insert($data);
         }
