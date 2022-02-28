@@ -80,7 +80,8 @@
 
             <ul class="row">
               <li v-for="service in services" :key="service.slug" class="col-4">
-                <i class="fa-solid fa-circle-check"></i> {{ service.name }}
+                <i class="fa-solid fa-circle-check" style="color: green"></i>
+                {{ service.name }}
               </li>
             </ul>
           </div>
@@ -170,12 +171,13 @@ export default {
         console.log(data);
       });
 
-    /* axios
-      .get("../api/services?&apartment_id=" + this.apartment.id)
+    axios
+      .get("../api/getservices?&apartment_id=" + this.apartment.id)
       .then((resp) => {
+        console.log(resp);
         this.services = resp.data;
       });
- */
+
     var HomeCoordinates = [this.apartment.longitude, this.apartment.latitude];
 
     var map = tt.map({

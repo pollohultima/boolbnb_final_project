@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
 
 use function GuzzleHttp\json_encode;
 
@@ -122,6 +123,7 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+
         $lati = $apartment['latitude'];
 
         $long = $apartment['longitude'];
@@ -130,6 +132,103 @@ class ApartmentController extends Controller
 
 
         return view('host.apartments.show', compact('apartment', 'lati', 'long'));
+    }
+
+    public function statistics($id)
+    {
+
+        /*  $statistic_year_tracked = DB::table('views')
+            ->selectRaw('year(created_at) AS year')
+            ->groupByRaw('year(created_at)')
+            ->get();
+ */
+
+
+
+        /* 
+        foreach ($statistic_year_tracked as $key => $value) { */
+        /* 
+            $report_for_mounth[get_object_vars($value)['year']] =
+                DB::table('views')
+                ->selectRaw('COUNT(created_at) AS total_view ,month(created_at) AS month')
+                ->whereRaw('year(created_at) = ?', [get_object_vars($value)['year']])
+                ->groupByRaw('month(created_at)')
+                ->orderByRaw('month(created_at)')
+                ->get(); */
+        /*   } */
+
+        $report_for_mounth =
+            DB::table('views')
+            ->selectRaw('COUNT(created_at) AS total_view ,month(created_at) AS month')
+            ->whereRaw('year(created_at) = 2022 AND apartment_id = ?', [$id])
+            ->groupByRaw('month(created_at)')
+            ->orderByRaw('month(created_at)')
+            ->get();
+
+
+
+        $report_for_mounth =
+            json_decode(json_encode((object) $report_for_mounth), true);
+        $report_value_list = [];
+
+
+        for ($i = 1; $i < 13; $i++) {
+            foreach ($report_for_mounth as $key => $value) {
+
+                if ($i == $report_for_mounth[$key]['month']) {
+                    $report_value_list[$i - 1] = $report_for_mounth[$key]['total_view'];
+                    break;
+                } else {
+                    $report_value_list[$i - 1] = 0;
+                }
+            }
+        }
+
+        ddd($report_value_list);
+        /*        return view('host.apartments.statistic', compact('report_value_list')); */
+
+        return view('host.apartments.statistic')->with('report_value_list', json_encode($report_value_list, JSON_NUMERIC_CHECK));
+    }
+
+    public function messages($id)
+    {
+
+        $messages_list =
+            DB::table('messages')
+            ->where('apartment_id', '=', $id)
+            ->get();
+
+
+        $report_for_mounth =
+            DB::table('messages')
+            ->selectRaw('COUNT(created_at) AS total_messages ,month(created_at) AS month')
+            ->whereRaw('year(created_at) = 2022 AND apartment_id = ?', [$id])
+            ->groupByRaw('month(created_at)')
+            ->orderByRaw('month(created_at)')
+            ->get();
+
+
+
+
+        $report_for_mounth =
+            json_decode(json_encode((object) $report_for_mounth), true);
+        $report_message_list = [];
+
+        for ($i = 1; $i < 13; $i++) {
+            foreach ($report_for_mounth as $key => $value) {
+
+                if ($i == $report_for_mounth[$key]['month']) {
+                    $report_message_list[$i - 1] = $report_for_mounth[$key]['total_messages'];
+                    break;
+                } else {
+
+                    $report_message_list[$i - 1] = 0;
+                }
+            }
+        }
+
+
+        return view('host.apartments.message', compact('messages_list'))->with('report_message_list', json_encode($report_message_list, JSON_NUMERIC_CHECK));;
     }
 
     /**

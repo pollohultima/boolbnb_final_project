@@ -23,5 +23,6 @@ Route::get('apartments', 'API\ApartmentController@index');
 Route::get('apartments/{apartment}', 'API\ApartmentController@show');
 Route::get('advanced_search', 'API\ApartmentController@advanced_search');
 Route::get('services', 'API\ServiceController@index');
-
+Route::post('views', 'API\ViewsController@store');
 Route::resource('messages', 'API\MessageController');
+Route::get('getservices', 'API\ServiceController@get_current_services');

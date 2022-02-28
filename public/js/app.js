@@ -5363,6 +5363,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5433,13 +5434,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("../api/views?" + "&apartment_id=" + _this2.apartment.id + "&client_ip=" + _this2.client_ip).then(function (data) {
                 console.log(data);
               });
-              /* axios
-                .get("../api/services?&apartment_id=" + this.apartment.id)
-                .then((resp) => {
-                  this.services = resp.data;
-                });
-              */
-
+              axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("../api/getservices?&apartment_id=" + _this2.apartment.id).then(function (resp) {
+                console.log(resp);
+                _this2.services = resp.data;
+              });
               HomeCoordinates = [_this2.apartment.longitude, _this2.apartment.latitude];
               map = tt.map({
                 key: "3a6pOX546txENpMTLIdG3as2UoLVCypG",
@@ -5449,7 +5447,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               });
               marker = new tt.Marker().setLngLat(HomeCoordinates).addTo(map);
 
-            case 9:
+            case 10:
             case "end":
               return _context2.stop();
           }
@@ -43275,8 +43273,15 @@ var render = function () {
                 { staticClass: "row" },
                 _vm._l(_vm.services, function (service) {
                   return _c("li", { key: service.slug, staticClass: "col-4" }, [
-                    _c("i", { staticClass: "fa-solid fa-circle-check" }),
-                    _vm._v(" " + _vm._s(service.name) + "\n            "),
+                    _c("i", {
+                      staticClass: "fa-solid fa-circle-check",
+                      staticStyle: { color: "green" },
+                    }),
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(service.name) +
+                        "\n            "
+                    ),
                   ])
                 }),
                 0

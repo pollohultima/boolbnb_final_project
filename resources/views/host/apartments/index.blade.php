@@ -109,13 +109,13 @@
                         </a>
 
                         <!-- BOTTONE GRAFICO -->
-                        <a href="#">
+                        <a href="{{ route('host.apartments.statistic', $apartment->id) }}">
                            <i class="fa-solid fa-chart-line" title="statistiche"></i>
                         </a>
 
                         
                          <!-- BOTTONE MESSAGGI -->
-                        <a href="#">
+                        <a href="{{ route('host.apartments.message', $apartment->id) }}">
                            <i class="fa-solid fa-message" title="messaggi"></i>
                         </a>
 

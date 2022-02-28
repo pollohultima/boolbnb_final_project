@@ -14,11 +14,9 @@ class ServiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $aparment = Apartment::find(1);
-
-        /* return Service::where(); */
+        return Service::all();
     }
 
 
@@ -31,5 +29,12 @@ class ServiceController extends Controller
     public function show(Service $service)
     {
         return $service;
+    }
+
+    public function get_current_services(Request $request)
+    {
+
+        $apartment =  Apartment::find($request->all()['apartment_id']);
+        return $apartment->services;
     }
 }
