@@ -99,7 +99,7 @@
                 responsive: true,
                 title: {
                     display: true,
-                    text: 'Yearly User Joined'
+                    text: 'messaggi ricevuti'
                 }
             }
         });

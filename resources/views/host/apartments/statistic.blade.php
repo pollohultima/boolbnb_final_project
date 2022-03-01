@@ -25,7 +25,7 @@
  var barChartData = {
         labels: month,
         datasets: [{
-            label: "messaggi",
+            label: "visite",
             backgroundColor: "#ff385c",
             borderColor: "#ff385c",
             borderWidth: 0,

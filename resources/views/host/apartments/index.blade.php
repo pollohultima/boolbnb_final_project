@@ -12,8 +12,8 @@
 
                <span class="add_appear">Aggiungi un appartamento</span>
                <span class="add_plus_appear">
-               <!-- <i class="fa-solid fa-plus plus_icon"></i> -->
-               <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-plus plus_icon"></i>
+              <!--  <i class="fa-solid fa-house"></i> -->
                </span>
             </a>
         </div>
